@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Taxa;
+use App\Models\Produto;
 
-class TaxasController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,22 +25,34 @@ class TaxasController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = $request->user_id;
-        $bairro = $request->bairro;
-        $valor = $request->valor;
 
-        if (!$user_id or !$bairro or !$valor){
+        $user_id = $request->user_id;
+        $categoria_id = $request->categoria_id;
+        $nome = $request->nome;
+        $descricao = $request->descricao;
+        $preco = $request->preco;
+        $imagem = $request->imagem;
+        
+        if (!$user_id or !$categoria_id or !$nome or !$descricao or !$preco){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
 
-        $newTaxa = new Taxa();
-        $newTaxa->user_id = $user_id;
-        $newTaxa->bairro = $bairro;
-        $newTaxa->valor = $valor;
-        $newTaxa->save();
+        $newProduto = new Produto();
+        $newProduto->user_id = $user_id;
+        $newProduto->categoria_id = $categoria_id;
+        $newProduto->nome = $nome;
+        $newProduto->descricao = $descricao;
+        $newProduto->preco = $preco;
+        $newProduto->ativo = true;
+        if($imagem){
+            $imagem_url = $imagem->store('imagens/'.$user_id.'/produtos','public');
+            $newProduto->imagem = $imagem_url;
+        }
+        $newProduto->save();
 
-        return response()->json($newTaxa,201);
+        return response()->json($newProduto,201);
+        
     }
 
     /**

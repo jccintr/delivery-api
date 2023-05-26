@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categoria;
 
 class CategoriasController extends Controller
 {
@@ -24,7 +25,22 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user_id = $request->user_id;
+        $nome = $request->nome;
+
+        if (!$user_id or !$nome){
+            $array['erro'] = "Campos obrigatórios não informados.";
+            return response()->json($array,400);
+        }
+
+        $newCategoria = new Categoria();
+        $newCategoria->user_id = $user_id;
+        $newCategoria->nome = $nome;
+        $newCategoria->save();
+
+        return response()->json($newCategoria,201);
+  
     }
 
     /**

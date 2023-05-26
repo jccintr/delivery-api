@@ -6,6 +6,9 @@ use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\TaxasController;
 use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\PagamentosController;
+use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TenantsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::post('/auth/register',[AuthController::class,'register']);
 
-
-Route::get('/tenant/{id}',[CategoriasController::class,'show']);
+Route::get('/tenant/{id}',[TenantsController::class,'show']);
 
 Route::get('/categorias',[CategoriasController::class,'index']);
 Route::get('/categorias/{id}',[CategoriasController::class,'show']);
@@ -46,3 +49,6 @@ Route::get('/pagamentos',[PagamentosController::class,'index']);
 Route::get('/pagamentos/{id}',[PagamentosController::class,'show']);
 Route::post('/pagamentos',[PagamentosController::class,'store']);
 Route::put('/pagamentos',[PagamentosController::class,'update']);
+
+Route::get('/produtos',[ProdutosController::class,'index']);
+Route::post('/produtos',[ProdutosController::class,'store']);

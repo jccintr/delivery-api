@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pagamento;
 
 class PagamentosController extends Controller
 {
@@ -24,7 +25,21 @@ class PagamentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = $request->user_id;
+        $nome = $request->nome;
+        
+
+        if (!$user_id or !$nome){
+            $array['erro'] = "Campos obrigatórios não informados.";
+            return response()->json($array,400);
+        }
+
+        $newPagamento = new Pagamento();
+        $newPagamento->user_id = $user_id;
+        $newPagamento->nome = $nome;
+        $newPagamento->save();
+
+        return response()->json($newPagamento,201);
     }
 
     /**
