@@ -9,6 +9,8 @@ use App\Http\Controllers\PagamentosController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantsController;
+use App\Http\Controllers\PedidosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +54,5 @@ Route::put('/pagamentos',[PagamentosController::class,'update']);
 
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::post('/produtos',[ProdutosController::class,'store']);
+
+Route::post('/pedidos',[PedidosController::class,'store']);

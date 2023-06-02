@@ -199,7 +199,7 @@ class UserSeeder extends Seeder
                         DB::table('produtos')->insert([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
-                            'nome' => "Balinho de Carne",
+                            'nome' => "Bolinho de Carne",
                             'descricao' => '10 unidades de bolinho de carne frito.',
                             'preco' => 17.90,
                             'ativo' => true,

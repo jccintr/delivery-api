@@ -4,26 +4,29 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
-use App\Models\Categoria;
 
 return new class extends Migration
 {
     /**
      * Run the migrations.
-     *'endereco',
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->string('token')->unique();
             $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Categoria::class);
+            $table->boolean('delivery')->default(true);
             $table->string('nome');
-            $table->string('descricao');
-            $table->string('imagem');
-            $table->decimal('preco', 5, 2)->default(0);
-            $table->boolean('ativo')->default(true);
+            $table->string('telefone');
+            $table->string('endereco')->nullable();
+            $table->string('observacao')->nullable();
+            $table->string('bairro')->nullable();
+            $table->decimal('taxa_entrega', 5, 2)->default(0);
+            $table->string('forma_pagamento');
+            
             $table->timestamps();
         });
     }
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('pedidos');
     }
 };
