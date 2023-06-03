@@ -7,6 +7,8 @@ use App\Models\Pedido;
 use App\Models\Taxa;
 use App\Models\Pagamento;
 use App\Models\ItemPedido;
+use App\Models\User;
+
 
 class PedidosController extends Controller
 {
@@ -35,26 +37,70 @@ class PedidosController extends Controller
        $nome = $request->nome;
        $telefone = $request->telefone;
        $endereco = $request->endereco;
-       $taxa_id =  $request->taxa_id;
+       $taxa_id  =  $request->taxa_id;
        $pagamento_id =  $request->pagamento_id;
        $observacao =  $request->observacao;
        $itensPedido = $request->itensPedido;
 
 
-       $novoPedido = new Pedido();
-       $novoPedido->user_id = $tenant;
-       $novoPedido->token = $tenant.rand(0,999).time();
-       $novoPedido->delivery = $delivery;
-       $novoPedido->nome = $nome;
-       $novoPedido->telefone = $telefone;
-       $novoPedido->endereco = $endereco;
-       $taxa = Taxa::find($taxa_id);
-       $novoPedido->bairro = $taxa->bairro;
-       $novoPedido->taxa_entrega = $taxa->valor;
-       $pagamento = Pagamento::find($pagamento_id);
-       $novoPedido->forma_pagamento = $pagamento->nome;
-       $novoPedido->observacao = $observacao;
-       $novoPedido->save();
+       /*
+       if(!$tenant){
+         // sai
+       } 
+       $found_tenant = User::find($tenant)
+
+       if(!$found_tenant){
+        // sai 
+       }
+       if(!$nome or !$telefone or !$pagamento_id){
+        // sai 
+       }
+
+
+
+       if($delivery===true and ()){
+
+       }
+       if($delivery===false and ()){
+
+       }
+*/
+        $novoPedido = new Pedido();
+        $novoPedido->user_id = $tenant;
+        $novoPedido->token = $tenant.rand(0,999).time();
+
+       if($delivery===true){
+         
+      
+        $novoPedido->delivery = true;
+        $novoPedido->nome = $nome;
+        $novoPedido->telefone = $telefone;
+        $novoPedido->endereco = $endereco;
+        $taxa = Taxa::find($taxa_id);
+        $novoPedido->bairro = $taxa->bairro;
+        $novoPedido->taxa_entrega = $taxa->valor;
+        $pagamento = Pagamento::find($pagamento_id);
+        $novoPedido->forma_pagamento = $pagamento->nome;
+        $novoPedido->observacao = $observacao;
+        $novoPedido->save();
+      
+       } else {
+
+        $novoPedido->delivery = false;
+        $novoPedido->nome = $nome;
+        $novoPedido->telefone = $telefone;
+        //$novoPedido->endereco = $endereco; // x
+        //$taxa = Taxa::find($taxa_id); // x
+        //$novoPedido->bairro = $taxa->bairro; //x
+        $novoPedido->taxa_entrega = 0; //x
+        $pagamento = Pagamento::find($pagamento_id);
+        $novoPedido->forma_pagamento = $pagamento->nome;
+        $novoPedido->observacao = $observacao;
+        $novoPedido->save();
+
+       } 
+
+       
        
        
        foreach ($itensPedido as $itemPedido){
@@ -71,6 +117,8 @@ class PedidosController extends Controller
        return response()->json(['pedido'=>$novoPedido->token],201);
 
 /*
+let response = await Api.addPedido(entregar,1,nome,telefone,endereco,taxaId,pagamentoId,observacao,itensPedido);
+
        {
         "tenant_id": 1,
         "delivery" : true,
