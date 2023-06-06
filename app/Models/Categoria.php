@@ -10,4 +10,9 @@ class Categoria extends Model
     use HasFactory;
     protected $table ='categorias';
     protected $fillable = ['user_id','nome'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

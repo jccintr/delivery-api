@@ -10,4 +10,9 @@ class Taxa extends Model
     use HasFactory;
     protected $table = 'taxas';
     protected $fillable = ['user_id','bairro','valor'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

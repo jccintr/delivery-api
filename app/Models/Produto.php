@@ -10,4 +10,9 @@ class Produto extends Model
     use HasFactory;
     protected $table = 'produtos';
     protected $fillable = ['user_id','categoria_id','nome','descricao','preco','ativo','imagem'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

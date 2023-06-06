@@ -9,6 +9,8 @@ use App\Models\Horario;
 use App\Models\Pagamento;
 use App\Models\Categoria;
 use App\Models\Produto;
+use App\Models\Obrigatorio;
+use App\Models\ProdutoObrigatorio;
 
 
 class TenantsController extends Controller
@@ -54,7 +56,22 @@ class TenantsController extends Controller
         $tenant['horarios'] = Horario::where('user_id',$id)->get(); 
         $tenant['categorias'] = Categoria::where('user_id',$id)->get(); 
         $tenant['produtos'] = Produto::where('user_id',$id)->get(); 
+        
+        
+        foreach ($tenant->produtos as $produto){
+           
+            $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
+            $novoObrigatorio = [];
 
+            foreach ($obrigatorios as $obrigatorio){
+                $obrigatorio = Obrigatorio::find($obrigatorio->obrigatorio_id);
+                array_push( $novoObrigatorio,array( 'nome' => $obrigatorio->nome, 'opcoes' => explode(';',$obrigatorio->opcoes) ) );
+            }
+
+            $produto['obrigatorios'] = $novoObrigatorio;
+           
+        }
+      
         return response()->json($tenant,200);
 
     }
