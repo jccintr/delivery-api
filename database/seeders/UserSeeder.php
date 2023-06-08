@@ -136,10 +136,7 @@ class UserSeeder extends Seeder
                             'produto_id' => $produto,
                             'obrigatorio_id' => $molho
                         ]);
-                        DB::table('produto_obrigatorios')->insert([
-                            'produto_id' => $produto,
-                            'obrigatorio_id' => $carne
-                        ]);
+                        
                         $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
@@ -154,7 +151,7 @@ class UserSeeder extends Seeder
                             'produto_id' => $produto,
                             'obrigatorio_id' => $molho
                         ]);
-                        DB::table('produtos')->insert([
+                        $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
                             'nome' => "Cheddar",
@@ -163,7 +160,11 @@ class UserSeeder extends Seeder
                             'ativo' => true,
                             'imagem' => 'imagens/1/produtos/cheddar.jpeg'
                         ]);
-                        DB::table('produtos')->insert([
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $molho
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
                             'nome' => "Cream",
@@ -172,7 +173,11 @@ class UserSeeder extends Seeder
                             'ativo' => true,
                             'imagem' => 'imagens/1/produtos/cream.jpeg'
                         ]);
-                        DB::table('produtos')->insert([
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $molho
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
                             'nome' => "Gorgon",
@@ -181,7 +186,11 @@ class UserSeeder extends Seeder
                             'ativo' => true,
                             'imagem' => 'imagens/1/produtos/gorgon.jpeg'
                         ]);
-                        DB::table('produtos')->insert([
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $molho
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
                             'nome' => "Smash",
@@ -190,7 +199,11 @@ class UserSeeder extends Seeder
                             'ativo' => true,
                             'imagem' => 'imagens/1/produtos/smash.jpeg'
                         ]);
-                        DB::table('produtos')->insert([
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $molho
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
                             'nome' => "Triplo Smash",
@@ -198,6 +211,10 @@ class UserSeeder extends Seeder
                             'preco' => 21.99,
                             'ativo' => true,
                             'imagem' => 'imagens/1/produtos/triplosmash.jpeg'
+                        ]);
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $molho
                         ]);
 
                 $idCategoria = DB::table('categorias')->insertGetid([

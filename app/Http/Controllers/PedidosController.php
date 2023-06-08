@@ -110,6 +110,7 @@ class PedidosController extends Controller
          $novoItemPedido->produto_id = $itemPedido['produto']['id'];
          $novoItemPedido->quantidade = $itemPedido['quantidade'];
          $novoItemPedido->total = $itemPedido['total'];
+         $novoItemPedido->obrigatorios = $itemPedido['obrigatorios'];
          $novoItemPedido->observacao = $itemPedido['observacao'];
          $novoItemPedido->save();
        }

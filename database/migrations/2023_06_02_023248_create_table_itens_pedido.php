@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Produto::class);
             $table->integer('quantidade')->default(1);
             $table->decimal('total', 5, 2)->default(0);
+            $table->string('obrigatorios')->nullable();
             $table->string('observacao')->nullable();
             $table->timestamps();
         });
