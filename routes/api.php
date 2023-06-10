@@ -29,10 +29,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/auth/register',[AuthController::class,'register']);
+Route::post('/auth/login',[AuthController::class,'login']);
 
 Route::get('/tenant/{id}',[TenantsController::class,'show']);
 
-Route::get('/categorias',[CategoriasController::class,'index']);
+Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);
 Route::get('/categorias/{id}',[CategoriasController::class,'show']);
 Route::post('/categorias',[CategoriasController::class,'store']);
 Route::put('/categorias',[CategoriasController::class,'update']);

@@ -15,4 +15,8 @@ class Produto extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function categoria(){
+         return $this->belongsTo(Categoria::class);
+    }
 }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
+
+//$newTask->usuario_id = Auth::User()->id;
 
 class CategoriasController extends Controller
 {
@@ -14,7 +17,8 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Categoria::where('user_id',Auth::User()->id)->with('produtos')->get();
+        return response()->json($categorias,200);
     }
 
     /**
