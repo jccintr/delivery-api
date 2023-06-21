@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pagamento;
+use Illuminate\Support\Facades\Auth;
 
 class PagamentosController extends Controller
 {
@@ -14,7 +15,8 @@ class PagamentosController extends Controller
      */
     public function index()
     {
-        //
+        $pagamentos = Pagamento::where('user_id',Auth::User()->id)->orderBy('nome')->get();
+        return response()->json($pagamentos,200);
     }
 
     /**
@@ -25,17 +27,15 @@ class PagamentosController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = $request->user_id;
         $nome = $request->nome;
-        
 
-        if (!$user_id or !$nome){
+        if (!$nome){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
 
         $newPagamento = new Pagamento();
-        $newPagamento->user_id = $user_id;
+        $newPagamento->user_id = Auth::User()->id;
         $newPagamento->nome = $nome;
         $newPagamento->save();
 
@@ -50,7 +50,16 @@ class PagamentosController extends Controller
      */
     public function show($id)
     {
-        //
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
+        $pagamento = Pagamento::find($id);
+        if (!$pagamento){
+            $array['erro'] = "Categoria não encontrada.";
+            return response()->json($array,404);
+        }
+        return response()->json($pagamento,200);
     }
 
     /**
@@ -62,7 +71,28 @@ class PagamentosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
+        $nome = $request->nome;
+        if (!$nome) {
+            $array['erro'] = "Campos obrigatórios não informados.";
+            return response()->json($array,400);
+        }
+        $pagamento = Pagamento::find($id);
+        
+        if (!$pagamento){
+            $array['erro'] = "Forma de pagamento não encontrada.";
+            return response()->json($array,404);
+        }
+        if ($pagamento->user_id !== Auth::User()->id){
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        }
+        $pagamento->nome = $nome;
+        $pagamento->save();
+        return response()->json($pagamento,200);
     }
 
     /**

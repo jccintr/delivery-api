@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Categoria;
+use App\Models\Obrigatorio;
 use Illuminate\Support\Facades\Auth;
 
-//$newTask->usuario_id = Auth::User()->id;
 
-class CategoriasController extends Controller
+class ObrigatoriosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,15 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::where('user_id',Auth::User()->id)->with('produtos')->orderBy('nome')->get();
-        return response()->json($categorias,200);
+        $obrigatorios = Obrigatorio::where('user_id',Auth::User()->id)->orderBy('nome')->get();
+       
+        
+        foreach ($obrigatorios as $obrigatorio){
+            $obrigatorio['opcoes'] = explode(';',$obrigatorio->opcoes);
+        }
+       
+        
+        return response()->json($obrigatorios,200);
     }
 
     /**
@@ -29,22 +35,25 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-
-        
         $nome = $request->nome;
-
-        if (!$nome){
+        $opcoes = $request->opcoes;
+        
+        if(!$nome or !$opcoes or count($opcoes)==0){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
 
-        $newCategoria = new Categoria();
-        $newCategoria->user_id = Auth::User()->id;
-        $newCategoria->nome = $nome;
-        $newCategoria->save();
-
-        return response()->json($newCategoria,201);
-  
+        $newObrigatorio = new Obrigatorio();
+        $newObrigatorio->nome = $nome;
+        $opt_str = '';
+        foreach ($opcoes as $opcao){
+            $opt_str.= $opcao.';';
+        }
+        $opt_str = rtrim($opt_str,';');
+        $newObrigatorio->user_id = Auth::User()->id;
+        $newObrigatorio->opcoes = $opt_str;
+        $newObrigatorio->save();
+        return response()->json($newObrigatorio,201);
     }
 
     /**
@@ -59,12 +68,13 @@ class CategoriasController extends Controller
             $array['erro'] = "Requisição mal formatada.";
             return response()->json($array,400);
         }
-        $categoria = Categoria::find($id);
-        if (!$categoria){
-            $array['erro'] = "Categoria não encontrada.";
+        $obrigatorio = Obrigatorio::find($id);
+        if (!$obrigatorio){
+            $array['erro'] = "Item não encontrado.";
             return response()->json($array,404);
         }
-        return response()->json($categoria,200);
+        $obrigatorio['opcoes'] = explode(';',$obrigatorio->opcoes);
+        return response()->json($obrigatorio,200);
     }
 
     /**
@@ -76,29 +86,30 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        if (!$id){
-            $array['erro'] = "Requisição mal formatada.";
-            return response()->json($array,400);
-        }
         $nome = $request->nome;
-        if (!$nome) {
+        $opcoes = $request->opcoes;
+        
+        if(!$nome or !$opcoes or !$id or count($opcoes)==0){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
-        $categoria = Categoria::find($id);
-        
-        if (!$categoria){
-            $array['erro'] = "Categoria não encontrada.";
-            return response()->json($array,404);
-        }
-        if ($categoria->user_id !== Auth::User()->id){
+
+        $obrigatorio = Obrigatorio::find($id);
+
+        if ($obrigatorio->user_id !== Auth::User()->id){
             $array['erro'] = "Não Autorizado.";
             return response()->json($array,401);
         }
-        $categoria->nome = $nome;
-        $categoria->save();
-        return response()->json($categoria,200);
+
+        $obrigatorio->nome = $nome;
+        $opt_str = '';
+        foreach ($opcoes as $opcao){
+            $opt_str.= $opcao.';';
+        }
+        $opt_str = rtrim($opt_str,';');
+        $obrigatorio->opcoes = $opt_str;
+        $obrigatorio->save();
+        return response()->json($obrigatorio,201);
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantsController;
 use App\Http\Controllers\PedidosController;
+use App\Http\Controllers\ObrigatoriosController;
 
 
 /*
@@ -32,26 +33,34 @@ Route::post('/auth/register',[AuthController::class,'register']);
 Route::post('/auth/login',[AuthController::class,'login']);
 
 Route::get('/tenant/{id}',[TenantsController::class,'show']);
+Route::middleware('auth:sanctum')->post('/status',[TenantsController::class,'status']);
 
 Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);
-Route::get('/categorias/{id}',[CategoriasController::class,'show']);
-Route::post('/categorias',[CategoriasController::class,'store']);
-Route::put('/categorias',[CategoriasController::class,'update']);
+Route::middleware('auth:sanctum')->get('/categorias/{id}',[CategoriasController::class,'show']);
+Route::middleware('auth:sanctum')->post('/categorias',[CategoriasController::class,'store']);
+Route::middleware('auth:sanctum')->put('/categorias/{id}',[CategoriasController::class,'update']);
 
-Route::get('/taxas',[TaxasController::class,'index']);
-Route::get('/taxas/{id}',[TaxasController::class,'show']);
-Route::post('/taxas',[TaxasController::class,'store']);
-Route::put('/taxas',[TaxasController::class,'update']);
+Route::middleware('auth:sanctum')->get('/pagamentos',[PagamentosController::class,'index']);
+Route::middleware('auth:sanctum')->get('/pagamentos/{id}',[PagamentosController::class,'show']);
+Route::middleware('auth:sanctum')->post('/pagamentos',[PagamentosController::class,'store']);
+Route::middleware('auth:sanctum')->put('/pagamentos/{id}',[PagamentosController::class,'update']);
 
-Route::get('/horarios',[HorariosController::class,'index']);
-Route::get('/horarios/{id}',[HorariosController::class,'show']);
-Route::post('/horarios',[HorariosController::class,'store']);
-Route::put('/horarios',[HorariosController::class,'update']);
+Route::middleware('auth:sanctum')->get('/taxas',[TaxasController::class,'index']);
+Route::middleware('auth:sanctum')->get('/taxas/{id}',[TaxasController::class,'show']);
+Route::middleware('auth:sanctum')->post('/taxas',[TaxasController::class,'store']);
+Route::middleware('auth:sanctum')->put('/taxas/{id}',[TaxasController::class,'update']);
 
-Route::get('/pagamentos',[PagamentosController::class,'index']);
-Route::get('/pagamentos/{id}',[PagamentosController::class,'show']);
-Route::post('/pagamentos',[PagamentosController::class,'store']);
-Route::put('/pagamentos',[PagamentosController::class,'update']);
+Route::middleware('auth:sanctum')->get('/horarios',[HorariosController::class,'index']);
+Route::middleware('auth:sanctum')->get('/horarios/{id}',[HorariosController::class,'show']);
+Route::middleware('auth:sanctum')->post('/horarios',[HorariosController::class,'store']);
+Route::middleware('auth:sanctum')->put('/horarios/{id}',[HorariosController::class,'update']);
+
+Route::middleware('auth:sanctum')->get('/obrigatorios',[ObrigatoriosController::class,'index']);
+Route::middleware('auth:sanctum')->post('/obrigatorios',[ObrigatoriosController::class,'store']);
+Route::middleware('auth:sanctum')->get('/obrigatorios/{id}',[ObrigatoriosController::class,'show']);
+Route::middleware('auth:sanctum')->put('/obrigatorios/{id}',[ObrigatoriosController::class,'update']);
+
+
 
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::post('/produtos',[ProdutosController::class,'store']);

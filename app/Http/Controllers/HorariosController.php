@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Horario;
+use Illuminate\Support\Facades\Auth;
 
 class HorariosController extends Controller
 {
@@ -14,7 +15,8 @@ class HorariosController extends Controller
      */
     public function index()
     {
-        //
+        $horarios = Horario::where('user_id',Auth::User()->id)->orderBy('dia')->get();
+        return response()->json($horarios,200);
     }
 
     /**
@@ -25,18 +27,18 @@ class HorariosController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = $request->user_id;
+       
         $dia = $request->dia;
         $horario = $request->horario;
         
 
-        if (!$user_id or $dia or !$horario){
+        if ($dia or !$horario){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
 
         $newHorario = new Horario();
-        $newHorario->user_id = $user_id;
+        $newHorario->user_id = Auth::User()->id;
         $newHorario->dia = $dia;
         $newHorario->horario = $horario;    
         $newHorario->save();
@@ -52,7 +54,16 @@ class HorariosController extends Controller
      */
     public function show($id)
     {
-        //
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
+        $horario = Horario::find($id);
+        if (!$horario){
+            $array['erro'] = "Horário não encontrado.";
+            return response()->json($array,404);
+        }
+        return response()->json($horario,200);
     }
 
     /**
@@ -64,7 +75,30 @@ class HorariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
+        //$dia = $request->dia;
+        $horario_atendimento = $request->horario;
+        if (!$horario_atendimento) {
+            $array['erro'] = "Campos obrigatórios não informados.";
+            return response()->json($array,400);
+        }
+        $horario = Horario::find($id);
+        
+        if (!$horario){
+            $array['erro'] = "Horário não encontrado.";
+            return response()->json($array,404);
+        }
+        if ($horario->user_id !== Auth::User()->id){
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        }
+        //$horario->dia = $dia;
+        $horario->horario = $horario_atendimento;
+        $horario->save();
+        return response()->json($horario,200);
     }
 
     /**

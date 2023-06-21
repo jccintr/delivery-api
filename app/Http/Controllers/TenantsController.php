@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Taxa;
@@ -97,5 +98,15 @@ class TenantsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function status(){
+
+        $user = Auth::User();
+        $user->aberto = !$user->aberto;
+        $user->save();
+        return response()->json($user,200);
+
+
     }
 }
