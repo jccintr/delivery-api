@@ -10,6 +10,12 @@ class Pedido extends Model
     
     use HasFactory;
     protected $table = 'pedidos';
-    protected $fillable = ['user_id','nome','telefone','observacao','endereco','bairro','taxa_entrega','forma_pagamento'];
+    protected $fillable = ['user_id','nome','telefone','observacao','endereco','bairro','taxa_entrega','forma_pagamento','token'];
+
+
+
+    public function itensPedido(){
+        return $this->hasMany(ItemPedido::class);
+    }
 
 }

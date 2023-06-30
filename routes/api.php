@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantsController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ObrigatoriosController;
+use App\Http\Controllers\AdicionalController;
 
 
 /*
@@ -60,9 +61,15 @@ Route::middleware('auth:sanctum')->post('/obrigatorios',[ObrigatoriosController:
 Route::middleware('auth:sanctum')->get('/obrigatorios/{id}',[ObrigatoriosController::class,'show']);
 Route::middleware('auth:sanctum')->put('/obrigatorios/{id}',[ObrigatoriosController::class,'update']);
 
+Route::middleware('auth:sanctum')->get('/adicionais',[AdicionalController::class,'index']);
+Route::middleware('auth:sanctum')->post('/adicionais',[AdicionalController::class,'store']);
+Route::middleware('auth:sanctum')->get('/adicionais/{id}',[AdicionalController::class,'show']);
+Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::class,'update']);
+
 
 
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::post('/produtos',[ProdutosController::class,'store']);
 
 Route::post('/pedidos',[PedidosController::class,'store']);
+Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);

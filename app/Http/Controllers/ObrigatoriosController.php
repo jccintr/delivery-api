@@ -73,6 +73,12 @@ class ObrigatoriosController extends Controller
             $array['erro'] = "Item não encontrado.";
             return response()->json($array,404);
         }
+
+        if ($obrigatorio->user_id !== Auth::User()->id){
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        }
+        
         $obrigatorio['opcoes'] = explode(';',$obrigatorio->opcoes);
         return response()->json($obrigatorio,200);
     }

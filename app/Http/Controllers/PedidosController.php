@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\Produto;
 use App\Models\Taxa;
 use App\Models\Pagamento;
 use App\Models\ItemPedido;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 
 class PedidosController extends Controller
@@ -19,7 +21,9 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('itensPedido.produto')->get();
+
+        return response()->json($pedidos,200);
     }
 
     /**

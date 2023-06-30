@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Taxa;
+use App\Models\Adicional;
 use Illuminate\Support\Facades\Auth;
 
-class TaxasController extends Controller
+class AdicionalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class TaxasController extends Controller
      */
     public function index()
     {
-        $taxas = Taxa::where('user_id',Auth::User()->id)->orderBy('bairro')->get();
-        return response()->json($taxas,200);
+        $adicionais = Adicional::where('user_id',Auth::User()->id)->orderBy('nome')->get();
+       
+        return response()->json($adicionais,200);
     }
 
     /**
@@ -27,21 +28,21 @@ class TaxasController extends Controller
      */
     public function store(Request $request)
     {
-        $bairro = $request->bairro;
+        $nome = $request->nome;
         $valor = $request->valor;
 
-        if (!$bairro or !$valor){
+        if (!$nome or !$valor){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
 
-        $newTaxa = new Taxa();
-        $newTaxa->user_id = Auth::User()->id;
-        $newTaxa->bairro = $bairro;
-        $newTaxa->valor = $valor;
-        $newTaxa->save();
+        $newAdicional = new Adicional();
+        $newAdicional->user_id = Auth::User()->id;
+        $newAdicional->nome = $nome;
+        $newAdicional->valor = $valor;
+        $newAdicional->save();
 
-        return response()->json($newTaxa,201);
+        return response()->json($newAdicional,201);
     }
 
     /**
@@ -56,16 +57,16 @@ class TaxasController extends Controller
             $array['erro'] = "Requisição mal formatada.";
             return response()->json($array,400);
         }
-        $taxa = Taxa::find($id);
-        if (!$taxa){
-            $array['erro'] = "Taxa não encontrada.";
+        $adicional = Adicional::find($id);
+        if (!$adicional){
+            $array['erro'] = "Adicional não encontrado.";
             return response()->json($array,404);
         }
-        if ($taxa->user_id !== Auth::User()->id){
+        if ($adicional->user_id !== Auth::User()->id){
             $array['erro'] = "Não Autorizado.";
             return response()->json($array,401);
         }
-        return response()->json($taxa,200);
+        return response()->json($adicional,200);
     }
 
     /**
@@ -81,26 +82,26 @@ class TaxasController extends Controller
             $array['erro'] = "Requisição mal formatada.";
             return response()->json($array,400);
         }
-        $bairro = $request->bairro;
+        $nome = $request->nome;
         $valor = $request->valor;
-        if (!$bairro or !$valor) {
+        if (!$nome or !$valor) {
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
-        $taxa = Taxa::find($id);
+        $adicional = Adicional::find($id);
         
-        if (!$taxa){
-            $array['erro'] = "Taxa de entrega não encontrada.";
+        if (!$adicional){
+            $array['erro'] = "Adicional não encontrado.";
             return response()->json($array,404);
         }
-        if ($taxa->user_id !== Auth::User()->id){
+        if ($adicional->user_id !== Auth::User()->id){
             $array['erro'] = "Não Autorizado.";
             return response()->json($array,401);
         }
-        $taxa->bairro = $bairro;
-        $taxa->valor = $valor;
-        $taxa->save();
-        return response()->json($taxa,200);
+        $adicional->nome = $nome;
+        $adicional->valor = $valor;
+        $adicional->save();
+        return response()->json($adicional,200);
     }
 
     /**
