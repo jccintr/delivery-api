@@ -21,9 +21,29 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('itensPedido.produto')->get();
+      
+        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('statusPedido')->with('itensPedido.produto')->get();
+            
+        //dd($pedidos);
+        foreach($pedidos as $pedido):
+             $total = 0;
+             $pedido['data'] = date_format($pedido->created_at,"d-m-Y H:i");
+             foreach($pedido->itensPedido as $itemPedido):
 
+                 if (strlen($itemPedido->obrigatorios)>0){
+                     $itemPedido['obrigatorios'] = explode(';',$itemPedido->obrigatorios);
+                 } else {
+                     $itemPedido['obrigatorios'] = [];
+                 }
+
+                 $total += $itemPedido->total;
+                 
+             endforeach;
+             $pedido['total'] = round($total,2);
+        endforeach;
+        
         return response()->json($pedidos,200);
+        
     }
 
     /**
@@ -46,67 +66,39 @@ class PedidosController extends Controller
        $observacao =  $request->observacao;
        $itensPedido = $request->itensPedido;
 
+       //cria um novo pedido
+       $novoPedido = new Pedido();
+       $novoPedido->user_id = $tenant;
+       $novoPedido->token = $tenant."-".time();
 
-       /*
-       if(!$tenant){
-         // sai
-       } 
-       $found_tenant = User::find($tenant)
-
-       if(!$found_tenant){
-        // sai 
-       }
-       if(!$nome or !$telefone or !$pagamento_id){
-        // sai 
-       }
-
-
-
-       if($delivery===true and ()){
-
-       }
-       if($delivery===false and ()){
-
-       }
-*/
-        $novoPedido = new Pedido();
-        $novoPedido->user_id = $tenant;
-        $novoPedido->token = $tenant.rand(0,999).time();
-
+       
        if($delivery===true){
-         
-      
-        $novoPedido->delivery = true;
-        $novoPedido->nome = $nome;
-        $novoPedido->telefone = $telefone;
-        $novoPedido->endereco = $endereco;
-        $taxa = Taxa::find($taxa_id);
-        $novoPedido->bairro = $taxa->bairro;
-        $novoPedido->taxa_entrega = $taxa->valor;
-        $pagamento = Pagamento::find($pagamento_id);
-        $novoPedido->forma_pagamento = $pagamento->nome;
-        $novoPedido->observacao = $observacao;
-        $novoPedido->save();
-      
-       } else {
+         $novoPedido->delivery = true;
+         $novoPedido->nome = $nome;
+         $novoPedido->telefone = $telefone;
+         $novoPedido->endereco = $endereco;
+         $taxa = Taxa::find($taxa_id);
+         $novoPedido->bairro = $taxa->bairro;
+         $novoPedido->taxa_entrega = $taxa->valor;
+         $pagamento = Pagamento::find($pagamento_id);
+         $novoPedido->forma_pagamento = $pagamento->nome;
+         $novoPedido->observacao = $observacao;
+         $novoPedido->status_pedido_id = 1;
+         $novoPedido->save();
+        } 
+        else { // para retirar
+         $novoPedido->delivery = false;
+         $novoPedido->nome = $nome;
+         $novoPedido->telefone = $telefone;
+         $novoPedido->taxa_entrega = 0; //x
+         $pagamento = Pagamento::find($pagamento_id);
+         $novoPedido->forma_pagamento = $pagamento->nome;
+         $novoPedido->observacao = $observacao;
+         $novoPedido->status_pedido_id = 1;
+         $novoPedido->save();
+        } 
 
-        $novoPedido->delivery = false;
-        $novoPedido->nome = $nome;
-        $novoPedido->telefone = $telefone;
-        //$novoPedido->endereco = $endereco; // x
-        //$taxa = Taxa::find($taxa_id); // x
-        //$novoPedido->bairro = $taxa->bairro; //x
-        $novoPedido->taxa_entrega = 0; //x
-        $pagamento = Pagamento::find($pagamento_id);
-        $novoPedido->forma_pagamento = $pagamento->nome;
-        $novoPedido->observacao = $observacao;
-        $novoPedido->save();
-
-       } 
-
-       
-       
-       
+       //adiciona os itens no pedido
        foreach ($itensPedido as $itemPedido){
          
          $novoItemPedido = new ItemPedido();
@@ -117,43 +109,11 @@ class PedidosController extends Controller
          $novoItemPedido->obrigatorios = $itemPedido['obrigatorios'];
          $novoItemPedido->observacao = $itemPedido['observacao'];
          $novoItemPedido->save();
+
        }
        
        return response()->json(['pedido'=>$novoPedido->token],201);
-
-/*
-let response = await Api.addPedido(entregar,1,nome,telefone,endereco,taxaId,pagamentoId,observacao,itensPedido);
-
-       {
-        "tenant_id": 1,
-        "delivery" : true,
-        "nome" : "Joyce",
-        "telefone" : "35-98326-3200",
-        "endereco" : "Rua Jk, 53",
-        "taxa_id": 1,
-        "pagamento_id": 1,$novoPedido->delivery = $delivery;
-        "observacao" : "Vem me amarrar",
-        "itensPedido" : [
-            {
-                "id": 1,
-                "quantidade": 2,
-                "total" : 32.99,
-                "produto": {"id": 1,"nome": "Salada"},
-                "observacao": "mandar maionese"
-            },
-            {
-                "id": 2,
-                "quantidade": 1,
-                "total" : 10.00,
-                "produto": {"id": 4,"nome": "Coca cola 2 litros"},
-                "observacao": null
-            }
-        ]
-    }
-*/
-
-       
-    }
+ }
 
     /**
      * Display the specified resource.

@@ -136,6 +136,11 @@ class UserSeeder extends Seeder
                             'produto_id' => $produto,
                             'obrigatorio_id' => $molho
                         ]);
+
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $carne
+                        ]);
                         
                         $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
@@ -151,6 +156,13 @@ class UserSeeder extends Seeder
                             'produto_id' => $produto,
                             'obrigatorio_id' => $molho
                         ]);
+
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $carne
+                        ]);
+
+
                         $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
@@ -177,6 +189,12 @@ class UserSeeder extends Seeder
                             'produto_id' => $produto,
                             'obrigatorio_id' => $molho
                         ]);
+
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $carne
+                        ]);
+                        
                         $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,

@@ -17,16 +17,21 @@ class StatusSeeder extends Seeder
     {
 
         $status = [
-            ['descricao'=>'Pedido enviado'],
-            ['descricao'=>'Pedido recebido pela loja'],
-            ['descricao'=>'Pedido cancelado pela loja'],
-            ['descricao'=>'Pedido em preparação'],
-            ['descricao'=>'Pedido pronto para retirada'],
-            ['descricao'=>'Saiu para entrega'],
-            ['descricao'=>'Pedido entregue ao cliente'],
-            ['descricao'=>'Pedido retirado pelo cliente'],
-            ['descricao'=>'Pedido devolvido pelo cliente'],
-            ['descricao'=>'Pedido devolvido pelo entregador'],
+            ['descricao'=>'Pedido Recebido pelo Estabelecimento','descricao_curta'=>'Recebido','code'=> 1],
+            ['descricao'=>'Pedido Entregue ao Cliente','descricao_curta'=>'Entregue','code'=> 1],
+            ['descricao'=>'Pedido Retirado pelo Cliente','descricao_curta'=>'Retirado','code'=> 1],
+
+            ['descricao'=>'Pedido em Preparação','descricao_curta'=>'Rejeitado','code'=>2],
+            ['descricao'=>'Pedido saiu para entrega','descricao_curta'=>'A caminho','code'=>2],
+            ['descricao'=>'Pedido pronto para retirada','descricao_curta'=>'Pronto','code'=>2],
+
+            ['descricao'=>'Pedido Rejeitado pelo Estabelecimento','descricao_curta'=>'Rejeitado','code'=>3],
+            ['descricao'=>'Pedido Cancelado pelo Estabelecimento','descricao_curta'=>'Cancelado','code'=>3],
+            ['descricao'=>'Pedido Devolvido pelo Cliente','descricao_curta'=>'Devolvido','code'=>3],
+
+        
+
+
         ];
 
 

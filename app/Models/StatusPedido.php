@@ -9,5 +9,10 @@ class StatusPedido extends Model
 {
     use HasFactory;
     protected $table = 'status_pedidos';
-    protected $fillable = ['descricao'];
+    protected $fillable = ['descricao','descricao_curta','code'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('status_pedidos', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
+            $table->string('descricao_curta');
+            $table->integer('code'); // 1-verde 2-amarelo 3-vermelho
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
+use App\Models\StatusPedido;
 
 return new class extends Migration
 {
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->string('bairro')->nullable();
             $table->decimal('taxa_entrega', 5, 2)->default(0);
             $table->string('forma_pagamento');
+            $table->foreignIdFor(StatusPedido::class);
             
             $table->timestamps();
         });
