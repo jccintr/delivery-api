@@ -12,6 +12,8 @@ use App\Http\Controllers\TenantsController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ObrigatoriosController;
 use App\Http\Controllers\AdicionalController;
+use App\Http\Controllers\StatusPedidoController;
+use App\Http\Controllers\StatusPedidoLogController;
 
 
 /*
@@ -70,6 +72,12 @@ Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::
 
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::post('/produtos',[ProdutosController::class,'store']);
+Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
 
 Route::post('/pedidos',[PedidosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);
+Route::middleware('auth:sanctum')->get('/pedidos/{id}',[PedidosController::class,'show']);
+
+Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,'index']);
+
+Route::middleware('auth:sanctum')->post('/statuslog',[StatusPedidoLogController::class,'store']);

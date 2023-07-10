@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('descricao');
             $table->string('descricao_curta');
-            $table->integer('code'); // 1-verde 2-amarelo 3-vermelho
+            $table->string('cor'); 
             $table->timestamps();
         });
     }

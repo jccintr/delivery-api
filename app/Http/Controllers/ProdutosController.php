@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutosController extends Controller
 {
@@ -75,7 +76,33 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
+        $nome = $request->nome;
+        $preco = $request->preco;
+        $ativo = $request->ativo;
+           
+        if (!$nome or !$preco or !is_numeric($preco)) {
+            $array['erro'] = "Campos obrigatórios não informados.";
+            return response()->json($array,400);
+        }
+        $produto = Produto::find($id);
+        
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado.";
+            return response()->json($array,404);
+        }
+        if ($produto->user_id !== Auth::User()->id){
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        }
+        $produto->nome = $nome;
+        $produto->preco = $preco;
+        $produto->ativo = $ativo;
+        $produto->save();
+        return response()->json($produto,200);
     }
 
     /**

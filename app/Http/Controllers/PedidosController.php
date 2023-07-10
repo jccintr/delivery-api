@@ -9,6 +9,7 @@ use App\Models\Taxa;
 use App\Models\Pagamento;
 use App\Models\ItemPedido;
 use App\Models\User;
+use App\Models\StatusPedidoLog;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -22,12 +23,17 @@ class PedidosController extends Controller
     public function index()
     {
       
-        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('statusPedido')->with('itensPedido.produto')->get();
+        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('statusPedidoLog.statusPedido')->with('statusPedido')->with('itensPedido.produto')->get();
             
         //dd($pedidos);
         foreach($pedidos as $pedido):
              $total = 0;
-             $pedido['data'] = date_format($pedido->created_at,"d-m-Y H:i");
+             $pedido['data'] = date_format($pedido->created_at,"d/m/Y H:i");
+
+             foreach($pedido->statusPedidoLog as $statusPedido):
+                $statusPedido['data'] = date_format($statusPedido->created_at,"d/m-H:i");
+             endforeach;   
+             
              foreach($pedido->itensPedido as $itemPedido):
 
                  if (strlen($itemPedido->obrigatorios)>0){
@@ -112,6 +118,13 @@ class PedidosController extends Controller
 
        }
        
+       // cria o status inicial do pedido
+       $novoStatus = new StatusPedidoLog();
+       $novoStatus->pedido_id = $novoPedido->id;
+       $novoStatus->status_pedido_id = 1;
+       $novoStatus->motivo = "";
+       $novoStatus->save();
+
        return response()->json(['pedido'=>$novoPedido->token],201);
  }
 
@@ -123,7 +136,35 @@ class PedidosController extends Controller
      */
     public function show($id)
     {
-        //
+
+        
+
+        $pedido = Pedido::with('itensPedido.produto')->with('statusPedido')->with('statusPedidoLog.statusPedido')->find($id);
+
+        if ($pedido->user_id !== Auth::User()->id){
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        } 
+
+        $pedido['data'] = date_format($pedido->created_at,"d/m/Y H:i");
+        foreach($pedido->statusPedidoLog as $statusPedido):
+                $statusPedido['data'] = date_format($statusPedido->created_at,"d/m-H:i");
+        endforeach; 
+        $total = 0;
+        foreach($pedido->itensPedido as $itemPedido):
+
+                 if (strlen($itemPedido->obrigatorios)>0){
+                     $itemPedido['obrigatorios'] = explode(';',$itemPedido->obrigatorios);
+                 } else {
+                     $itemPedido['obrigatorios'] = [];
+                 }
+
+                 $total += $itemPedido->total;
+                 
+        endforeach;
+        $pedido['total'] = round($total,2);  
+
+        return response()->json($pedido,200);      
     }
 
     /**

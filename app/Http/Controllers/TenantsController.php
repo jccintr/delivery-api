@@ -56,7 +56,7 @@ class TenantsController extends Controller
         $tenant['pagamentos'] = Pagamento::where('user_id',$id)->get(); 
         $tenant['horarios'] = Horario::where('user_id',$id)->get(); 
         $tenant['categorias'] = Categoria::where('user_id',$id)->get(); 
-        $tenant['produtos'] = Produto::where('user_id',$id)->get(); 
+        $tenant['produtos'] = Produto::where('user_id',$id)->where('ativo',true)->get(); 
         
         
         foreach ($tenant->produtos as $produto){

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Pedido::class);
             $table->foreignIdFor(StatusPedido::class);
-            $table->string('motivo');
+            $table->string('motivo')->nullable();
             $table->timestamps();
         });
     }

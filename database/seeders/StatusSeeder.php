@@ -17,17 +17,17 @@ class StatusSeeder extends Seeder
     {
 
         $status = [
-            ['descricao'=>'Pedido Recebido pelo Estabelecimento','descricao_curta'=>'Recebido','code'=> 1],
-            ['descricao'=>'Pedido Entregue ao Cliente','descricao_curta'=>'Entregue','code'=> 1],
-            ['descricao'=>'Pedido Retirado pelo Cliente','descricao_curta'=>'Retirado','code'=> 1],
+            ['descricao'=>'Pedido Recebido','descricao_curta'=>'Recebido','cor'=>'green'],
+            ['descricao'=>'Pedido Entregue','descricao_curta'=>'Entregue','cor'=>'green'],
+            ['descricao'=>'Pedido Retirado','descricao_curta'=>'Retirado','cor'=>'green'],
 
-            ['descricao'=>'Pedido em Preparação','descricao_curta'=>'Rejeitado','code'=>2],
-            ['descricao'=>'Pedido saiu para entrega','descricao_curta'=>'A caminho','code'=>2],
-            ['descricao'=>'Pedido pronto para retirada','descricao_curta'=>'Pronto','code'=>2],
+            ['descricao'=>'Pedido em Preparação','descricao_curta'=>'Em Preparação','cor'=>'orange'],
+            ['descricao'=>'Pedido saiu para entrega','descricao_curta'=>'A caminho','cor'=>'orange'],
+            ['descricao'=>'Pedido Pronto','descricao_curta'=>'Pronto','cor'=>'orange'],
 
-            ['descricao'=>'Pedido Rejeitado pelo Estabelecimento','descricao_curta'=>'Rejeitado','code'=>3],
-            ['descricao'=>'Pedido Cancelado pelo Estabelecimento','descricao_curta'=>'Cancelado','code'=>3],
-            ['descricao'=>'Pedido Devolvido pelo Cliente','descricao_curta'=>'Devolvido','code'=>3],
+            ['descricao'=>'Pedido Rejeitado','descricao_curta'=>'Rejeitado','cor'=>'red'],
+            ['descricao'=>'Pedido Cancelado','descricao_curta'=>'Cancelado','cor'=>'red'],
+            ['descricao'=>'Pedido Devolvido','descricao_curta'=>'Devolvido','cor'=>'red'],
 
         
 
