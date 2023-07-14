@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Categoria::class);
             $table->string('nome');
             $table->string('descricao');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
             $table->decimal('preco', 5, 2)->default(0);
             $table->boolean('ativo')->default(true);
             $table->timestamps();

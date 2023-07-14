@@ -34,8 +34,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/auth/register',[AuthController::class,'register']);
 Route::post('/auth/login',[AuthController::class,'login']);
+Route::post('/auth/login2',[AuthController::class,'login2']);
 
 Route::get('/tenant/{id}',[TenantsController::class,'show']);
+Route::middleware('auth:sanctum')->post('/tenant',[TenantsController::class,'store']);
+Route::middleware('auth:sanctum')->get('/tenant',[TenantsController::class,'index']);
 Route::middleware('auth:sanctum')->post('/status',[TenantsController::class,'status']);
 
 Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);

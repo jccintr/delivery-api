@@ -29,12 +29,7 @@ class StatusSeeder extends Seeder
             ['descricao'=>'Pedido Cancelado','descricao_curta'=>'Cancelado','cor'=>'red'],
             ['descricao'=>'Pedido Devolvido','descricao_curta'=>'Devolvido','cor'=>'red'],
 
-        
-
-
         ];
-
-
         DB::table('status_pedidos')->insert($status);
     }
 }

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
    
-    public function login(Request $request){
+    public function login(Request $request){ // login da loja role = 2
 
      
       $email = filter_var($request->email,FILTER_VALIDATE_EMAIL);
@@ -19,15 +19,55 @@ class AuthController extends Controller
       
       $credentials = ['email'=> $email,'password'=>$password];
         
-
-      if (!Auth::attempt($credentials)) 
+      //verifica se o email existe
+      if (!Auth::attempt($credentials)) {
           return response()->json(['erro'=>'Email e ou senha inválidos'],401);
-   
-      $token = Auth::User()->createToken('teste');
-      $loggedUser = Auth::User();
-      $loggedUser['token'] = $token->plainTextToken;
+      }
+      //verifica se o usuario é do tipo loja
 
-      return response()->json($loggedUser,200);
+      if (Auth::User()->role == 2){
+
+        $token = Auth::User()->createToken('teste');
+        $loggedUser = Auth::User();
+        $loggedUser['token'] = $token->plainTextToken;
+        return response()->json($loggedUser,200);
+          
+      } else {
+
+        return response()->json(['erro'=>'Email e ou senha inválidos'],401);
+
+      }
+   
+      
+    }
+
+    public function login2(Request $request){ // login do admin  role = 3
+
+      $email = filter_var($request->email,FILTER_VALIDATE_EMAIL);
+      $password = $request->password;
+      
+      $credentials = ['email'=> $email,'password'=>$password];
+        
+      //verifica se o email existe
+      if (!Auth::attempt($credentials)) {
+          return response()->json(['erro'=>'Email e ou senha inválidos'],401);
+      }
+      //verifica se o usuario é do tipo admin
+      if (Auth::User()->role == 3){
+
+        $token = Auth::User()->createToken('teste');
+        $loggedUser = Auth::User();
+        $loggedUser['token'] = $token->plainTextToken;
+        return response()->json($loggedUser,200);
+         
+      } else {
+
+         return response()->json(['erro'=>'Email e ou senha inválidos'],401); 
+
+      }
+   
+      
+
     }
 
     public function register(Request $request){
