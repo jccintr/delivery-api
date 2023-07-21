@@ -27,6 +27,7 @@ class BrothersSeeder extends Seeder
                 'bairro' => 'Tijuco Preto',
                 'cor_fundo' => '#23211f',
                 'cor_texto' => '#ffffff',
+                'tempo_espera' => '15 a 30min',
                 'logotipo' => 'imagens/logos/brothers.jpeg'
             ]);
                     // taxas

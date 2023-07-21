@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\ProdutoObrigatorio;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProdutosController extends Controller
 {
@@ -27,14 +29,14 @@ class ProdutosController extends Controller
     public function store(Request $request)
     {
 
-        $user_id = $request->user_id;
-        $categoria_id = $request->categoria_id;
+        $user_id = Auth::User()->id;
         $nome = $request->nome;
         $descricao = $request->descricao;
         $preco = $request->preco;
+        $categoria_id = $request->categoria_id;
         $imagem = $request->imagem;
         
-        if (!$user_id or !$categoria_id or !$nome or !$descricao or !$preco){
+        if (!$categoria_id or !$nome or !$descricao or !$preco){
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
@@ -64,7 +66,10 @@ class ProdutosController extends Controller
      */
     public function show($id)
     {
-        //
+        $produto = Produto::find($id);
+        $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
+        $produto['obrigatorios'] = $obrigatorios;
+        return response()->json($produto,200);
     }
 
     /**
@@ -81,7 +86,9 @@ class ProdutosController extends Controller
             return response()->json($array,400);
         }
         $nome = $request->nome;
+        $descricao = $request->descricao;
         $preco = $request->preco;
+        $categoria_id = $request->categoria_id;
         $ativo = $request->ativo;
            
         if (!$nome or !$preco or !is_numeric($preco)) {
@@ -99,8 +106,25 @@ class ProdutosController extends Controller
             return response()->json($array,401);
         }
         $produto->nome = $nome;
+        $produto->descricao = $descricao;
         $produto->preco = $preco;
+        $produto->categoria_id = $categoria_id;
         $produto->ativo = $ativo;
+        $produto->save();
+        return response()->json($produto,200);
+    }
+
+    public function updateImagem(Request $request, $id){
+        
+        $user_id = Auth::User()->id;
+        $produto = Produto::find($id);
+        $imagem = $request->file('imagem');
+        if($produto->imagem){
+            Storage::disk('public')->delete($produto->imagem);
+        }
+
+        $imagem_url = $imagem->store('imagens/'.$user_id.'/produtos','public');
+        $produto->imagem = $imagem_url;
         $produto->save();
         return response()->json($produto,200);
     }

@@ -46,6 +46,8 @@ class TenantsController extends Controller
         $bairro = $request->bairro; 
         $cidade = $request->cidade; 
         $estado = $request->estado; 
+        $cor_fundo = $request->cor_fundo;
+        $cor_texto = $request->cor_texto;
         $logotipo = $request->file('logotipo');
 
         if (!$name or !$email or !$password or !$telefone or !$logradouro or !$bairro or !$cidade or !$estado) {
@@ -70,6 +72,8 @@ class TenantsController extends Controller
         $newUser->estado = $estado;
         $newUser->role = 2;
         $newUser->logotipo = $logotipo_url;
+        $newUser->cor_fundo = $cor_fundo;
+        $newUser->cor_texto = $cor_texto;
         $newUser->save();
 
         for ($i=0;$i<=6;$i++) {

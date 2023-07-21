@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('estado')->nullable();
             $table->string('cor_fundo')->nullable();
             $table->string('cor_texto')->nullable();
+            $table->string('tempo_espera')->nullable();
             
             $table->timestamps();
         });

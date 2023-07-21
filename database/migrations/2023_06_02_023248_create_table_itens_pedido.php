@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('quantidade')->default(1);
             $table->decimal('total', 5, 2)->default(0);
             $table->string('obrigatorios')->nullable();
+            $table->string('adicionais')->nullable();
             $table->string('observacao')->nullable();
             $table->timestamps();
         });

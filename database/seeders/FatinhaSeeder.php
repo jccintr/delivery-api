@@ -26,6 +26,7 @@ class FatinhaSeeder extends Seeder
             'bairro' => 'Centro',
             'cor_fundo' => '#d6aa4b',
             'cor_texto' => '#723034',
+            'tempo_espera' => '15 a 30min',
             'logotipo' => 'imagens/logos/fatinha-lanches.png'
         ]);
          // taxas

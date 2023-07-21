@@ -7,6 +7,7 @@ use App\Http\Controllers\TaxasController;
 use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\PagamentosController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutoObrigatorioController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantsController;
 use App\Http\Controllers\PedidosController;
@@ -74,8 +75,10 @@ Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::
 
 
 Route::get('/produtos',[ProdutosController::class,'index']);
-Route::post('/produtos',[ProdutosController::class,'store']);
+Route::get('/produtos/{id}',[ProdutosController::class,'show']);
+Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'store']);
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
+Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosController::class,'updateImagem']);
 
 Route::post('/pedidos',[PedidosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);
@@ -84,3 +87,6 @@ Route::middleware('auth:sanctum')->get('/pedidos/{id}',[PedidosController::class
 Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,'index']);
 
 Route::middleware('auth:sanctum')->post('/statuslog',[StatusPedidoLogController::class,'store']);
+
+Route::middleware('auth:sanctum')->post('/produtoobrigatorio',[ProdutoObrigatorioController::class,'store']);
+Route::middleware('auth:sanctum')->delete('/produtoobrigatorio/{id}',[ProdutoObrigatorioController::class,'destroy']);
