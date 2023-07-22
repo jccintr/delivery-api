@@ -12,7 +12,9 @@ use App\Models\Pagamento;
 use App\Models\Categoria;
 use App\Models\Produto;
 use App\Models\Obrigatorio;
+use App\Models\Adicional;
 use App\Models\ProdutoObrigatorio;
+use App\Models\ProdutoAdicional;
 
 
 
@@ -113,16 +115,22 @@ class TenantsController extends Controller
         
         foreach ($tenant->produtos as $produto){
            
+            // pega os obrigatorios do produto
             $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
             $novoObrigatorio = [];
-
             foreach ($obrigatorios as $obrigatorio){
                 $obrigatorio = Obrigatorio::find($obrigatorio->obrigatorio_id);
                 array_push( $novoObrigatorio,array( 'nome' => $obrigatorio->nome, 'opcoes' => explode(';',$obrigatorio->opcoes) ) );
             }
-
             $produto['obrigatorios'] = $novoObrigatorio;
-           
+            // pega os adicionais do produto
+            $adicionais = ProdutoAdicional::where('produto_id',$produto->id)->get();
+            $novoAdicional = [];
+            foreach ($adicionais as $adicional){
+                $adicional = Adicional::find($adicional->adicional_id);
+                array_push( $novoAdicional,array( 'nome' => $adicional->nome, 'valor' => $adicional->valor ) );
+            }
+            $produto['adicionais'] = $novoAdicional;
         }
       
         return response()->json($tenant,200);
