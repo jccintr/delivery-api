@@ -42,6 +42,12 @@ class PedidosController extends Controller
                      $itemPedido['obrigatorios'] = [];
                  }
 
+                 if (strlen($itemPedido->adicionais)>0){
+                    $itemPedido['adicionais'] = explode(';',$itemPedido->adicionais);
+                } else {
+                    $itemPedido['adicionais'] = [];
+                }
+
                  $total += $itemPedido->total;
                  
              endforeach;
@@ -113,6 +119,7 @@ class PedidosController extends Controller
          $novoItemPedido->quantidade = $itemPedido['quantidade'];
          $novoItemPedido->total = $itemPedido['total'];
          $novoItemPedido->obrigatorios = $itemPedido['obrigatorios'];
+         $novoItemPedido->adicionais = $itemPedido['adicionais'];
          $novoItemPedido->observacao = $itemPedido['observacao'];
          $novoItemPedido->save();
 
@@ -157,6 +164,12 @@ class PedidosController extends Controller
                      $itemPedido['obrigatorios'] = explode(';',$itemPedido->obrigatorios);
                  } else {
                      $itemPedido['obrigatorios'] = [];
+                 }
+
+                 if (strlen($itemPedido->adicionais)>0){
+                     $itemPedido['adicionais'] = explode(';',$itemPedido->adicionais);
+                 } else {
+                     $itemPedido['adicionais'] = [];
                  }
 
                  $total += $itemPedido->total;

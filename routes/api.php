@@ -8,6 +8,7 @@ use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\PagamentosController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProdutoObrigatorioController;
+use App\Http\Controllers\ProdutoAdicionalController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantsController;
 use App\Http\Controllers\PedidosController;
@@ -90,3 +91,6 @@ Route::middleware('auth:sanctum')->post('/statuslog',[StatusPedidoLogController:
 
 Route::middleware('auth:sanctum')->post('/produtoobrigatorio',[ProdutoObrigatorioController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/produtoobrigatorio/{id}',[ProdutoObrigatorioController::class,'destroy']);
+
+Route::middleware('auth:sanctum')->post('/produtoadicional',[ProdutoAdicionalController::class,'store']);
+Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdicionalController::class,'destroy']);
