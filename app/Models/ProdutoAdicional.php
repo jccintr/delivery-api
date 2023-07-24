@@ -10,4 +10,9 @@ class ProdutoAdicional extends Model
     use HasFactory;
     protected $table = 'produto_adicionais';
     protected $fillable = ['produto_id','adicional_id'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\ProdutoObrigatorio;
+use App\Models\ProdutoAdicional;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -69,6 +70,8 @@ class ProdutosController extends Controller
         $produto = Produto::find($id);
         $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
         $produto['obrigatorios'] = $obrigatorios;
+        $adicionais = ProdutoAdicional::where('produto_id',$produto->id)->get();
+        $produto['adicionais'] = $adicionais;
         return response()->json($produto,200);
     }
 
