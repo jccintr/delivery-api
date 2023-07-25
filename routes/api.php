@@ -40,6 +40,7 @@ Route::post('/auth/login2',[AuthController::class,'login2']);
 
 Route::get('/tenant/{id}',[TenantsController::class,'show']);
 Route::middleware('auth:sanctum')->post('/tenant',[TenantsController::class,'store']);
+Route::middleware('auth:sanctum')->post('/tenant/token',[TenantsController::class,'storePushToken']);
 Route::middleware('auth:sanctum')->get('/tenant',[TenantsController::class,'index']);
 Route::middleware('auth:sanctum')->post('/status',[TenantsController::class,'status']);
 
