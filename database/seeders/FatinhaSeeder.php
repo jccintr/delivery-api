@@ -27,6 +27,7 @@ class FatinhaSeeder extends Seeder
             'cor_fundo' => '#d6aa4b',
             'cor_texto' => '#723034',
             'tempo_espera' => '15 a 30min',
+            'slug' => 'fatinha-lanches',
             'logotipo' => 'imagens/logos/fatinha-lanches.png'
         ]);
          // taxas

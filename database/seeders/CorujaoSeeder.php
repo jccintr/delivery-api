@@ -27,6 +27,7 @@ class CorujaoSeeder extends Seeder
             'cor_fundo' => '#f6a426',
             'cor_texto' => '#ac3d43',
             'tempo_espera' => '15 a 30min',
+            'slug' => 'corujao',
             'logotipo' => 'imagens/logos/corujao.png'
         ]);
          // taxas

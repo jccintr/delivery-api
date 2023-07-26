@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('role')->default(2); // 1-cliente 2-loja 3-admin
             $table->string('push_token')->nullable();
+            $table->string('slug')->unique();
             $table->rememberToken();
             // dados do tenant
             $table->string('telefone')->nullable();

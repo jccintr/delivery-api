@@ -11,6 +11,7 @@ use App\Models\ItemPedido;
 use App\Models\User;
 use App\Models\StatusPedidoLog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 
 class PedidosController extends Controller
@@ -131,6 +132,17 @@ class PedidosController extends Controller
        $novoStatus->status_pedido_id = 1;
        $novoStatus->motivo = "";
        $novoStatus->save();
+
+       $user = User::find($request->tenant_id);
+
+       $response = Http::withHeaders([
+        'Content-Type' => 'application/json'
+        ])->post('https://exp.host/--/api/v2/push/send',[
+              'to' => $user->push_token,
+              'sound'=> 'default',
+              'title'=> 'Novo Pedido BrazPed',
+              'body'=> 'Oba! Acabou de chegar um novo pedido no BrazPed.'
+        ]);
 
        return response()->json(['pedido'=>$novoPedido->token],201);
  }
