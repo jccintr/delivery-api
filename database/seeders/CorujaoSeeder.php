@@ -16,6 +16,7 @@ class CorujaoSeeder extends Seeder
      */
     public function run()
     {
+        $slug = 'corujao';
         $idTenant = DB::table('users')->insertGetid([
             'name' => "Corujão Lanches",
             'email' => "corujao@gmail.com",
@@ -27,8 +28,8 @@ class CorujaoSeeder extends Seeder
             'cor_fundo' => '#f6a426',
             'cor_texto' => '#ac3d43',
             'tempo_espera' => '15 a 30min',
-            'slug' => 'corujao',
-            'logotipo' => 'imagens/logos/corujao.png'
+            'slug' => $slug,
+            'logotipo' => 'imagens/'.$slug.'/logo/corujao.png'
         ]);
          // taxas
          DB::table('taxas')->insert([
@@ -249,7 +250,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, salada, milho e batata-palha.',
                 'preco' => 12.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-xsalada.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-xsalada.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -350,7 +351,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, bacon, ovo, tomate, catupiry, milho e batata-palha.',
                 'preco' => 16.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-crock.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-crock.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -401,7 +402,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, bacon, ovo, milho e batata-palha.',
                 'preco' => 15.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-rango.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-rango.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -552,7 +553,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, hambúrguer, bacon, queijo, presunto, alface, milho, tomate e batata-palha.',
                 'preco' => 15.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-xbacon.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-xbacon.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -753,7 +754,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, hambúrguer, bacon, calabresa, ovo, alface, tomate, presunto, queijo, milho e batata-palha.',
                 'preco' => 18.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-xtudo.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-xtudo.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -854,7 +855,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Pão, 2 hambúrgueres, queijo, presunto, milho e batata-palha.',
                 'preco' => 12.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-bigburguer.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-bigburguer.jpeg'
             ]);
                 // ProdutoAdicional
                 DB::table('produto_adicionais')->insert([
@@ -1226,7 +1227,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Macarrão, carne moída, molho, alho, cebola, cebolinha e queijo ralado.',
                 'preco' => 16.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-espaguete-bolonhesa.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-bolonhesa.jpeg'
             ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -1235,7 +1236,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Macarrão, linguiça de porco, tomate, cebola, mussarela, alho, cebolinha e queijo ralado.',
                 'preco' => 16.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-espaguete-amineira.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-amineira.jpeg'
             ]);
           
         $idCategoria = DB::table('categorias')->insertGetid([
@@ -1249,7 +1250,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Refrigerante lata 350ml',
                 'preco' => 5.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-refrigerantelata.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-refrigerantelata.jpeg'
             ]);
                 // ProdutoObrigatorios
                 DB::table('produto_obrigatorios')->insert([
@@ -1263,7 +1264,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Refrigerante 2 litros',
                 'preco' => 12.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-refrigerante2litros.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-refrigerante2litros.jpeg'
             ]);
                 // ProdutoObrigatorios
                 DB::table('produto_obrigatorios')->insert([
@@ -1277,7 +1278,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Refrigerante 600ml',
                 'preco' => 7.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-refrigerante600ml.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-refrigerante600ml.jpeg'
             ]);
                 // ProdutoObrigatorios
                 DB::table('produto_obrigatorios')->insert([
@@ -1291,7 +1292,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Refrigerante 200ml',
                 'preco' => 2.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-refrigerante200ml.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-refrigerante200ml.jpeg'
             ]);
                 // ProdutoObrigatorios
                 DB::table('produto_obrigatorios')->insert([
@@ -1305,7 +1306,7 @@ class CorujaoSeeder extends Seeder
                 'descricao' => 'Suco Del Valle 290ml',
                 'preco' => 5.00,
                 'ativo' => true,
-                'imagem' => 'imagens/corujao-sucodelvalle290ml.jpeg'
+                'imagem' => 'imagens/'.$slug.'/produtos/corujao-sucodelvalle290ml.jpeg'
             ]);
                 // ProdutoObrigatorios
                 DB::table('produto_obrigatorios')->insert([
@@ -1319,7 +1320,7 @@ class CorujaoSeeder extends Seeder
             'descricao' => 'Água mineral sem gás 510ml',
             'preco' => 2.00,
             'ativo' => true,
-            'imagem' => 'imagens/corujao-agua.jpeg'
+            'imagem' => 'imagens/'.$slug.'/produtos/corujao-agua.jpeg'
            ]);
            $produto = DB::table('produtos')->insertGetid([
             'user_id' => $idTenant,
@@ -1328,7 +1329,7 @@ class CorujaoSeeder extends Seeder
             'descricao' => 'Água mineral com gás 510ml',
             'preco' => 2.50,
             'ativo' => true,
-            'imagem' => 'imagens/corujao-agua_com_gas.jpeg'
+            'imagem' => 'imagens/'.$slug.'/produtos/corujao-agua_com_gas.jpeg'
            ]);
            
     }

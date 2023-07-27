@@ -31,6 +31,7 @@ class ProdutosController extends Controller
     {
 
         $user_id = Auth::User()->id;
+        $slug = Auth::User()->slug;
         $nome = $request->nome;
         $descricao = $request->descricao;
         $preco = $request->preco;
@@ -50,7 +51,7 @@ class ProdutosController extends Controller
         $newProduto->preco = $preco;
         $newProduto->ativo = true;
         if($imagem){
-            $imagem_url = $imagem->store('imagens/'.$user_id.'/produtos','public');
+            $imagem_url = $imagem->store('imagens/'.$slug.'/produtos','public');
             $newProduto->imagem = $imagem_url;
         }
         $newProduto->save();
@@ -119,14 +120,14 @@ class ProdutosController extends Controller
 
     public function updateImagem(Request $request, $id){
         
-        $user_id = Auth::User()->id;
+        $slug = Auth::User()->slug;
         $produto = Produto::find($id);
         $imagem = $request->file('imagem');
         if($produto->imagem){
             Storage::disk('public')->delete($produto->imagem);
         }
 
-        $imagem_url = $imagem->store('imagens/'.$user_id.'/produtos','public');
+        $imagem_url = $imagem->store('imagens/'.$slug.'/produtos','public');
         $produto->imagem = $imagem_url;
         $produto->save();
         return response()->json($produto,200);

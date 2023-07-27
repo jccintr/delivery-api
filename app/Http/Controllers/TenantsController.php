@@ -97,20 +97,20 @@ class TenantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $tenant = User::find($id);
-
+        //$tenant = User::find($id);
+        $tenant = User::where('slug',$slug)->first();
         if(!$tenant) {
             $array['erro'] = "Estabelecimento não encontrado.";
             return response()->json($array,400);
         }
 
-        $tenant['taxas'] = Taxa::where('user_id',$id)->get(); 
-        $tenant['pagamentos'] = Pagamento::where('user_id',$id)->get(); 
-        $tenant['horarios'] = Horario::where('user_id',$id)->get(); 
-        $tenant['categorias'] = Categoria::where('user_id',$id)->get(); 
-        $tenant['produtos'] = Produto::where('user_id',$id)->where('ativo',true)->get(); 
+        $tenant['taxas'] = Taxa::where('user_id',$tenant->id)->get(); 
+        $tenant['pagamentos'] = Pagamento::where('user_id',$tenant->id)->get(); 
+        $tenant['horarios'] = Horario::where('user_id',$tenant->id)->get(); 
+        $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
+        $tenant['produtos'] = Produto::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         
         
         foreach ($tenant->produtos as $produto){

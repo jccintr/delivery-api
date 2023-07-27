@@ -16,7 +16,7 @@ class BrothersSeeder extends Seeder
      */
     public function run()
     {
-       
+            $slug = 'brothersburger';
             $idTenant = DB::table('users')->insertGetid([
                 'name' => "Brothers Burger",
                 'email' => "brothers@gmail.com",
@@ -28,8 +28,8 @@ class BrothersSeeder extends Seeder
                 'cor_fundo' => '#23211f',
                 'cor_texto' => '#ffffff',
                 'tempo_espera' => '15 a 30min',
-                'slug' => 'brothers-burger',
-                'logotipo' => 'imagens/logos/brothers.jpeg'
+                'slug' => $slug,
+                'logotipo' => 'imagens/'.$slug.'/logo/brothers.jpeg'
             ]);
                     // taxas
                     DB::table('taxas')->insert([
@@ -137,7 +137,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, hambúrguer 180g, queijo prato e molho.',
                                 'preco' => 15.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/burguer.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/burguer.jpeg'
                             ]);
                             // ProdutoObrigatorios
                             DB::table('produto_obrigatorios')->insert([
@@ -157,7 +157,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, hambúrguer 180g, queijo prato, alface, tomate, cebola roxa e molho.',
                                 'preco' => 16.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/salada.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/salada.jpeg'
                             ]);
                             // ProdutoObrigatorios
                             DB::table('produto_obrigatorios')->insert([
@@ -178,7 +178,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, hambúrguer 180g, cheddar, cebola caramelizada e molho.',
                                 'preco' => 17.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/cheddar.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/cheddar.jpeg'
                             ]);
                             DB::table('produto_obrigatorios')->insert([
                                 'produto_id' => $produto,
@@ -191,7 +191,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, hambúrguer 180g, bacon, cream cheese e molho.',
                                 'preco' => 17.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/cream.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/cream.jpeg'
                             ]);
                             DB::table('produto_obrigatorios')->insert([
                                 'produto_id' => $produto,
@@ -210,7 +210,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão australiano, hambúrguer 180g, creme de gorgonzola, geleia de abacaxi com pimenta, bacon e molho.',
                                 'preco' => 18.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/gorgon.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/gorgon.jpeg'
                             ]);
                             DB::table('produto_obrigatorios')->insert([
                                 'produto_id' => $produto,
@@ -223,7 +223,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, 2 hambúrguer smash, bacon, ovo, cheddar e molho.',
                                 'preco' => 19.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/smash.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/smash.jpeg'
                             ]);
                             DB::table('produto_obrigatorios')->insert([
                                 'produto_id' => $produto,
@@ -236,7 +236,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Pão brioche, 3 hambúrguers smash, triplo queijo, cebola caramelizada, bacon e molho.',
                                 'preco' => 21.99,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/triplosmash.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/triplosmash.jpeg'
                             ]);
                             DB::table('produto_obrigatorios')->insert([
                                 'produto_id' => $produto,
@@ -254,7 +254,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => '500g de batatas-palito fritas.',
                                 'preco' => 17.90,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/batatapalito.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/batatapalito.jpeg'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
@@ -263,7 +263,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => '500g de batatas rústicas fritas.',
                                 'preco' => 17.90,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/batatarustica.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/batatarustica.jpeg'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
@@ -272,7 +272,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => '10 unidades de bolinho de carne frito.',
                                 'preco' => 17.90,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/bolinho.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/bolinho.jpeg'
                             ]);
                     $idCategoria = DB::table('categorias')->insertGetid([
                         'nome' => "Bebidas",
@@ -285,7 +285,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Refrigerante Coca-cola 2 Litros',
                                 'preco' => 11.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/cocacola2litros.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/cocacola2litros.jpeg'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
@@ -294,7 +294,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Refrigerante Coca-cola Lata 350ml',
                                 'preco' => 5.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/cocacolalata.png'
+                                'imagem' => 'imagens/'.$slug.'/produtos/cocacolalata.png'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
@@ -303,7 +303,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Refrigerante Guaraná Antarctica 2 Litros',
                                 'preco' => 11.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/1/produtos/guaranaantarctica2litros.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/guaranaantarctica2litros.jpeg'
                             ]);
         
     }

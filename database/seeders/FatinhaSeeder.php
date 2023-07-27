@@ -16,18 +16,19 @@ class FatinhaSeeder extends Seeder
      */
     public function run()
     {
+        $slug = 'fatinhalanches';
         $idTenant = DB::table('users')->insertGetid([
             'name' => "Fatinha Lanches",
             'email' => "fatinha@gmail.com",
             'password' => Hash::make('123'),
             'role' => 2,
-            'telefone' => '35-98477-1500',
+            'telefone' => '35-99128-6258',
             'logradouro' =>'Av. Cel. Francisco Braz,35',
             'bairro' => 'Centro',
             'cor_fundo' => '#d6aa4b',
             'cor_texto' => '#723034',
             'tempo_espera' => '15 a 30min',
-            'slug' => 'fatinha-lanches',
+            'slug' => $slug,
             'logotipo' => 'imagens/logos/fatinha-lanches.png'
         ]);
          // taxas
