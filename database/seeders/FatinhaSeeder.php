@@ -29,7 +29,7 @@ class FatinhaSeeder extends Seeder
             'cor_texto' => '#723034',
             'tempo_espera' => '15 a 30min',
             'slug' => $slug,
-            'logotipo' => 'imagens/logos/fatinha-lanches.png'
+            'logotipo' => 'imagens/'.$slug.'/logo/fatinha-lanches.png'
         ]);
          // taxas
          DB::table('taxas')->insert([
