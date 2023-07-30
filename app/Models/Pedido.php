@@ -12,7 +12,7 @@ class Pedido extends Model
     protected $table = 'pedidos';
     protected $fillable = ['user_id','delivery','nome','telefone','observacao','endereco','bairro','taxa_entrega','forma_pagamento','token','status_pedido_id'];
     protected $hidden = ['status_pedido_id','created_at','updated_at',];
-
+    protected $casts = ['delivery'=> 'boolean'];
 
     public function itensPedido(){
         return $this->hasMany(ItemPedido::class);
