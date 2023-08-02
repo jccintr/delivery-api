@@ -144,7 +144,7 @@ class PedidosController extends Controller
               'body'=> 'Oba! Acabou de chegar um novo pedido no BrazPed.'
         ]);
 
-       return response()->json(['pedido'=>$novoPedido->token],201);
+       return response()->json($novoPedido,201);
  }
 
     /**
@@ -190,6 +190,40 @@ class PedidosController extends Controller
         $pedido['total'] = round($total,2);  
 
         return response()->json($pedido,200);      
+    }
+
+    public function show2($id){
+
+         $pedido = Pedido::with('itensPedido.produto')->with('statusPedido')->with('statusPedidoLog.statusPedido')->find($id);
+
+        
+        $pedido['data'] = date_format($pedido->created_at,"d/m/Y H:i");
+        foreach($pedido->statusPedidoLog as $statusPedido):
+                $statusPedido['data'] = date_format($statusPedido->created_at,"d/m-H:i");
+        endforeach; 
+        $total = 0;
+        foreach($pedido->itensPedido as $itemPedido):
+
+                 if (strlen($itemPedido->obrigatorios)>0){
+                     $itemPedido['obrigatorios'] = explode(';',$itemPedido->obrigatorios);
+                 } else {
+                     $itemPedido['obrigatorios'] = [];
+                 }
+
+                 if (strlen($itemPedido->adicionais)>0){
+                     $itemPedido['adicionais'] = explode(';',$itemPedido->adicionais);
+                 } else {
+                     $itemPedido['adicionais'] = [];
+                 }
+
+                 $total += $itemPedido->total;
+                 
+        endforeach;
+        $pedido['total'] = round($total,2);  
+
+        return response()->json($pedido,200);  
+
+
     }
 
     /**
