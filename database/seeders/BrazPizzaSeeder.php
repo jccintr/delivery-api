@@ -91,6 +91,17 @@ class BrazPizzaSeeder extends Seeder
             'horario' => '18h30 as 23h30'
         ]);
         // Obrigatorios
+        // Obrigatorios
+        $primeiro_sabor = DB::table('obrigatorios')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => '1o Sabor',
+            'opcoes' => 'Alho;Bacon;Bacon Especial;Baiana;Bauru;Brócolis Especial;Brócolis Simples;Caipira;Calabresa;Cinco Queijos;Dois Queijos;Franbacon;Francheddar;Frango;Lombo Canadense;Marguerita;Moda da Casa;Mussarela;Napolitana;Peito de Peru;Pepperonni;Peruana;Portuguesa;Quatro Queijos;Siciliana;Toscana;Três Queijos'
+        ]);
+        $segundo_sabor = DB::table('obrigatorios')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => '2o Sabor',
+            'opcoes' => 'Alho;Bacon;Bacon Especial;Baiana;Bauru;Brócolis Especial;Brócolis Simples;Caipira;Calabresa;Cinco Queijos;Dois Queijos;Franbacon;Francheddar;Frango;Lombo Canadense;Marguerita;Moda da Casa;Mussarela;Napolitana;Peito de Peru;Pepperonni;Peruana;Portuguesa;Quatro Queijos;Siciliana;Toscana;Três Queijos'
+        ]);
         $refrigerante_lata = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Tipo Ref. lata',
@@ -1860,7 +1871,7 @@ class BrazPizzaSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "TrÊs Queijos",
+                    'nome' => "Três Queijos",
                     'descricao' => 'Mussarela, parmesão e catupiry.',
                     'preco' => 48.00,
                     'ativo' => true
@@ -4243,7 +4254,7 @@ $idCategoria = DB::table('categorias')->insertGetid([
             'categoria_id' => $idCategoria,
             'nome' => "Atum (broto)",
             'descricao' => 'Atum e cebola.',
-            'preco' => 50.00,
+            'preco' => 40.00,
             'ativo' => true
         ]);
             // ProdutoAdicional
@@ -4586,6 +4597,99 @@ $idCategoria = DB::table('categorias')->insertGetid([
                 'produto_id' => $produto,
                 'adicional_id' => $palmito
             ]);
+// pizza dois sabores
+    $idCategoria = DB::table('categorias')->insertGetid([
+        'nome' => "Pizzas Dois Sabores",
+        'user_id' => $idTenant
+    ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Grande Dois Sabores",
+            'descricao' => 'Pizza grande dois sabores',
+            'preco' => 48.00,
+            'ativo' => true
+        ]);
+            // ProdutoObrigatorios
+            DB::table('produto_obrigatorios')->insert([
+                'produto_id' => $produto,
+                'obrigatorio_id' => $primeiro_sabor
+            ]);
+            // ProdutoObrigatorios
+            DB::table('produto_obrigatorios')->insert([
+                'produto_id' => $produto,
+                'obrigatorio_id' => $segundo_sabor
+            ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Broto Dois Sabores",
+            'descricao' => 'Pizza broto dois sabores',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoObrigatorios
+            DB::table('produto_obrigatorios')->insert([
+                'produto_id' => $produto,
+                'obrigatorio_id' => $primeiro_sabor
+            ]);
+            // ProdutoObrigatorios
+            DB::table('produto_obrigatorios')->insert([
+                'produto_id' => $produto,
+                'obrigatorio_id' => $segundo_sabor
+            ]);
+
 // pizzas doces
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Pizzas Doces Broto",
