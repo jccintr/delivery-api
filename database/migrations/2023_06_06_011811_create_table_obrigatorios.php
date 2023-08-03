@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('nome');
-            $table->string('opcoes');
+            $table->text('opcoes');
             $table->timestamps();
         });
     }
