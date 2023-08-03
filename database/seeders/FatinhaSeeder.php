@@ -126,6 +126,73 @@ class FatinhaSeeder extends Seeder
             'nome' => 'Tipo',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja'
         ]);
+        // adicionais
+        $bacon = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Bacon',
+            'valor' => 2.00
+        ]);
+        $batata_palha = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Batata-Palha',
+            'valor' => 2.00
+        ]);
+        $calabresa = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Calabresa',
+            'valor' => 2.00
+        ]);
+        $catupiry = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Catupiry',
+            'valor' => 2.00
+        ]);
+        $frango = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Frango',
+            'valor' => 2.00
+        ]);
+        $hamburguer = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Hambúrguer',
+            'valor' => 2.00
+        ]);
+        $milho = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Milho',
+            'valor' => 2.00
+        ]);
+        $molho = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Molho',
+            'valor' => 2.00
+        ]);
+        $ovo = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Ovo',
+            'valor' => 2.00
+        ]);
+        $presunto = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Presunto',
+            'valor' => 2.00
+        ]);
+        $queijo = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Queijo',
+            'valor' => 2.00
+        ]);
+        $salada = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Salada',
+            'valor' => 2.00
+        ]);
+        $salsicha = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Salsicha',
+            'valor' => 2.00
+        ]);
+        
         // categorias
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Lanches",
@@ -139,6 +206,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 8.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -147,6 +259,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 12.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -155,6 +312,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 12.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -163,6 +365,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 13.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -171,6 +418,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 13.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -179,6 +471,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 14.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -187,6 +524,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 15.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -195,6 +577,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 15.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -203,6 +630,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 15.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -211,6 +683,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -219,6 +736,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -227,6 +789,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 17.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -235,6 +842,51 @@ class FatinhaSeeder extends Seeder
                 'preco' => 18.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salada
+                ]);
 
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Hot-Dogs",
@@ -248,6 +900,40 @@ class FatinhaSeeder extends Seeder
                 'preco' => 7.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -256,6 +942,39 @@ class FatinhaSeeder extends Seeder
                 'preco' => 8.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Bebidas",
             'user_id' => $idTenant

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('nome');
             $table->decimal('valor', 5, 2)->default(0);
+            //$table->boolean('ativo')->default(true);
             $table->timestamps();
         });
     }
