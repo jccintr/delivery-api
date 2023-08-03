@@ -98,13 +98,13 @@ class BrazPizzaSeeder extends Seeder
         ]);
         $sukita_2l = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. 2L',
-            'opcoes' => 'Coca-Cola;Fanta Laranja;Fanta Uva'
+            'nome' => 'Tipo Sukita 2L',
+            'opcoes' => 'Sabor Laranja;Sabor Uva'
         ]);
         $fanta_2l = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. 2L',
-            'opcoes' => 'Coca-Cola;Fanta Laranja;Fanta Uva'
+            'nome' => 'Tipo Fanta 2L',
+            'opcoes' => 'Sabor Laranja;Sabor Uva'
         ]);
         $suco_del_valle_1000ml = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
@@ -2379,9 +2379,2216 @@ class BrazPizzaSeeder extends Seeder
                         'produto_id' => $produto,
                         'adicional_id' => $palmito
                     ]);
+// pizzas broto
+$idCategoria = DB::table('categorias')->insertGetid([
+    'nome' => "Pizzas Broto",
+    'user_id' => $idTenant
+]);
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Alho (broto)",
+        'descricao' => 'Alho e mussarela.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Bacon (broto)",
+        'descricao' => 'Bacon e mussarela.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Bacon Especial (broto)",
+        'descricao' => 'Bacon, mussarela, catupiry, ervilha e cebola.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+        
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Baiana (broto)",
+        'descricao' => 'Ovo, calabresa, pimenta e cebola.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Bauru (broto)",
+        'descricao' => 'Mussarela, presunto e tomate.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Brócolis Especial (broto)",
+        'descricao' => 'Alho, mussarela, bacon e brócolis.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Brócolis Simples (broto)",
+        'descricao' => 'mussarela e brócolis.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Caipira (broto)",
+        'descricao' => 'Frango, mussarela e milho.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Calabresa (broto)",
+        'descricao' => 'Calebresa e cebola.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Cinco Queijos (broto)",
+        'descricao' => 'Mussarela, parmesão, gorgonzola, provolone e catupiry.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Dois Queijos (broto)",
+        'descricao' => 'Mussarela e catupiry.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Franbacon (broto)",
+        'descricao' => 'Bacon e frango.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Francheddar (broto)",
+        'descricao' => 'Cheddar, Bacon e frango.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Frango (broto)",
+        'descricao' => 'Frango e catupiry.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Lombo Canadense (broto)",
+        'descricao' => 'Mussarela e lombo canadense.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+    $produto = DB::table('produtos')->insertGetid([
+        'user_id' => $idTenant,
+        'categoria_id' => $idCategoria,
+        'nome' => "Marguerita (broto)",
+        'descricao' => 'Mussarela, manjericão e tomate.',
+        'preco' => 38.00,
+        'ativo' => true
+    ]);
+        // ProdutoAdicional
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_chocolate
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $borda_caracol
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $bacon
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $calabresa
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $catupiry
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $cheddar
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $creme_especial
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $frango
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $mussarela
+        ]);
+        DB::table('produto_adicionais')->insert([
+            'produto_id' => $produto,
+            'adicional_id' => $palmito
+        ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Milho Verde (broto)",
+            'descricao' => 'Mussarela e milho verde.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Moda da Casa (broto)",
+            'descricao' => 'Mussarela, presunto, palmito, cebola, milho, ervilha e tomate.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Mussarela (broto)",
+            'descricao' => 'Mussarela, tomate e azeitona.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Napolitana (broto)",
+            'descricao' => 'Mussarela, parmesão e tomate.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Palmito (broto)",
+            'descricao' => 'Palmito e mussarela.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Peito de Peru (broto)",
+            'descricao' => 'Peito de Peru.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pepperonni (broto)",
+            'descricao' => 'Pepperonni e mussarela.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Peruna (broto)",
+            'descricao' => 'Peito de Peru e mussarela.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Portuguesa (broto)",
+            'descricao' => 'Mussarela, presunto, ovo, bacon, cebola, milho e ervilha.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Quatro Queijos (broto)",
+            'descricao' => 'Mussarela, parmesão, gorgonzola e catupiry.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Seis Queijos (broto)",
+            'descricao' => 'Cheddar, mussarela, parmesão, gorgonzola, provolone e catupiry.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Siciliana (broto)",
+            'descricao' => 'Mussarela, champignon, bacon e palmito.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Toscana (broto)",
+            'descricao' => 'Mussarela, calabresa e cebola.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Três Queijos (broto)",
+            'descricao' => 'Mussarela, parmesão e catupiry.',
+            'preco' => 38.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Calabresa Top (broto)",
+            'descricao' => 'Mussarela, calabresa, catupiry e cebola.',
+            'preco' => 43.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Frango Especial (broto)",
+            'descricao' => 'Mussarela, bacon, frango, catupiry e milho.',
+            'preco' => 40.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Atum (broto)",
+            'descricao' => 'Atum e cebola.',
+            'preco' => 50.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Atum Especial (broto)",
+            'descricao' => 'Atum, catupiry e cebola.',
+            'preco' => 41.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Atum Especial 2 (broto)",
+            'descricao' => 'Atum e mussarela.',
+            'preco' => 41.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Calabresa Especial (broto)",
+            'descricao' => 'Calabresa, catupiry e cebola.',
+            'preco' => 41.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Brasileirinha (broto)",
+            'descricao' => 'Mussarela, atum, palmito, cebola e ervilha.',
+            'preco' => 43.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
+
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Entulho (broto)",
+            'descricao' => 'Mussarela, ovo, bacon, lombo, frango, catupiry, cebola, milho, ervilha e tomate.',
+            'preco' => 49.00,
+            'ativo' => true
+        ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_chocolate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $borda_caracol
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $creme_especial
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $mussarela
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $palmito
+            ]);
 // pizzas doces
         $idCategoria = DB::table('categorias')->insertGetid([
-            'nome' => "Pizzas Doces",
+            'nome' => "Pizzas Doces Broto",
             'user_id' => $idTenant
         ]);
             $produto = DB::table('produtos')->insertGetid([
@@ -2417,7 +4624,7 @@ class BrazPizzaSeeder extends Seeder
             'user_id' => $idTenant,
             'categoria_id' => $idCategoria,
             'nome' => "Refrigerante Lata",
-            'descricao' => 'Refrigerante lata 350ml',
+            'descricao' => 'Refrigerante lata 350ml vários sabores',
             'preco' => 5.00,
             'ativo' => true
         ]);
@@ -2430,7 +4637,7 @@ class BrazPizzaSeeder extends Seeder
             'user_id' => $idTenant,
             'categoria_id' => $idCategoria,
             'nome' => "Refrigerante Sukita 2L",
-            'descricao' => 'Refrigerante Sukita 2L',
+            'descricao' => 'Refrigerante Sukita 2L vários sabores',
             'preco' => 10.00,
             'ativo' => true
         ]);
@@ -2444,7 +4651,7 @@ class BrazPizzaSeeder extends Seeder
             'user_id' => $idTenant,
             'categoria_id' => $idCategoria,
             'nome' => "Refrigerante Fanta 2L",
-            'descricao' => 'Refrigerante Fanta 2L',
+            'descricao' => 'Refrigerante Fanta 2L vários sabores',
             'preco' => 10.00,
             'ativo' => true
         ]);
@@ -2474,7 +4681,7 @@ class BrazPizzaSeeder extends Seeder
             'user_id' => $idTenant,
             'categoria_id' => $idCategoria,
             'nome' => "Suco Del Valle 1L",
-            'descricao' => 'Suco Del Valle 1L',
+            'descricao' => 'Suco Del Valle 1L vários sabores',
             'preco' => 10.00,
             'ativo' => true
         ]);
