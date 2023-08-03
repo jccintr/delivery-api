@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             BrothersSeeder::class,
             FatinhaSeeder::class,
             CorujaoSeeder::class,
+            BrazPizzaSeeder::class,
             UserSeeder::class,
             StatusSeeder::class
         ]);
