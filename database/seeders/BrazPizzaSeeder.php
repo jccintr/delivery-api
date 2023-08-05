@@ -1523,7 +1523,7 @@ class BrazPizzaSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "Peruna",
+                    'nome' => "Peruana",
                     'descricao' => 'Peito de Peru e mussarela.',
                     'preco' => 48.00,
                     'ativo' => true
@@ -3730,7 +3730,7 @@ $idCategoria = DB::table('categorias')->insertGetid([
         $produto = DB::table('produtos')->insertGetid([
             'user_id' => $idTenant,
             'categoria_id' => $idCategoria,
-            'nome' => "Peruna (broto)",
+            'nome' => "Peruana (broto)",
             'descricao' => 'Peito de Peru e mussarela.',
             'preco' => 38.00,
             'ativo' => true

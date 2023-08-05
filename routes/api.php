@@ -43,6 +43,7 @@ Route::middleware('auth:sanctum')->post('/tenant',[TenantsController::class,'sto
 Route::middleware('auth:sanctum')->post('/tenant/token',[TenantsController::class,'storePushToken']);
 Route::middleware('auth:sanctum')->get('/tenant',[TenantsController::class,'index']);
 Route::middleware('auth:sanctum')->post('/status',[TenantsController::class,'status']);
+Route::middleware('auth:sanctum')->post('/espera',[TenantsController::class,'updateEspera']);
 
 Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);
 Route::middleware('auth:sanctum')->get('/categorias/{id}',[CategoriasController::class,'show']);

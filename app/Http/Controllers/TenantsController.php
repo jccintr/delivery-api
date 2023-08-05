@@ -50,9 +50,10 @@ class TenantsController extends Controller
         $estado = $request->estado; 
         $cor_fundo = $request->cor_fundo;
         $cor_texto = $request->cor_texto;
+        $slug = $request->slug;
         $logotipo = $request->file('logotipo');
 
-        if (!$name or !$email or !$password or !$telefone or !$logradouro or !$bairro or !$cidade or !$estado) {
+        if (!$name or !$email or !$password or !$telefone or !$logradouro or !$bairro or !$cidade or !$estado or !$slug) {
             return response()->json(['erro'=>'Preencha todos os campos por favor.'],400);
         }
 
@@ -76,6 +77,8 @@ class TenantsController extends Controller
         $newUser->logotipo = $logotipo_url;
         $newUser->cor_fundo = $cor_fundo;
         $newUser->cor_texto = $cor_texto;
+        $newUser->slug = $slug;
+        $newUser->tempo_espera = '15 a 30min';
         $newUser->save();
 
         for ($i=0;$i<=6;$i++) {
@@ -168,6 +171,14 @@ class TenantsController extends Controller
         return response()->json($user,200);
 
 
+    }
+
+    public function updateEspera(Request $request){
+
+        $user = Auth::User();
+        $user->tempo_espera = $request->tempo_espera;
+        $user->save();
+        return response()->json($user,200);
     }
 
     public function storePushtoken( Request $request) {
