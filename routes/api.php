@@ -86,6 +86,7 @@ Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosControl
 Route::post('/pedidos',[PedidosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);
 Route::middleware('auth:sanctum')->get('/pedidos/{id}',[PedidosController::class,'show']);
+Route::middleware('auth:sanctum')->get('/pedidosresumo',[PedidosController::class,'resumo']);
 Route::get('/pedidos/cliente/{id}',[PedidosController::class,'show2']);
 
 Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,'index']);

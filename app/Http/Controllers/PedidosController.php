@@ -248,4 +248,42 @@ class PedidosController extends Controller
     {
         //
     }
+
+    
+    public function total(Request $request){
+
+        $pedidos = Pedido::where('user_id',Auth::User()->id)->sum('total')->get();
+        
+        
+        return response()->json($pedidos,200);  
+
+    }
+
+    public function resumo(){
+
+        $recebidos = Pedido::where('user_id',Auth::User()->id)->count();
+        $entregues = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',2)->count();
+        $retirados = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',3)->count();
+        $pedidos   = Pedido::where('user_id',Auth::User()->id)->with('itensPedido')->get();
+
+        $total_pedidos = 0;
+        foreach($pedidos as $pedido):
+            $total = 0;
+            $total_pedido = 0;
+            foreach($pedido->itensPedido as $itemPedido):
+                $total += $itemPedido->total;
+            endforeach;
+            $total_pedido = $total + $pedido->taxa_entrega;
+            $total_pedidos = $total_pedidos + $total_pedido;
+       endforeach;
+
+        $resposta['recebidos'] = $recebidos;
+        $resposta['entregues'] = $entregues;
+        $resposta['retirados'] = $retirados;
+        $resposta['faturamento'] = round($total_pedidos,2);
+        
+        return response()->json($resposta,200);
+    }
+
+   
 }
