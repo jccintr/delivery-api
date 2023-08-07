@@ -487,7 +487,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Calabrinho",
                                 'descricao' => 'Pão brioche, hambúrguer 180g, calabresa, cream cheese, cebola roxa e molho.',
                                 'preco' => 17.99,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/calabrinho.jpeg'
                                 
                             ]);
                                 // ProdutoObrigatorios
@@ -660,7 +661,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Big Chicken",
                                 'descricao' => 'Pão brioche, frango, queijo prato, bacon, salada e molho.',
                                 'preco' => 17.99,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/bigchicken.jpeg'
                                 
                             ]);
                                 // ProdutoObrigatorios
@@ -834,7 +836,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Brother's",
                                 'descricao' => 'Pão brioche, duplo hambúrguer, duplo queijo, bacon, cebola caramelizada de molho.',
                                 'preco' => 22.99,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/brothers-lanche.jpeg'
                                 
                             ]);
                                 // ProdutoObrigatorios
@@ -1094,7 +1097,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Crispy",
                                 'descricao' => 'Pão brioche, hambúrguer, queijo, catupiry empanado, bacon e molho.',
                                 'preco' => 22.99,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/crispy.jpeg'
                                 
                             ]);
                                 DB::table('produto_obrigatorios')->insert([
@@ -1194,7 +1198,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Batata Palito porção individual",
                                 'descricao' => 'Batatas-palito porção individual.',
                                 'preco' => 5.00,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/batatapequena.jpeg'
                                 
                             ]);
                             DB::table('produtos')->insert([
@@ -1221,7 +1226,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Búffalo Wings",
                                 'descricao' => '500g de búffalo wings.',
                                 'preco' => 25.90,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/buffalowings.png'
                                 
                             ]);
                             DB::table('produtos')->insert([
@@ -1230,7 +1236,8 @@ class BrothersSeeder extends Seeder
                                 'nome' => "Onion Rings",
                                 'descricao' => 'Anéis de cebola empanados.',
                                 'preco' => 19.90,
-                                'ativo' => true
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/onions.jpeg'
                                 
                             ]);
                     $idCategoria = DB::table('categorias')->insertGetid([
