@@ -4692,7 +4692,7 @@ $idCategoria = DB::table('categorias')->insertGetid([
 
 // pizzas doces
         $idCategoria = DB::table('categorias')->insertGetid([
-            'nome' => "Pizzas Doces Broto",
+            'nome' => "Pizzas Doces",
             'user_id' => $idTenant
         ]);
             $produto = DB::table('produtos')->insertGetid([
