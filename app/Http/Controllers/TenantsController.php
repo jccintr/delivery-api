@@ -195,4 +195,14 @@ class TenantsController extends Controller
           return response()->json($array,400);
         }
       }
+
+    public function changePassword(Request $request) {
+
+        $user = Auth::User();
+        $newPassword = $request->password;
+        $user->password = Hash::make($newPassword);
+        $user->save();
+        $array['sucesso'] = "Senha alterada com sucesso.";
+        return response()->json($array,200);
+    }
 }
