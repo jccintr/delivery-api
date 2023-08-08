@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
             $table->timestamps();
         });
     }
