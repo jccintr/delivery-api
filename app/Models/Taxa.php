@@ -9,7 +9,7 @@ class Taxa extends Model
 {
     use HasFactory;
     protected $table = 'taxas';
-    protected $fillable = ['user_id','bairro','valor'];
+    protected $fillable = ['user_id','bairro','valor','ativo'];
 
     protected $hidden = [
         'created_at',

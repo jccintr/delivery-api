@@ -9,7 +9,7 @@ class Pagamento extends Model
 {
     use HasFactory;
     protected $table = 'pagamentos';
-    protected $fillable = ['user_id','nome'];
+    protected $fillable = ['user_id','nome','ativo'];
 
     protected $hidden = [
         'created_at',

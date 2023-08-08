@@ -83,7 +83,8 @@ class TaxasController extends Controller
         }
         $bairro = $request->bairro;
         $valor = $request->valor;
-        if (!$bairro or !$valor) {
+        $ativo = $request->ativo;
+        if (!$bairro or !$valor or !$ativo) {
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
@@ -99,6 +100,7 @@ class TaxasController extends Controller
         }
         $taxa->bairro = $bairro;
         $taxa->valor = $valor;
+        $taxa->ativo = $ativo;
         $taxa->save();
         return response()->json($taxa,200);
     }
