@@ -109,7 +109,7 @@ class TenantsController extends Controller
             return response()->json($array,400);
         }
 
-        $tenant['taxas'] = Taxa::where('user_id',$tenant->id)->get(); 
+        $tenant['taxas'] = Taxa::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['pagamentos'] = Pagamento::where('user_id',$tenant->id)->get(); 
         $tenant['horarios'] = Horario::where('user_id',$tenant->id)->get(); 
         $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
