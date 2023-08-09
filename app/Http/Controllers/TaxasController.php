@@ -84,7 +84,8 @@ class TaxasController extends Controller
         $bairro = $request->bairro;
         $valor = $request->valor;
         $ativo = $request->ativo;
-        if (!$bairro or !$valor or !$ativo) {
+        
+        if (!$bairro or !$valor ) {
             $array['erro'] = "Campos obrigatórios não informados.";
             return response()->json($array,400);
         }
