@@ -285,5 +285,41 @@ class PedidosController extends Controller
         return response()->json($resposta,200);
     }
 
-   
+   public function historico($ano,$mes) {
+
+    $pedidos = Pedido::where('user_id',Auth::User()->id)->whereYear('created_at',$ano)->whereMonth('created_at',$mes)->with('statusPedidoLog.statusPedido')->with('statusPedido')->with('itensPedido.produto')->orderBy('created_at','desc')->get();
+            
+    //dd($pedidos);
+    foreach($pedidos as $pedido):
+         $total = 0;
+         $pedido['data'] = date_format($pedido->created_at,"d/m/Y H:i");
+
+         foreach($pedido->statusPedidoLog as $statusPedido):
+            $statusPedido['data'] = date_format($statusPedido->created_at,"d/m-H:i");
+         endforeach;   
+         
+         foreach($pedido->itensPedido as $itemPedido):
+
+             if (strlen($itemPedido->obrigatorios)>0){
+                 $itemPedido['obrigatorios'] = explode(';',$itemPedido->obrigatorios);
+             } else {
+                 $itemPedido['obrigatorios'] = [];
+             }
+
+             if (strlen($itemPedido->adicionais)>0){
+                $itemPedido['adicionais'] = explode(';',$itemPedido->adicionais);
+            } else {
+                $itemPedido['adicionais'] = [];
+            }
+
+             $total += $itemPedido->total;
+             
+         endforeach;
+         $pedido['total'] = round($total,2);
+    endforeach;
+    
+    return response()->json($pedidos,200);
+    
+
+   }
 }
