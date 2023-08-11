@@ -264,7 +264,10 @@ class PedidosController extends Controller
         $recebidos = Pedido::where('user_id',Auth::User()->id)->count();
         $entregues = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',2)->count();
         $retirados = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',3)->count();
-        $pedidos   = Pedido::where('user_id',Auth::User()->id)->with('itensPedido')->get();
+        $pedidos   = Pedido::where('user_id',Auth::User()->id)
+                           ->where('status_pedido_id',2)
+                           ->where('status_pedido_id',3)
+                           ->with('itensPedido')->get();
 
         $total_pedidos = 0;
         foreach($pedidos as $pedido):
@@ -289,7 +292,7 @@ class PedidosController extends Controller
 
     $pedidos = Pedido::where('user_id',Auth::User()->id)->whereYear('created_at',$ano)->whereMonth('created_at',$mes)->with('statusPedidoLog.statusPedido')->with('statusPedido')->with('itensPedido.produto')->orderBy('created_at','desc')->get();
             
-    //dd($pedidos);
+    
     foreach($pedidos as $pedido):
          $total = 0;
          $pedido['data'] = date_format($pedido->created_at,"d/m/Y H:i");
