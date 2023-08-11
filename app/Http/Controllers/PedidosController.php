@@ -266,7 +266,7 @@ class PedidosController extends Controller
         $retirados = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',3)->count();
         $pedidos   = Pedido::where('user_id',Auth::User()->id)
                            ->where('status_pedido_id',2)
-                           ->where('status_pedido_id',3)
+                           ->orWhere('status_pedido_id',3)
                            ->with('itensPedido')->get();
 
         $total_pedidos = 0;
