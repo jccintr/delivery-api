@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('observacao')->nullable();
             $table->string('bairro')->nullable();
             $table->decimal('taxa_entrega', 5, 2)->default(0);
-            $table->string('forma_pagamento');
+            $table->decimal('desconto', 5, 2)->default(0);
+            $table->string('forma_pagamento')->nullable();
             $table->foreignIdFor(StatusPedido::class);
-            
             $table->timestamps();
         });
     }

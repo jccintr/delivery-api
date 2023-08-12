@@ -81,6 +81,7 @@ Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::get('/produtos/{id}',[ProdutosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'store']);
+Route::middleware('auth:sanctum')->post('/produtos/clone/{id}',[ProdutosController::class,'clone']);
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
 Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosController::class,'updateImagem']);
 

@@ -143,4 +143,38 @@ class ProdutosController extends Controller
     {
         //
     }
+
+    public function clone($id) {
+
+        $produto = Produto::find($id);
+
+        if (Auth::User()->id !== $produto->user_id) {
+            $array['erro'] = "Não Autorizado.";
+            return response()->json($array,401);
+        }
+
+        $newProduto = $produto->replicate();
+        $newProduto->nome = 'Cópia de '.$produto->nome;
+        $newProduto->imagem = null;
+        $newProduto->created_at = date("Y-m-d H:i:s"); //Carbon::now();
+        $newProduto->save();
+
+        $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
+        foreach($obrigatorios as $obrigatorio) {
+            $newObrigatorio = new ProdutoObrigatorio();
+            $newObrigatorio->produto_id = $newProduto->id;
+            $newObrigatorio->obrigatorio_id = $obrigatorio->obrigatorio_id;
+            $newObrigatorio->save();
+        }
+
+        $adicionais = ProdutoAdicional::where('produto_id',$produto->id)->get();
+        foreach($adicionais as $adicional) {
+            $newAdicional = new ProdutoAdicional();
+            $newAdicional->produto_id = $newProduto->id;
+            $newAdicional->adicional_id = $adicional->adicional_id;
+            $newAdicional->save();
+        }
+        
+        return response()->json($newProduto,201);
+    }
 }

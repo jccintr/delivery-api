@@ -27,15 +27,18 @@ return new class extends Migration
             // dados do tenant
             $table->string('telefone')->nullable();
             $table->boolean('ativo')->default(true);
-            $table->boolean('aberto')->default(true);
+            $table->boolean('aberto')->default(false);
             $table->string('logotipo')->nullable();
             $table->string('logradouro')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
+            $table->string('chave_pix')->nullable();
+            $table->string('favorecido_pix')->nullable();
             $table->string('cor_fundo')->nullable();
             $table->string('cor_texto')->nullable();
             $table->string('tempo_espera')->nullable();
+            $table->timestamp('opened_at')->nullable();
             $table->timestamps();
         });
     }
