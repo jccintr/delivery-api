@@ -17,7 +17,7 @@ class StatusSeeder extends Seeder
     {
 
         $status = [
-            ['descricao'=>'Pedido Recebido','descricao_curta'=>'Recebido','cor'=>'green'],
+            ['descricao'=>'Pedido Recebido','descricao_curta'=>'Novo','cor'=>'gold'],
             ['descricao'=>'Pedido Entregue','descricao_curta'=>'Entregue','cor'=>'green'],
             ['descricao'=>'Pedido Retirado','descricao_curta'=>'Retirado','cor'=>'green'],
 
