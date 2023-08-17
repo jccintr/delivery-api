@@ -1268,7 +1268,7 @@ class BrothersSeeder extends Seeder
                                 'categoria_id' => $idCategoria,
                                 'nome' => "Fanta Laranja 2L",
                                 'descricao' => 'Refrigerante Fanta Laranja 2 Litros',
-                                'preco' => 15.00,
+                                'preco' => 12.00,
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/fanta-laranja-2litros.png'
                             ]);
@@ -1415,7 +1415,7 @@ class BrothersSeeder extends Seeder
                                 'descricao' => 'Cerveja Original 600ml',
                                 'preco' => 12.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/'.$slug.'/produtos/original600.png'
+                                'imagem' => 'imagens/'.$slug.'/produtos/original600ml.png'
                             ]);
                             
         
