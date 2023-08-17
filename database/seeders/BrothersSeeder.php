@@ -39,23 +39,18 @@ class BrothersSeeder extends Seeder
                     ]);
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
-                        'bairro' => 'Alto da Glória',
-                        'valor' => 3.50
-                    ]);
-                    DB::table('taxas')->insert([
-                        'user_id' => $idTenant,
                         'bairro' => 'Horizonte Azul',
-                        'valor' => 4.00
+                        'valor' => 3.00
                     ]);
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
                         'bairro' => 'Frei Orestes',
-                        'valor' => 5.00
+                        'valor' => 3.00
                     ]);
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
                         'bairro' => 'São Francisco',
-                        'valor' => 5.00
+                        'valor' => 3.00
                     ]);
                     // pagamentos
                     DB::table('pagamentos')->insert([
@@ -87,12 +82,12 @@ class BrothersSeeder extends Seeder
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
                         'dia' => 1,
-                        'horario' => 'Fechado'
+                        'horario' => '19h as 23h'
                     ]);
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
                         'dia' => 2,
-                        'horario' => '19h as 23h'
+                        'horario' => 'Fechado'
                     ]);
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
@@ -119,6 +114,21 @@ class BrothersSeeder extends Seeder
                         'user_id' => $idTenant,
                         'nome' => 'Molho',
                         'opcoes' => 'Molho de Ervas;Molho Defumado;Molho Especial;Molho Barbacue;Sem Molho'
+                    ]);
+                    $tipo_refri_lata = DB::table('obrigatorios')->insertGetid([
+                        'user_id' => $idTenant,
+                        'nome' => 'Tipo refrigerante',
+                        'opcoes' => 'Coca-Cola;Coca-Cola Zero;Fanta Laranja;Fanta Uva;Guaraná Antárctica;Guaraná Antárctica Zero;Schweppes Citrus;Schweppes Tônica'
+                    ]);
+                    $tipo_refri_600 = DB::table('obrigatorios')->insertGetid([
+                        'user_id' => $idTenant,
+                        'nome' => 'Tipo regrigerante',
+                        'opcoes' => 'Coca-Cola;Coca-Cola Zero;Guaraná Antárctica;Guaraná Antárctica Zero'
+                    ]);
+                    $tipo_refri_1litro = DB::table('obrigatorios')->insertGetid([
+                        'user_id' => $idTenant,
+                        'nome' => 'Tipo regrigerante',
+                        'opcoes' => 'Coca-Cola;Guaraná Antárctica'
                     ]);
                      // adicionais
                     $pao_australiano = DB::table('adicionais')->insertGetid([
@@ -1249,28 +1259,165 @@ class BrothersSeeder extends Seeder
                                 'categoria_id' => $idCategoria,
                                 'nome' => "Coca-Cola 2L",
                                 'descricao' => 'Refrigerante Coca-cola 2 Litros',
-                                'preco' => 11.00,
+                                'preco' => 15.00,
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/cocacola2litros.jpeg'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
                                 'categoria_id' => $idCategoria,
-                                'nome' => "Coca-Cola Lata",
-                                'descricao' => 'Refrigerante Coca-cola Lata 350ml',
+                                'nome' => "Fanta Laranja 2L",
+                                'descricao' => 'Refrigerante Fanta Laranja 2 Litros',
+                                'preco' => 15.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/fanta-laranja-2litros.png'
+                            ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Refrigerante Lata",
+                                'descricao' => 'Refrigerante lata 350ml diversos sabores',
                                 'preco' => 5.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/'.$slug.'/produtos/cocacolalata.png'
+                                'imagem' => 'imagens/'.$slug.'/produtos/refri-lata-brothers.png'
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $tipo_refri_lata
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Refrigerante 600ml",
+                                'descricao' => 'Refrigerante 600ml diversos sabores',
+                                'preco' => 7.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/refri-600-brothers.png'
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $tipo_refri_600
+                                ]);    
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Refrigerante 1L",
+                                'descricao' => 'Refrigerante 1L diversos sabores',
+                                'preco' => 8.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/refri-1litro-brothers.png'
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $tipo_refri_1litro
+                                ]);    
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Energético Red Bull Lata",
+                                'descricao' => 'Bebida energética Red Bull Lata 250ml',
+                                'preco' => 12.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/red-bull.png'
+                            ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Água sem gás",
+                                'descricao' => 'Água sem gás 510ml',
+                                'preco' => 3.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/agua510ml.jpeg'
+                            ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Água com gás",
+                                'descricao' => 'Água com gás 510ml',
+                                'preco' => 3.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/aguagasosa510ml.jpeg'
+                            ]);
+                    $idCategoria = DB::table('categorias')->insertGetid([
+                        'nome' => "Cervejas",
+                        'user_id' => $idTenant
+                    ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Skol Lata",
+                                'descricao' => 'Cerveja Skol lata 350ml',
+                                'preco' => 5.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/skol-lata.jpeg'
                             ]);
                             DB::table('produtos')->insert([
                                 'user_id' => $idTenant,
                                 'categoria_id' => $idCategoria,
-                                'nome' => "Guaraná 2L",
-                                'descricao' => 'Refrigerante Guaraná Antarctica 2 Litros',
-                                'preco' => 11.00,
+                                'nome' => "Brahma Lata",
+                                'descricao' => 'Cerveja Brahma lata 350ml',
+                                'preco' => 5.00,
                                 'ativo' => true,
-                                'imagem' => 'imagens/'.$slug.'/produtos/guaranaantarctica2litros.jpeg'
+                                'imagem' => 'imagens/'.$slug.'/produtos/brahma-lata.jpeg'
                             ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Brahma Duplo Malte Lata",
+                                'descricao' => 'Cerveja Brahma Duplo Malte lata 350ml',
+                                'preco' => 6.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/duplo-malte.jpeg'
+                            ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Stella Long Neck",
+                                'descricao' => 'Cerveja Stella Long Neck',
+                                'preco' => 7.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/stella.png'
+                            ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Budweiser Long Neck",
+                                'descricao' => 'Cerveja Budweiser Long Neck',
+                                'preco' => 6.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/budweiser-ln.png'
+                            ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Corona Long Neck",
+                                'descricao' => 'Cerveja Corona Long Neck',
+                                'preco' => 8.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/corona.jpg'
+                            ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Spaten Long Neck",
+                                'descricao' => 'Cerveja Spaten Long Neck',
+                                'preco' => 7.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/spaten.png'
+                            ]);
+                            DB::table('produtos')->insert([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Original 600ml",
+                                'descricao' => 'Cerveja Original 600ml',
+                                'preco' => 12.00,
+                                'ativo' => true,
+                                'imagem' => 'imagens/'.$slug.'/produtos/original600.png'
+                            ]);
+                            
         
     }
 }
