@@ -26,6 +26,7 @@ class NoCaprichoSeeder extends Seeder
                 'telefone' => '35-99912-2008',
                 'logradouro' =>'Av. Cel. Francisco Braz,372',
                 'bairro' => 'Centro',
+                'cidade_id' => 1,
                 'cor_fundo' => '#000000',
                 'cor_texto' => '#ffdc14',
                 'tempo_espera' => '15 a 30min',

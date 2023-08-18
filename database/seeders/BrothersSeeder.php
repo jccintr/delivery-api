@@ -25,6 +25,7 @@ class BrothersSeeder extends Seeder
                 'telefone' => '35-98477-2578',
                 'logradouro' =>'Rua Benjamin Constant,50',
                 'bairro' => 'Tijuco Preto',
+                'cidade_id' => 1,
                 'cor_fundo' => '#23211f',
                 'cor_texto' => '#ffffff',
                 'tempo_espera' => '15 a 30min',

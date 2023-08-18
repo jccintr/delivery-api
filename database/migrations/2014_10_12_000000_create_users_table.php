@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Estado;
+use App\Models\Cidade;
 
 
 return new class extends Migration
@@ -14,6 +16,22 @@ return new class extends Migration
      */
     public function up()
     {
+
+
+        Schema::create('estados', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('sigla');
+            $table->timestamps();
+        });
+
+        Schema::create('cidades', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->foreignIdFor(Estado::class);
+            $table->timestamps();
+        });
+
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -31,7 +49,8 @@ return new class extends Migration
             $table->string('logotipo')->nullable();
             $table->string('logradouro')->nullable();
             $table->string('bairro')->nullable();
-            $table->string('cidade')->nullable();
+            $table->foreignIdFor(Cidade::class);
+            //$table->string('cidade')->nullable();
             $table->string('estado')->nullable();
             $table->string('chave_pix')->nullable();
             $table->string('favorecido_pix')->nullable();
@@ -50,6 +69,8 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('estados');
+        Schema::dropIfExists('cidades');
         Schema::dropIfExists('users');
     }
 };

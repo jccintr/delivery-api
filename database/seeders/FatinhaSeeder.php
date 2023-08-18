@@ -25,6 +25,7 @@ class FatinhaSeeder extends Seeder
             'telefone' => '35-99128-6258',
             'logradouro' =>'Av. Cel. Francisco Braz,35',
             'bairro' => 'Centro',
+            'cidade_id' => 1,
             'cor_fundo' => '#d6aa4b',
             'cor_texto' => '#723034',
             'tempo_espera' => '15 a 30min',

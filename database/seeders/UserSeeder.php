@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'name' => "Julio Cesar",
             'email' => "jccintr@gmail.com",
             'password' => Hash::make('zodiac'),
+            'cidade_id' => 1,
             'role' => 3
             //'logotipo' => 'imagens/logos/brothers.jpeg'
         ]);

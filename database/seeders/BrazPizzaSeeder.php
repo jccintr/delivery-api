@@ -25,6 +25,7 @@ class BrazPizzaSeeder extends Seeder
             'telefone' => '35-99128-6796',
             'logradouro' =>'Av. Dr. Pedro Rosas,377',
             'bairro' => 'Centro',
+            'cidade_id' => 1,
             'cor_fundo' => '#fcc73b',
             'cor_texto' => '#472f2b',
             'tempo_espera' => '30 a 45min',
