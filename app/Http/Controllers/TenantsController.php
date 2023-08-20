@@ -215,5 +215,14 @@ class TenantsController extends Controller
         return response()->json($array,200);
     }
 
+    public function changeColors(Request $request) {
+        $user = Auth::User();
+        $user->cor_fundo = $request->cor_fundo;
+        $user->cor_texto = $request->cor_texto;
+        $user->save();
+        $array['sucesso'] = "Cores alteradas com sucesso.";
+        return response()->json($array,200);
+    }
+
 
 }
