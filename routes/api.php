@@ -45,6 +45,7 @@ Route::middleware('auth:sanctum')->get('/tenant',[TenantsController::class,'inde
 Route::middleware('auth:sanctum')->post('/status',[TenantsController::class,'status']);
 Route::middleware('auth:sanctum')->post('/espera',[TenantsController::class,'updateEspera']);
 Route::middleware('auth:sanctum')->post('/changepassword',[TenantsController::class,'changePassword']);
+Route::middleware('auth:sanctum')->post('/changepix',[TenantsController::class,'changePix']);
 
 Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);
 Route::middleware('auth:sanctum')->get('/categorias/{id}',[CategoriasController::class,'show']);

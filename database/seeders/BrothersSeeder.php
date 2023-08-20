@@ -26,6 +26,8 @@ class BrothersSeeder extends Seeder
                 'logradouro' =>'Rua Benjamin Constant,50',
                 'bairro' => 'Tijuco Preto',
                 'cidade_id' => 1,
+                'chave_pix' => 'jccintr@gmail.com',
+                'favorecido_pix' => 'Julio Cesar',
                 'cor_fundo' => '#23211f',
                 'cor_texto' => '#ffffff',
                 'tempo_espera' => '15 a 30min',
@@ -118,17 +120,17 @@ class BrothersSeeder extends Seeder
                     ]);
                     $tipo_refri_lata = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo refrigerante',
+                        'nome' => 'Tipo refrigerante lata',
                         'opcoes' => 'Coca-Cola;Coca-Cola Zero;Fanta Laranja;Fanta Uva;Guaraná Antárctica;Guaraná Antárctica Zero;Schweppes Citrus;Schweppes Tônica'
                     ]);
                     $tipo_refri_600 = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo regrigerante',
+                        'nome' => 'Tipo refrigerante 600ml',
                         'opcoes' => 'Coca-Cola;Coca-Cola Zero;Guaraná Antárctica;Guaraná Antárctica Zero'
                     ]);
                     $tipo_refri_1litro = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo regrigerante',
+                        'nome' => 'Tipo refrigerante 1 litro',
                         'opcoes' => 'Coca-Cola;Guaraná Antárctica'
                     ]);
                      // adicionais

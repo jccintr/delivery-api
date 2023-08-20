@@ -26,6 +26,8 @@ class CorujaoSeeder extends Seeder
             'logradouro' =>'Av. Cel. Francisco Braz,34',
             'bairro' => 'Centro',
             'cidade_id' => 1,
+            'chave_pix' => 'jccintr@gmail.com',
+            'favorecido_pix' => 'Julio Cesar',
             'cor_fundo' => '#f6a426',
             'cor_texto' => '#ac3d43',
             'tempo_espera' => '15 a 30min',

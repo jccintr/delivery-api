@@ -26,6 +26,8 @@ class FatinhaSeeder extends Seeder
             'logradouro' =>'Av. Cel. Francisco Braz,35',
             'bairro' => 'Centro',
             'cidade_id' => 1,
+            'chave_pix' => 'jccintr@gmail.com',
+            'favorecido_pix' => 'Julio Cesar',
             'cor_fundo' => '#d6aa4b',
             'cor_texto' => '#723034',
             'tempo_espera' => '15 a 30min',

@@ -205,4 +205,15 @@ class TenantsController extends Controller
         $array['sucesso'] = "Senha alterada com sucesso.";
         return response()->json($array,200);
     }
+
+    public function changePix(Request $request) {
+        $user = Auth::User();
+        $user->chave_pix = $request->chave_pix;
+        $user->favorecido_pix = $request->favorecido_pix;
+        $user->save();
+        $array['sucesso'] = "Chave Pix alterada com sucesso.";
+        return response()->json($array,200);
+    }
+
+
 }
