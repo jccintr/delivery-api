@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             FatinhaSeeder::class,
             CorujaoSeeder::class,
             BrazPizzaSeeder::class,
+            NoCaprichoSeeder::class,
             UserSeeder::class,
             StatusSeeder::class
         ]);
