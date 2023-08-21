@@ -261,9 +261,9 @@ class PedidosController extends Controller
 
     public function resumo(){
 
-        $recebidos = Pedido::where('user_id',Auth::User()->id)->count();
-        $entregues = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',2)->count();
-        $retirados = Pedido::where('user_id',Auth::User()->id)->where('status_pedido_id',3)->count();
+        $recebidos = Pedido::where('user_id',Auth::User()->id)->Where('created_at','>',Auth::User()->opened_at)->count();
+        $entregues = Pedido::where('user_id',Auth::User()->id)->Where('created_at','>',Auth::User()->opened_at)->where('status_pedido_id',2)->count();
+        $retirados = Pedido::where('user_id',Auth::User()->id)->Where('created_at','>',Auth::User()->opened_at)->where('status_pedido_id',3)->count();
         $pedidos   = Pedido::where('user_id',Auth::User()->id)
                            ->where('status_pedido_id',2)
                            ->orWhere('status_pedido_id',3)
