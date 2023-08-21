@@ -226,7 +226,7 @@ class NoCaprichoSeeder extends Seeder
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
                         'nome' => "Hot Dog Especial",
-                        'descricao' => 'Pão, purê de batata, molho, salsicha,batata-palha, catchup e mostarda.',
+                        'descricao' => 'Pão, purê de batata, molho, salsicha, batata-palha, catchup e mostarda.',
                         'preco' => 8.00,
                         'ativo' => true,
                         'imagem' => 'imagens/'.$slug.'/produtos/hotdogespecial.png'
@@ -257,7 +257,7 @@ class NoCaprichoSeeder extends Seeder
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
                         'nome' => "Pizza Calabresa",
-                        'descricao' => 'Queijo, calabresa e cebola',
+                        'descricao' => 'Molho, queijo, calabresa e cebola',
                         'preco' => 35.00,
                         'ativo' => true,
                         'imagem' => 'imagens/'.$slug.'/produtos/pizza-calabresa.jpeg'
@@ -266,7 +266,7 @@ class NoCaprichoSeeder extends Seeder
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
                         'nome' => "Pizza Peperoni",
-                        'descricao' => 'Queijo, peperoni e cebola',
+                        'descricao' => 'Molho, queijo, peperoni e cebola',
                         'preco' => 35.00,
                         'ativo' => true,
                         'imagem' => 'imagens/'.$slug.'/produtos/pizza-peperoni.jpeg'
@@ -275,7 +275,7 @@ class NoCaprichoSeeder extends Seeder
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
                         'nome' => "Pizza Napolitana",
-                        'descricao' => 'Molho,Queijo, tomate e azeitona',
+                        'descricao' => 'Molho, queijo, tomate e azeitona',
                         'preco' => 35.00,
                         'ativo' => true,
                         'imagem' => 'imagens/'.$slug.'/produtos/pizza-napolitana.jpeg'
@@ -328,7 +328,7 @@ class NoCaprichoSeeder extends Seeder
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
                         'nome' => "Pudim Leite Condensado",
-                        'descricao' => 'Pudim de Leite Condensado calda.',
+                        'descricao' => 'Pudim de Leite Condensado com calda.',
                         'preco' => 10.00,
                         'ativo' => true,
                         'imagem' => 'imagens/'.$slug.'/produtos/pudim-leite.jpeg'
