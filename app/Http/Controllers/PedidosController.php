@@ -24,7 +24,7 @@ class PedidosController extends Controller
     public function index()
     {
       
-        $pedidos = Pedido::where('user_id',Auth::User()->id)->with('statusPedidoLog.statusPedido')->with('statusPedido')->with('itensPedido.produto')->orderBy('created_at','desc')->get();
+        $pedidos = Pedido::where('user_id',Auth::User()->id)->Where('created_at','>',Auth::User()->opened_at)->with('statusPedidoLog.statusPedido')->with('statusPedido')->with('itensPedido.produto')->orderBy('created_at','desc')->get();
             
         //dd($pedidos);
         foreach($pedidos as $pedido):

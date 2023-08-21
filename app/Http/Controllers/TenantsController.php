@@ -167,6 +167,9 @@ class TenantsController extends Controller
 
         $user = Auth::User();
         $user->aberto = !$user->aberto;
+        if ($user->aberto) {
+            $user->opened_at = now();
+        }
         $user->save();
         return response()->json($user,200);
 
