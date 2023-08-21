@@ -140,8 +140,8 @@ class PedidosController extends Controller
         ])->post('https://exp.host/--/api/v2/push/send',[
               'to' => $user->push_token,
               'sound'=> 'default',
-              'title'=> 'Novo Pedido BrazPed',
-              'body'=> 'Oba! Acabou de chegar um novo pedido no BrazPed.'
+              'title'=> 'Novo Pedido Delivroo !',
+              'body'=> 'Oba! Acabou de chegar um novo pedido para você. Bora atender mais um cliente !'
         ]);
 
        return response()->json($novoPedido,201);
