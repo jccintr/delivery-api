@@ -16,6 +16,7 @@ use App\Http\Controllers\ObrigatoriosController;
 use App\Http\Controllers\AdicionalController;
 use App\Http\Controllers\StatusPedidoController;
 use App\Http\Controllers\StatusPedidoLogController;
+use App\Models\Cidade;
 
 
 /*
@@ -30,6 +31,9 @@ use App\Http\Controllers\StatusPedidoLogController;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    $user = $request->user();
+    $cidade = Cidade::find($user->cidade_id);
+    $user->cidade = $cidade->nome;
     return $request->user();
 });
 
