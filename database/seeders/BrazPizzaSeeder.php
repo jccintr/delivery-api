@@ -107,7 +107,7 @@ class BrazPizzaSeeder extends Seeder
         ]);
         $refrigerante_lata = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. lata',
+            'nome' => 'Tipo ref. lata',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja;Fanta Uva'
         ]);
         $sukita_2l = DB::table('obrigatorios')->insertGetid([
@@ -117,7 +117,7 @@ class BrazPizzaSeeder extends Seeder
         ]);
         $fanta_2l = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Fanta 2L',
+            'nome' => 'Sabor Fanta 2L',
             'opcoes' => 'Sabor Laranja;Sabor Uva'
         ]);
         $suco_del_valle_1000ml = DB::table('obrigatorios')->insertGetid([

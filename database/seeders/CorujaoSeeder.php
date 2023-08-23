@@ -116,22 +116,22 @@ class CorujaoSeeder extends Seeder
         // Obrigatorios
         $refrigerante_200ml = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. 200ml',
+            'nome' => 'Tipo ref. 200ml',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica'
         ]);
         $refrigerante_lata = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. lata',
+            'nome' => 'Tipo ref. lata',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja;Fanta Uva'
         ]);
         $refrigerante_600ml = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. 600ml',
+            'nome' => 'Tipo ref. 600ml',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja;Fanta Uva'
         ]);
         $refrigerante_2l = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo Ref. 2L',
+            'nome' => 'Tipo ref. 2L',
             'opcoes' => 'Coca-Cola;Fanta Laranja;Fanta Uva'
         ]);
         $suco_del_valle_290ml = DB::table('obrigatorios')->insertGetid([

@@ -116,17 +116,17 @@ class FatinhaSeeder extends Seeder
         // Obrigatorios
         $refrigerante_lata = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo',
+            'nome' => 'Tipo ref. lata',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja;Fanta Uva'
         ]);
         $refrigerante_600ml = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo',
+            'nome' => 'Tipo ref. 600ml',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja;Fanta Uva'
         ]);
         $refrigerante_2l = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Tipo',
+            'nome' => 'Tipo ref. 2L',
             'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Laranja'
         ]);
         // adicionais

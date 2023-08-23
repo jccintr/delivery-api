@@ -120,17 +120,17 @@ class BrothersSeeder extends Seeder
                     ]);
                     $tipo_refri_lata = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo refrigerante lata',
+                        'nome' => 'Tipo ref. lata',
                         'opcoes' => 'Coca-Cola;Coca-Cola Zero;Fanta Laranja;Fanta Uva;Guaraná Antárctica;Guaraná Antárctica Zero;Schweppes Citrus;Schweppes Tônica'
                     ]);
                     $tipo_refri_600 = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo refrigerante 600ml',
+                        'nome' => 'Tipo refr. 600ml',
                         'opcoes' => 'Coca-Cola;Coca-Cola Zero;Guaraná Antárctica;Guaraná Antárctica Zero'
                     ]);
                     $tipo_refri_1litro = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo refrigerante 1 litro',
+                        'nome' => 'Tipo ref. 1 litro',
                         'opcoes' => 'Coca-Cola;Guaraná Antárctica'
                     ]);
                      // adicionais
