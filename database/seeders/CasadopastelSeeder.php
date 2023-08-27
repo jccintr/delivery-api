@@ -116,8 +116,8 @@ class CasadopastelSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "Pastél de Carne",
-                    'descricao' => 'Pastél de carne com batata.',
+                    'nome' => "Pastel de Carne",
+                    'descricao' => 'Pastel de carne com batata.',
                     'preco' => 6.00,
                     'ativo' => true,
                     'imagem' => 'imagens/'.$slug.'/produtos/pastel-carne.png'
@@ -125,8 +125,8 @@ class CasadopastelSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "Pastél de Queijo",
-                    'descricao' => 'Pastél de queijo mineiro e orégano.',
+                    'nome' => "Pastel de Queijo",
+                    'descricao' => 'Pastel de queijo mineiro e orégano.',
                     'preco' => 5.00,
                     'ativo' => true,
                     'imagem' => 'imagens/'.$slug.'/produtos/pastel-queijo.png'
@@ -134,8 +134,8 @@ class CasadopastelSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "Pastél de Pizza",
-                    'descricao' => 'Pastél de queijo mussarela, presunto e tomate.',
+                    'nome' => "Pastel de Pizza",
+                    'descricao' => 'Pastel de queijo mussarela, presunto e tomate.',
                     'preco' => 8.00,
                     'ativo' => true,
                     'imagem' => 'imagens/'.$slug.'/produtos/pastel-pizza.png'
@@ -143,8 +143,8 @@ class CasadopastelSeeder extends Seeder
                 $produto = DB::table('produtos')->insertGetid([
                     'user_id' => $idTenant,
                     'categoria_id' => $idCategoria,
-                    'nome' => "Pastél de Calabresa",
-                    'descricao' => 'Pastél de Calabresa com queijo',
+                    'nome' => "Pastel de Calabresa",
+                    'descricao' => 'Pastel de Calabresa com queijo',
                     'preco' => 6.00,
                     'ativo' => true,
                     'imagem' => 'imagens/'.$slug.'/produtos/pastel-calabresa.png'
