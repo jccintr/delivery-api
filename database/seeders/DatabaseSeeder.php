@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             CorujaoSeeder::class,
             BrazPizzaSeeder::class,
             NoCaprichoSeeder::class,
+            LucigasSeeder::class,
+            CasadopastelSeeder::class,
             UserSeeder::class,
             StatusSeeder::class
         ]);
