@@ -28,7 +28,7 @@ class CasadopastelSeeder extends Seeder
                 'bairro' => 'Centro',
                 'cidade_id' => 1,
                 'cor_fundo' => '#fdb813',
-                'cor_texto' => '#000000',
+                'cor_texto' => '#c41126',
                 'chave_pix' => 'jccintr@gmail.com',
                 'favorecido_pix' => 'Julio Cesar de Oliveira',
                 'tempo_espera' => '10 a 15min',
