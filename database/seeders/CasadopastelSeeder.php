@@ -33,6 +33,7 @@ class CasadopastelSeeder extends Seeder
                 'favorecido_pix' => 'Julio Cesar de Oliveira',
                 'tempo_espera' => '10 a 15min',
                 'slug' => $slug,
+                'aberto' => true,
                 'logotipo' => 'imagens/'.$slug.'/logo/casadopastel.png'
             ]);
              // taxas

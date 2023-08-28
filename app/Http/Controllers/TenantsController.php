@@ -62,7 +62,12 @@ class TenantsController extends Controller
             return response()->json(['erro'=>'Email já cadastrado.'],400);
         }
 
-        $logotipo_url = $logotipo->store('imagens/logos','public');
+        $user_slug = User::where('email', $request->email)->first();
+        if($user_slug) {
+            return response()->json(['erro'=>'Slug já cadastrado.'],400);
+        }
+
+        $logotipo_url = $logotipo->store('imagens/'.$slug.'/logo','public');
 
         $newUser = new User();
         $newUser->name = $name;
@@ -71,7 +76,7 @@ class TenantsController extends Controller
         $newUser->telefone = $telefone;
         $newUser->logradouro = $logradouro;
         $newUser->bairro = $bairro;
-        $newUser->cidade = $cidade;
+        $newUser->cidade_id = 1;
         $newUser->estado = $estado;
         $newUser->role = 2;
         $newUser->logotipo = $logotipo_url;

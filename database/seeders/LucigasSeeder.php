@@ -32,6 +32,7 @@ class LucigasSeeder extends Seeder
                 'favorecido_pix' => 'Julio Cesar de Oliveira',
                 'tempo_espera' => '15min',
                 'slug' => $slug,
+                'aberto' => true,
                 'logotipo' => 'imagens/'.$slug.'/logo/lucigas.png'
             ]);
              // taxas
