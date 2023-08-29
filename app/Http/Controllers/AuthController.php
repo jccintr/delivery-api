@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Cidade;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -29,7 +30,10 @@ class AuthController extends Controller
 
         $token = Auth::User()->createToken('teste');
         $loggedUser = Auth::User();
+        $cidade = Cidade::find(Auth::User()->cidade_id);
+        $loggedUser['cidade'] = $cidade->nome;
         $loggedUser['token'] = $token->plainTextToken;
+
         return response()->json($loggedUser,200);
           
       } else {
