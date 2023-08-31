@@ -93,6 +93,11 @@ class TenantsController extends Controller
                 'horario' => '19h as 23h'
             ]);
         }
+
+        Pagamento::create([
+            'user_id' => $newUser->id,
+            'nome' => 'Dinheiro'
+        ]);
       
 
         return response()->json($newUser,201);
