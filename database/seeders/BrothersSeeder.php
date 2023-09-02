@@ -72,10 +72,6 @@ class BrothersSeeder extends Seeder
                         'user_id' => $idTenant,
                         'nome' => 'Pix'
                     ]);
-                    DB::table('pagamentos')->insert([
-                        'user_id' => $idTenant,
-                        'nome' => 'PicPay'
-                    ]);
                     // horarios
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
@@ -116,7 +112,7 @@ class BrothersSeeder extends Seeder
                     $molho = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Molho',
-                        'opcoes' => 'Molho de Ervas;Molho Defumado;Molho Especial;Molho Barbacue;Sem Molho'
+                        'opcoes' => 'De Ervas;Defumado;Especial;Barbacue;Sem Molho'
                     ]);
                     $tipo_refri_lata = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
@@ -125,7 +121,7 @@ class BrothersSeeder extends Seeder
                     ]);
                     $tipo_refri_600 = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
-                        'nome' => 'Tipo refr. 600ml',
+                        'nome' => 'Tipo ref. 600ml',
                         'opcoes' => 'Coca-Cola;Coca-Cola Zero;Guaraná Antárctica;Guaraná Antárctica Zero'
                     ]);
                     $tipo_refri_1litro = DB::table('obrigatorios')->insertGetid([
