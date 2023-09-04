@@ -109,6 +109,11 @@ class BrothersSeeder extends Seeder
                         'horario' => '19h as 23h'
                     ]);
                     // Obrigatorios
+                    $pao = DB::table('obrigatorios')->insertGetid([
+                        'user_id' => $idTenant,
+                        'nome' => 'Pão',
+                        'opcoes' => 'Brioche;Australiano'
+                    ]);
                     $molho = DB::table('obrigatorios')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Molho',
@@ -130,11 +135,13 @@ class BrothersSeeder extends Seeder
                         'opcoes' => 'Coca-Cola;Guaraná Antárctica'
                     ]);
                      // adicionais
+                     /*
                     $pao_australiano = DB::table('adicionais')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Pão Australiano',
                         'valor' => 1.50
                     ]);
+                    */
                     $ovo = DB::table('adicionais')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Ovo',
@@ -242,10 +249,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -330,10 +334,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -418,10 +419,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                               
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -506,10 +504,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -592,10 +587,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -680,10 +672,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -757,20 +746,21 @@ class BrothersSeeder extends Seeder
                                 'user_id' => $idTenant,
                                 'categoria_id' => $idCategoria,
                                 'nome' => "Gorgon",
-                                'descricao' => 'Pão australiano, hambúrguer 180g, creme de gorgonzola, geleia de abacaxi com pimenta, bacon e molho.',
+                                'descricao' => 'Pão, hambúrguer 180g, creme de gorgonzola, geleia de abacaxi com pimenta, bacon e molho.',
                                 'preco' => 18.99,
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/gorgon.jpeg'
                             ]);
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
+                                    'obrigatorio_id' => $pao
+                                ]);
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -855,10 +845,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]); 
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -941,10 +928,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -1028,10 +1012,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -1115,10 +1096,7 @@ class BrothersSeeder extends Seeder
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                DB::table('produto_adicionais')->insert([
-                                    'produto_id' => $produto,
-                                    'adicional_id' => $pao_australiano
-                                ]);
+                                
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -1416,6 +1394,98 @@ class BrothersSeeder extends Seeder
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/original600ml.png'
                             ]);
+                    $idCategoria = DB::table('categorias')->insertGetid([
+                        'nome' => "Doces",
+                        'user_id' => $idTenant
+                    ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Laka",
+                            'descricao' => 'Chocolate Laka',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Diamante Negro",
+                            'descricao' => 'Chocolate Diamante Negro',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Prestígio",
+                            'descricao' => 'Chocolate Prestígio',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Kit Kat Preto",
+                            'descricao' => 'Chocolate Kit Kat Preto',
+                            'preco' => 4.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Kit Kat Branco",
+                            'descricao' => 'Chocolate Kit Kat Branco',
+                            'preco' => 4.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Charge",
+                            'descricao' => 'Chocolate Charge',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Suflair",
+                            'descricao' => 'Chocolate Suflair',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Halls Morango",
+                            'descricao' => 'Drops Halls sabor morango',
+                            'preco' => 2.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Halls Uva Verde",
+                            'descricao' => 'Drops Halls sabor uva verde',
+                            'preco' => 2.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Trident Menta",
+                            'descricao' => 'Goma de mascar Trident sabor menta',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Trident Morango",
+                            'descricao' => 'Goma de mascar Trident sabor morango',
+                            'preco' => 3.00,
+                            'ativo' => true
+                        ]);
                             
         
     }

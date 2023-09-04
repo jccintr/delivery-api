@@ -19,7 +19,7 @@ class FatinhaSeeder extends Seeder
         $slug = 'fatinhalanches';
         $idTenant = DB::table('users')->insertGetid([
             'name' => "Fatinha Lanches",
-            'email' => "fatinha@gmail.com",
+            'email' => "elizettemorais@hotmail.com",
             'password' => Hash::make('123'),
             'role' => 2,
             'telefone' => '35-99128-6258',
