@@ -271,11 +271,14 @@ class PedidosController extends Controller
         foreach($pedidos as $pedido):
             $total = 0;
             $total_pedido = 0;
-            foreach($pedido->itensPedido as $itemPedido):
-                $total += $itemPedido->total;
-            endforeach;
-            $total_pedido = $total + $pedido->taxa_entrega;
-            $total_pedidos = $total_pedidos + $total_pedido;
+            if($pedido->status_pedido_id === 2 or $pedido->status_pedido_id===3) {
+                foreach($pedido->itensPedido as $itemPedido):
+                    $total += $itemPedido->total;
+                endforeach;
+                $total_pedido = $total + $pedido->taxa_entrega;
+                $total_pedidos = $total_pedidos + $total_pedido;
+            }
+            
        endforeach;
 
         $resposta['recebidos'] = $recebidos;
