@@ -38,8 +38,53 @@ class BrothersSeeder extends Seeder
                     // taxas
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
+                        'bairro' => 'Alto da Glória',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Alvorada',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Aparecida',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Avenida',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Can-Can',
+                        'valor' => 5.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
                         'bairro' => 'Centro',
                         'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Estação',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Estação Dias',
+                        'valor' => 10.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Ferroviários',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Frei Orestes',
+                        'valor' => 5.00
                     ]);
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
@@ -48,7 +93,22 @@ class BrothersSeeder extends Seeder
                     ]);
                     DB::table('taxas')->insert([
                         'user_id' => $idTenant,
-                        'bairro' => 'Frei Orestes',
+                        'bairro' => 'Loba',
+                        'valor' => 5.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'N. S. Aparecida',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Parque de Exposições',
+                        'valor' => 6.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Rodovia',
                         'valor' => 3.00
                     ]);
                     DB::table('taxas')->insert([
@@ -56,6 +116,28 @@ class BrothersSeeder extends Seeder
                         'bairro' => 'São Francisco',
                         'valor' => 3.00
                     ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'São Gabriel',
+                        'valor' => 10.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Serra dos Mendonça',
+                        'valor' => 12.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Tijuco Preto',
+                        'valor' => 3.00
+                    ]);
+                    DB::table('taxas')->insert([
+                        'user_id' => $idTenant,
+                        'bairro' => 'Vargem Grande',
+                        'valor' => 3.00
+                    ]);
+                    
+                    //fim das taxas
                     // pagamentos
                     DB::table('pagamentos')->insert([
                         'user_id' => $idTenant,
