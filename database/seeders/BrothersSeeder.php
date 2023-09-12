@@ -86,7 +86,7 @@ class BrothersSeeder extends Seeder
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
                         'dia' => 2,
-                        'horario' => 'Fechado'
+                        'horario' => '19h as 23h'
                     ]);
                     DB::table('horarios')->insert([
                         'user_id' => $idTenant,
@@ -135,13 +135,12 @@ class BrothersSeeder extends Seeder
                         'opcoes' => 'Coca-Cola;Guaraná Antárctica'
                     ]);
                      // adicionais
-                     /*
+                     
                     $pao_australiano = DB::table('adicionais')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Pão Australiano',
                         'valor' => 1.50
                     ]);
-                    */
                     $ovo = DB::table('adicionais')->insertGetid([
                         'user_id' => $idTenant,
                         'nome' => 'Ovo',
@@ -244,12 +243,16 @@ class BrothersSeeder extends Seeder
                                 'imagem' => 'imagens/'.$slug.'/produtos/burguer.jpeg'
                             ]);
                                 // ProdutoObrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -329,12 +332,16 @@ class BrothersSeeder extends Seeder
                                 'imagem' => 'imagens/'.$slug.'/produtos/salada.jpeg'
                             ]);
                                 // ProdutoObrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -414,12 +421,16 @@ class BrothersSeeder extends Seeder
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/cheddar.jpeg'
                             ]);
+                               
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                               
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -499,12 +510,16 @@ class BrothersSeeder extends Seeder
                                 
                             ]);
                                 // ProdutoObrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -582,12 +597,17 @@ class BrothersSeeder extends Seeder
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/cream.jpeg'
                             ]);
+                                // obrigatorios
+                               
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -667,12 +687,16 @@ class BrothersSeeder extends Seeder
                                 
                             ]);
                                 // ProdutoObrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -840,12 +864,16 @@ class BrothersSeeder extends Seeder
                                 
                             ]);
                                 // ProdutoObrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]); 
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -923,12 +951,17 @@ class BrothersSeeder extends Seeder
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/smash.jpeg'
                             ]);
+                                // obrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -1007,12 +1040,17 @@ class BrothersSeeder extends Seeder
                                 'ativo' => true,
                                 'imagem' => 'imagens/'.$slug.'/produtos/triplosmash.jpeg'
                             ]);
+                                // obrigatorios
+                                
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo
@@ -1091,12 +1129,17 @@ class BrothersSeeder extends Seeder
                                 'imagem' => 'imagens/'.$slug.'/produtos/crispy.jpeg'
                                 
                             ]);
+                                // obrigatorios
+                               
                                 DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
                                 // ProdutoAdicional
-                                
+                                DB::table('produto_adicionais')->insert([
+                                    'produto_id' => $produto,
+                                    'adicional_id' => $pao_australiano
+                                ]);
                                 DB::table('produto_adicionais')->insert([
                                     'produto_id' => $produto,
                                     'adicional_id' => $ovo

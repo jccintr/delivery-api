@@ -200,7 +200,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Burguinho",
                 'descricao' => 'Pão, hambúrguer, milho e batata-palha.',
-                'preco' => 6.00,
+                'preco' => 8.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -251,7 +251,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Salada",
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, salada, milho e batata-palha.',
-                'preco' => 12.00,
+                'preco' => 14.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-xsalada.jpeg'
             ]);
@@ -302,7 +302,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Egg",
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, ovo, milho, salada e batata-palha.',
-                'preco' => 13.00,
+                'preco' => 15.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -352,7 +352,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Crock",
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, bacon, ovo, tomate, catupiry, milho e batata-palha.',
-                'preco' => 16.00,
+                'preco' => 18.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-crock.jpeg'
             ]);
@@ -403,7 +403,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Rango",
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, bacon, ovo, milho e batata-palha.',
-                'preco' => 15.00,
+                'preco' => 17.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-rango.jpeg'
             ]);
@@ -454,7 +454,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Calabresa",
                 'descricao' => 'Pão, hambúrguer, queijo, presunto, calabresa, milho, salada e batata-palha.',
-                'preco' => 14.00,
+                'preco' => 16.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -554,7 +554,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Bacon",
                 'descricao' => 'Pão, hambúrguer, bacon, queijo, presunto, alface, milho, tomate e batata-palha.',
-                'preco' => 15.00,
+                'preco' => 17.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-xbacon.jpeg'
             ]);
@@ -655,7 +655,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Frango Egg",
                 'descricao' => 'Pão, frango, queijo, ovo, bacon, milho e batata-palha',
-                'preco' => 14.00,
+                'preco' => 17.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -705,7 +705,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Americano c/ Bacon",
                 'descricao' => 'Pão, presunto, queijo, ovo, bacon, tomate e batata-palha.',
-                'preco' => 13.00,
+                'preco' => 14.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -755,7 +755,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Tudo",
                 'descricao' => 'Pão, hambúrguer, bacon, calabresa, ovo, alface, tomate, presunto, queijo, milho e batata-palha.',
-                'preco' => 18.00,
+                'preco' => 20.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-xtudo.jpeg'
             ]);
@@ -806,7 +806,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Vegetariano",
                 'descricao' => 'Pão, alface, tomate, milho, ovo, queijo e batata-palha.',
-                'preco' => 8.00,
+                'preco' => 10.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -856,7 +856,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Big Burguer",
                 'descricao' => 'Pão, 2 hambúrgueres, queijo, presunto, milho e batata-palha.',
-                'preco' => 12.00,
+                'preco' => 14.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-bigburguer.jpeg'
             ]);
@@ -907,7 +907,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Americano",
                 'descricao' => 'Pão, Presunto, Queijo, Ovo, Tomate e Batata Palha.',
-                'preco' => 11.00,
+                'preco' => 12.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -957,7 +957,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Misto c/ Bacon",
                 'descricao' => 'Pão, presunto, queijo, tomate, bacon, milho e batata-palha.',
-                'preco' => 11.00,
+                'preco' => 13.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -1007,7 +1007,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Mistão",
                 'descricao' => 'Pão, presunto, queijo, tomate, orégano, milho e batata-palha.',
-                'preco' => 10.00,
+                'preco' => 12.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -1057,7 +1057,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Bauru",
                 'descricao' => 'Pão, presunto, queijo e tomate.',
-                'preco' => 9.00,
+                'preco' => 10.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -1107,7 +1107,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "X-Burguer",
                 'descricao' => 'Pão, hambúrguer, presunto, queijo, milho e batata-palha',
-                'preco' => 9.00,
+                'preco' => 11.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -1157,7 +1157,7 @@ class CorujaoSeeder extends Seeder
                 'categoria_id' => $idCategoria,
                 'nome' => "Saladinha",
                 'descricao' => 'Pão, hambúrguer, salada e queijo',
-                'preco' => 7.00,
+                'preco' => 9.00,
                 'ativo' => true
             ]);
                 // ProdutoAdicional
@@ -1210,38 +1210,81 @@ class CorujaoSeeder extends Seeder
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
-                'nome' => "Espaguete À Moda",
-                'descricao' => 'Macarrão, bacon, calabresa, alho, cebolinha e queijo ralado.',
-                'preco' => 15.00,
-                'ativo' => true
-            ]);
-            $produto = DB::table('produtos')->insertGetid([
-                'user_id' => $idTenant,
-                'categoria_id' => $idCategoria,
-                'nome' => "Espaguete Filé de Frango",
-                'descricao' => 'Macarrão, filé de frango, alho, cebola, cebolinha e queijo ralado.',
-                'preco' => 15.00,
-                'ativo' => true
-            ]);
-            $produto = DB::table('produtos')->insertGetid([
-                'user_id' => $idTenant,
-                'categoria_id' => $idCategoria,
-                'nome' => "Espaguete À Bolonhesa",
-                'descricao' => 'Macarrão, carne moída, molho, alho, cebola, cebolinha e queijo ralado.',
+                'nome' => "Macarrão à Moda",
+                'descricao' => 'Macarrão espaguete, bacon, calabresa, alho, cebolinha e queijo ralado.',
                 'preco' => 16.00,
+                'ativo' => true
+            ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Macarrão com Frango",
+                'descricao' => 'Macarrão espaguete, filé de frango, alho, cebola, cebolinha e queijo ralado.',
+                'preco' => 16.00,
+                'ativo' => true
+            ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Macarrão à Bolonhesa",
+                'descricao' => 'Macarrão espaguete, carne moída, molho, alho, cebola, cebolinha e queijo ralado.',
+                'preco' => 17.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-bolonhesa.jpeg'
             ]);
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
-                'nome' => "Espaguete À Mineira",
-                'descricao' => 'Macarrão, linguiça de porco, tomate, cebola, mussarela, alho, cebolinha e queijo ralado.',
-                'preco' => 16.00,
+                'nome' => "Macarrão à Mineira",
+                'descricao' => 'Macarrão espaguete, linguiça de porco, tomate, cebola, mussarela, alho, cebolinha e queijo ralado.',
+                'preco' => 17.00,
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-amineira.jpeg'
             ]);
-          
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Macarrão ao Molho Branco com Brócolis",
+                'descricao' => 'Macarrão espaguete, alho, cebola, cebolinha, brócolis e queijo mussarela ralado.',
+                'preco' => 17.00,
+                'ativo' => true
+            ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Macarrão ao Molho Branco com Bacon",
+                'descricao' => 'Macarrão espaguete, alho, cebola, cebolinha, bacon e queijo mussarela ralado.',
+                'preco' => 16.00,
+                'ativo' => true
+            ]);
+        $idCategoria = DB::table('categorias')->insertGetid([
+            'nome' => "Cachorro Quente",
+            'user_id' => $idTenant
+        ]);  
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Cachorro Quente Simples",
+                'descricao' => 'Pão, 1 salsicha, molho de tomate, purê de batata, milho e batata palha.',
+                'preco' => 10.00,
+                'ativo' => true
+            ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Cachorro Quente Completo",
+                'descricao' => 'Pão, 1 salsicha, molho de tomate, purê de batata, bacon, queijo mussarela, milho e batata palha.',
+                'preco' => 13.00,
+                'ativo' => true
+            ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Cachorro Quente Especial",
+                'descricao' => 'Pão, 2 salsichas, molho de tomate, purê de batata, bacon, queijo mussarela, presunto, 1 ovo, milho e batata palha.',
+                'preco' => 16.00,
+                'ativo' => true
+            ]);
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Bebidas",
             'user_id' => $idTenant
