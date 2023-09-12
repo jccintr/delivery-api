@@ -469,6 +469,138 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                $idCategoria = DB::table('categorias')->insertGetid([
+                    'nome' => "Porções",
+                    'user_id' => $idTenant
+                ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Anél de Cebola",
+                        'descricao' => 'Porção de Anéis de Cebola.',
+                        'preco' => 28.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Batata frita Simples",
+                        'descricao' => 'Porção de Batatas fritas.',
+                        'preco' => 18.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Batata frita com Queijo e Bacon",
+                        'descricao' => 'Porção de Batatas fritas com queijo e bacon.',
+                        'preco' => 25.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Bolinho Mineiro",
+                        'descricao' => 'Porção de Bolinho Mineiro.',
+                        'preco' => 22.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa",
+                        'descricao' => 'Porção de Calabresa com Cebola.',
+                        'preco' => 20.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Contre Filé",
+                        'descricao' => 'Porção de Contra Filé Acebolado.',
+                        'preco' => 45.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Contra Filé com Fritas",
+                        'descricao' => 'Porção de Contra Filé com Fritas.',
+                        'preco' => 65.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Filé de Tilápia",
+                        'descricao' => 'Porção Filé de Tilápia.',
+                        'preco' => 45.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frango à Passarinho",
+                        'descricao' => 'Porção de Frango à Passarinho.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frango Empanado",
+                        'descricao' => 'Porção de Frango Empanado.',
+                        'preco' => 32.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frios",
+                        'descricao' => 'Porção de Frios.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Linguiça Toscana",
+                        'descricao' => 'Porção de Linguiça Toscana.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Pastél de Milho",
+                        'descricao' => 'Porção de Pastél de Milho.',
+                        'preco' => 22.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Provolone à Milanesa",
+                        'descricao' => 'Porção de Provolone à Milanesa.',
+                        'preco' => 45.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Salame",
+                        'descricao' => 'Porção de Salame fatiado.',
+                        'preco' => 25.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Torresmo",
+                        'descricao' => 'Porção de Torresmo.',
+                        'preco' => 28.00,
+                        'ativo' => true
+                    ]);
 
 
     }
