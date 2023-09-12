@@ -32,6 +32,7 @@ class CorujaoSeeder extends Seeder
             'cor_texto' => '#ac3d43',
             'tempo_espera' => '15 a 30min',
             'slug' => $slug,
+            'aberto' => true,
             'logotipo' => 'imagens/'.$slug.'/logo/corujao.png'
         ]);
          // taxas
@@ -40,26 +41,7 @@ class CorujaoSeeder extends Seeder
             'bairro' => 'Centro',
             'valor' => 3.00
         ]);
-        DB::table('taxas')->insert([
-            'user_id' => $idTenant,
-            'bairro' => 'Alto da Glória',
-            'valor' => 3.50
-        ]);
-        DB::table('taxas')->insert([
-            'user_id' => $idTenant,
-            'bairro' => 'Horizonte Azul',
-            'valor' => 4.00
-        ]);
-        DB::table('taxas')->insert([
-            'user_id' => $idTenant,
-            'bairro' => 'Frei Orestes',
-            'valor' => 5.00
-        ]);
-        DB::table('taxas')->insert([
-            'user_id' => $idTenant,
-            'bairro' => 'São Francisco',
-            'valor' => 5.00
-        ]);
+        
         // pagamentos
         DB::table('pagamentos')->insert([
             'user_id' => $idTenant,
@@ -143,11 +125,11 @@ class CorujaoSeeder extends Seeder
         $hamburguer = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Hambúrguer',
-            'valor' => 2.00
+            'valor' => 3.00
         ]);
         $queijo = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Queijo',
+            'nome' => 'Mussarela',
             'valor' => 2.00
         ]);
         $presunto = DB::table('adicionais')->insertGetid([
@@ -163,32 +145,87 @@ class CorujaoSeeder extends Seeder
         $bacon = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Bacon',
-            'valor' => 2.00
+            'valor' => 4.00
         ]);
         $calabresa = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Calabresa',
-            'valor' => 2.00
+            'valor' => 4.00
         ]);
         $tomate = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Tomate',
-            'valor' => 1.00
+            'valor' => 2.00
         ]);
         $alface = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Alface',
             'valor' => 1.00
         ]);
-        $salada = DB::table('adicionais')->insertGetid([
+        $linguica = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Salada',
-            'valor' => 2.00
+            'nome' => 'Linguiça',
+            'valor' => 4.00
         ]);
         $frango = DB::table('adicionais')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Frango',
+            'valor' => 4.00
+        ]);
+        $milho = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Milho',
+            'valor' => 2.00
+        ]);
+        $salsicha = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Salsicha',
             'valor' => 3.00
+        ]);
+        $cheddar = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Cheddar',
+            'valor' => 2.00
+        ]);
+        $queijo_ralado = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Queijo Ralado',
+            'valor' => 2.00
+        ]);
+        $oregano = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Orégano',
+            'valor' => 1.00
+        ]);
+        $molho_branco = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Molho Branco',
+            'valor' => 4.00
+        ]);
+        $catupiry = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Catupiry',
+            'valor' => 2.00
+        ]);
+        $cebolinha = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Cebolinha',
+            'valor' => 1.00
+        ]);
+        $cebola = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Cebola',
+            'valor' => 2.00
+        ]);
+        $carne_moida = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Carne Moída com molho',
+            'valor' => 4.00
+        ]);
+        $batata_palha = DB::table('adicionais')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Batata Palha',
+            'valor' => 2.00
         ]);
         // categorias
         $idCategoria = DB::table('categorias')->insertGetid([
@@ -214,6 +251,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -238,13 +279,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-                
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -266,6 +347,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -290,12 +375,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -316,6 +442,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -340,12 +470,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -367,6 +538,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -391,13 +566,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -418,6 +633,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -442,13 +661,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -468,6 +727,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -492,12 +755,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -507,47 +811,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 14.00,
                 'ativo' => true
             ]);
-                // ProdutoAdicional
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $hamburguer
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $queijo
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $presunto
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $ovo
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $bacon
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $calabresa
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $tomate
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $alface
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $salada
-                ]);
-                DB::table('produto_adicionais')->insert([
-                    'produto_id' => $produto,
-                    'adicional_id' => $frango
-                ]);
+               // ProdutoAdicional
+               DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -569,6 +918,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -593,13 +946,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -619,6 +1012,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -643,13 +1040,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -669,6 +1106,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -693,13 +1134,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -719,6 +1200,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -743,13 +1228,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -770,6 +1295,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -794,12 +1323,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -820,6 +1390,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -844,12 +1418,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -871,6 +1486,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -895,12 +1514,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -921,6 +1581,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -945,12 +1609,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -971,6 +1676,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -995,12 +1704,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -1021,6 +1771,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -1045,13 +1799,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
-
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1071,6 +1865,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -1095,12 +1893,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -1121,6 +1960,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -1145,12 +1988,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
 
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
@@ -1171,6 +2055,10 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
                     'adicional_id' => $presunto
                 ]);
                 DB::table('produto_adicionais')->insert([
@@ -1195,12 +2083,53 @@ class CorujaoSeeder extends Seeder
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
-                    'adicional_id' => $salada
+                    'adicional_id' => $linguica
                 ]);
                 DB::table('produto_adicionais')->insert([
                     'produto_id' => $produto,
                     'adicional_id' => $frango
                 ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             
 
         $idCategoria = DB::table('categorias')->insertGetid([
@@ -1215,6 +2144,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1223,6 +2238,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1232,6 +2333,92 @@ class CorujaoSeeder extends Seeder
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-bolonhesa.jpeg'
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1241,6 +2428,92 @@ class CorujaoSeeder extends Seeder
                 'ativo' => true,
                 'imagem' => 'imagens/'.$slug.'/produtos/corujao-espaguete-amineira.jpeg'
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1249,6 +2522,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 17.00,
                 'ativo' => true
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1257,6 +2616,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+            // ProdutoAdicional
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $hamburguer
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $queijo_ralado
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $presunto
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $ovo
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $bacon
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $calabresa
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $tomate
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $alface
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $linguica
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $frango
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebola
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cebolinha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $milho
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $batata_palha
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $molho_branco
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $carne_moida
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $catupiry
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $cheddar
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $oregano
+            ]);
+            DB::table('produto_adicionais')->insert([
+                'produto_id' => $produto,
+                'adicional_id' => $salsicha
+            ]);
+            // fim produto adicional
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Cachorro Quente",
             'user_id' => $idTenant
@@ -1269,6 +2714,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 10.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $tomate
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $alface
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $linguica
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1277,6 +2808,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 13.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $tomate
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $alface
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $linguica
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
             $produto = DB::table('produtos')->insertGetid([
                 'user_id' => $idTenant,
                 'categoria_id' => $idCategoria,
@@ -1285,6 +2902,92 @@ class CorujaoSeeder extends Seeder
                 'preco' => 16.00,
                 'ativo' => true
             ]);
+                // ProdutoAdicional
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $hamburguer
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $queijo_ralado
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $presunto
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $ovo
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $bacon
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $calabresa
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $tomate
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $alface
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $linguica
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $frango
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebola
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cebolinha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $milho
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $batata_palha
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $molho_branco
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $carne_moida
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $catupiry
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $cheddar
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $oregano
+                ]);
+                DB::table('produto_adicionais')->insert([
+                    'produto_id' => $produto,
+                    'adicional_id' => $salsicha
+                ]);
+                // fim produto adicional
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Bebidas",
             'user_id' => $idTenant

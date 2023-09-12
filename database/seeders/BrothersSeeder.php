@@ -32,6 +32,7 @@ class BrothersSeeder extends Seeder
                 'cor_texto' => '#ffffff',
                 'tempo_espera' => '15 a 30min',
                 'slug' => $slug,
+                'aberto' => true,
                 'logotipo' => 'imagens/'.$slug.'/logo/brothers.jpeg'
             ]);
                     // taxas
