@@ -123,7 +123,7 @@ class CorujaoSeeder extends Seeder
         ]);
         DB::table('taxas')->insert([
             'user_id' => $idTenant,
-            'bairro' => 'Boa Vitória (até no final)',
+            'bairro' => 'Bom Sucesso (até no final)',
             'valor' => 20.00
         ]);
         DB::table('taxas')->insert([
@@ -266,7 +266,7 @@ class CorujaoSeeder extends Seeder
             'bairro' => 'Vargem Grande',
             'valor' => 2.00
         ]);
-
+        // fim das taxas
         
         // pagamentos
         DB::table('pagamentos')->insert([
