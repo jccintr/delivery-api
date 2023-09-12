@@ -19,11 +19,11 @@ class BrothersSeeder extends Seeder
             $slug = 'brothersburger';
             $idTenant = DB::table('users')->insertGetid([
                 'name' => "Brothers Burger",
-                'email' => "brothers@gmail.com",
-                'password' => Hash::make('123'),
+                'email' => "romuloreno@outlook.com",
+                'password' => Hash::make('delivroo123'),
                 'role' => 2,
                 'telefone' => '35-98477-2578',
-                'logradouro' =>'Rua Benjamin Constant,50',
+                'logradouro' =>'Rua Benjamin Constant,55',
                 'bairro' => 'Tijuco Preto',
                 'cidade_id' => 1,
                 //'chave_pix' => 'jccintr@gmail.com',

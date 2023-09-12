@@ -15,17 +15,24 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            // rodar esses seeder apenas uma vez
             EstadosSeeder::class,
-            BrothersSeeder::class,
-            VillasSeeder::class,
-            FatinhaSeeder::class,
-            CorujaoSeeder::class,
-            BrazPizzaSeeder::class,
+            UserSeeder::class,
+            StatusSeeder::class,
+
+            // lojas exemplo
             NoCaprichoSeeder::class,
             LucigasSeeder::class,
             CasadopastelSeeder::class,
-            UserSeeder::class,
-            StatusSeeder::class
+            //fim lojas exemplo
+
+            //BrothersSeeder::class,
+            //VillasSeeder::class,
+            //FatinhaSeeder::class,
+            //CorujaoSeeder::class,
+            //BrazPizzaSeeder::class,
+            
+            
         ]);
     }
 }
