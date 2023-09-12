@@ -1115,6 +1115,14 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
+                        'nome' => "Grega",
+                        'descricao' => 'Molho, mussarela, lombo, palmito, cebola e orégano.',
+                        'preco' => 45.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
                         'nome' => "Italiana",
                         'descricao' => 'Molho, mussarela, presunto, cebola, milho, ervilha e orégano.',
                         'preco' => 45.00,
@@ -1133,6 +1141,14 @@ class VillasSeeder extends Seeder
                         'categoria_id' => $idCategoria,
                         'nome' => "Lombo com Catupiry",
                         'descricao' => 'Molho, mussarela, lombo, catupiry e orégano.',
+                        'preco' => 45.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Lombo com Champignon",
+                        'descricao' => 'Molho, mussarela, lombo, champignon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
@@ -1441,6 +1457,540 @@ class VillasSeeder extends Seeder
                         'ativo' => true
                     ]);
                     // FIM PIZZAS GRANDES
+                    // INICIO PIZZAS BROTO    
+                $idCategoria = DB::table('categorias')->insertGetid([
+                    'nome' => "Pizzas Broto",
+                    'user_id' => $idTenant
+                ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Alho e Óleo",
+                        'descricao' => 'Molho, mussarela, alho, óleo e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Americana",
+                        'descricao' => 'Molho, mussarela, ovo, bacon, milho e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "À Moda da Casa",
+                        'descricao' => 'Molho, mussarela, calabresa, bacon, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Atum",
+                        'descricao' => 'Molho, mussarela, atum, cebola, azeitona, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Bacon",
+                        'descricao' => 'Molho, mussarela, bacon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Batata",
+                        'descricao' => 'Molho, mussarela, frango, batata palha, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Brócolis",
+                        'descricao' => 'Molho, mussarela, brócolis, azeitona e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Caipira",
+                        'descricao' => 'Molho, mussarela, frango, milho e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa",
+                        'descricao' => 'Molho, mussarela, calabresa, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa com Catupiry",
+                        'descricao' => 'Molho, mussarela, calabresa, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa com Cheddar",
+                        'descricao' => 'Molho, mussarela, calabresa, cheddar e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa com Cebola Roxa",
+                        'descricao' => 'Molho, mussarela, calabresa, cebola roxa e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Calabresa Mineira",
+                        'descricao' => 'Molho, mussarela, calabresa, milho, bacon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Carioca (Brasileira)",
+                        'descricao' => 'Molho, mussarela, atum, parmesão, cebola, pimentão, cheiro verde e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Cinco Queijos",
+                        'descricao' => 'Molho, mussarela, provolone, parmesão, gorgonzola, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Champignon",
+                        'descricao' => 'Molho, mussarela, bacon, champignon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Crock",
+                        'descricao' => 'Molho, mussarela, presunto, bacon, champignon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Fazendeira",
+                        'descricao' => 'Molho, mussarela, frango, milho, bacon, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Francesa",
+                        'descricao' => 'Molho, mussarela, presunto, bacon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frango com Mussarela",
+                        'descricao' => 'Molho, mussarela, frango, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frango com Cheddar",
+                        'descricao' => 'Molho, mussarela, frango, milho, calabresa, cheddar e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Frango Caipira",
+                        'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Gorgonzola",
+                        'descricao' => 'Molho, mussarela, gorgonzola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Grega",
+                        'descricao' => 'Molho, mussarela, lombo, palmito, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Italiana",
+                        'descricao' => 'Molho, mussarela, presunto, cebola, milho, ervilha e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Lombo com Mussarela",
+                        'descricao' => 'Molho, mussarela, lombo e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Lombo com Catupiry",
+                        'descricao' => 'Molho, mussarela, lombo, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Lombo com Champignon",
+                        'descricao' => 'Molho, mussarela, lombo, champignon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Lombo com Cheddar",
+                        'descricao' => 'Molho, mussarela, lombo, cheddar e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Marguerita",
+                        'descricao' => 'Molho, mussarela, parmesão, manjericão, alho e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Maiale",
+                        'descricao' => 'Molho, mussarela, bacon, lombo, calabresa, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Marina",
+                        'descricao' => 'Molho, mussarela, provolone, atum, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Mexicana",
+                        'descricao' => 'Molho, mussarela, ovo, calabresa, pimenta, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Mista",
+                        'descricao' => 'Molho, mussarela, presunto, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Mussarela",
+                        'descricao' => 'Molho, mussarela, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Napolitana",
+                        'descricao' => 'Molho, mussarela, parmesão, aolho, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Palmito",
+                        'descricao' => 'Molho, mussarela, palmito e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Palmito Especial",
+                        'descricao' => 'Molho, mussarela, bacon, milho, palmito e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Paulista",
+                        'descricao' => 'Molho, mussarela, palmito, ervilha e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Paulista Especial",
+                        'descricao' => 'Molho, mussarela, calabresa, bacon, palmito, ervilha, milho e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Peruana",
+                        'descricao' => 'Molho, mussarela, atum, cebola, ervilha e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Portuguesa",
+                        'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Portuguesa com Calabresa",
+                        'descricao' => 'Molho, mussarela, calabresa, ovo, ervilha, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Portuguesa Especial",
+                        'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, milho, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Laranjinha",
+                        'descricao' => 'Molho, mussarela, bacon, cheddar, doritos e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Light",
+                        'descricao' => 'Molho, mussarela, palmito, champignon, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Provolone",
+                        'descricao' => 'Molho, mussarela, provolone, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Quatro Queijos",
+                        'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Romana",
+                        'descricao' => 'Molho, mussarela, ovo, bacon, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Siciliana",
+                        'descricao' => 'Molho, mussarela, presunto, milho, ervilha e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Suiça",
+                        'descricao' => 'Molho, mussarela, gorgonzola, palmito e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Toscana",
+                        'descricao' => 'Molho, mussarela, calabresa, cebola, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Texana",
+                        'descricao' => 'Molho, mussarela, bacon, frango, calabresa e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Vegetariana",
+                        'descricao' => 'Molho, mussarela, brócolis, palmito, champignon, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Viena",
+                        'descricao' => 'Molho, mussarela, lombo, champignon, catupiry, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Tomate Seco",
+                        'descricao' => 'Molho, mussarela, tomate seco, bacon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Peito de Peru",
+                        'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Peperoni",
+                        'descricao' => 'Molho, mussarela, peperoni, cheddar, cebola, pimentão e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Nordestina",
+                        'descricao' => 'Molho, mussarela, carne seca, tomate, cebola e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Hot Dog",
+                        'descricao' => 'Molho, mussarela, salsicha, batata palha, milho e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Sardinha",
+                        'descricao' => 'Molho, mussarela, sardinha, cheiro verde e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Quatro Queijos com Frango e Bacon",
+                        'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry, frango, bacon e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Strogonoff",
+                        'descricao' => 'Molho, mussarela, frango, milho, champignon, batata palha e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Salame",
+                        'descricao' => 'Molho, mussarela, salame, provolone e orégano.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Quatro estações",
+                        'descricao' => 'Escolha QUATRO ingredientes de seu desejo.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    $produto = DB::table('produtos')->insertGetid([
+                        'user_id' => $idTenant,
+                        'categoria_id' => $idCategoria,
+                        'nome' => "Villas",
+                        'descricao' => 'Escolha CINCO ingredientes de seu desejo.',
+                        'preco' => 30.00,
+                        'ativo' => true
+                    ]);
+                    // FIM PIZZAS BROTO
 
                     
 
