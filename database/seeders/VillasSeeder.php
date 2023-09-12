@@ -797,7 +797,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Anél de Cebola",
+                        'nome' => "Porção Anéis de Cebola",
                         'descricao' => 'Porção de Anéis de Cebola.',
                         'preco' => 28.00,
                         'ativo' => true
@@ -805,7 +805,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Batata frita Simples",
+                        'nome' => "Porção Batata frita Simples",
                         'descricao' => 'Porção de Batatas fritas.',
                         'preco' => 18.00,
                         'ativo' => true
@@ -813,7 +813,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Batata frita com Queijo e Bacon",
+                        'nome' => "Porção Batata frita com Queijo e Bacon",
                         'descricao' => 'Porção de Batatas fritas com queijo e bacon.',
                         'preco' => 25.00,
                         'ativo' => true
@@ -821,7 +821,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Bolinho Mineiro",
+                        'nome' => "Porção Bolinho Mineiro",
                         'descricao' => 'Porção de Bolinho Mineiro.',
                         'preco' => 22.00,
                         'ativo' => true
@@ -829,7 +829,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa",
+                        'nome' => "Porção Calabresa",
                         'descricao' => 'Porção de Calabresa com Cebola.',
                         'preco' => 20.00,
                         'ativo' => true
@@ -837,7 +837,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Contre Filé",
+                        'nome' => "Porção Contre Filé",
                         'descricao' => 'Porção de Contra Filé Acebolado.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -845,7 +845,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Contra Filé com Fritas",
+                        'nome' => "Porção Contra Filé com Fritas",
                         'descricao' => 'Porção de Contra Filé com Fritas.',
                         'preco' => 65.00,
                         'ativo' => true
@@ -853,7 +853,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Filé de Tilápia",
+                        'nome' => "Porção Filé de Tilápia",
                         'descricao' => 'Porção Filé de Tilápia.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -861,7 +861,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango à Passarinho",
+                        'nome' => "Porção Frango à Passarinho",
                         'descricao' => 'Porção de Frango à Passarinho.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -869,7 +869,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango Empanado",
+                        'nome' => "Porção Frango Empanado",
                         'descricao' => 'Porção de Frango Empanado.',
                         'preco' => 32.00,
                         'ativo' => true
@@ -877,7 +877,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frios",
+                        'nome' => "Porção Frios",
                         'descricao' => 'Porção de Frios.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -885,7 +885,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Linguiça Toscana",
+                        'nome' => "Porção Linguiça Toscana",
                         'descricao' => 'Porção de Linguiça Toscana.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -893,7 +893,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Pastél de Milho",
+                        'nome' => "Porção Pastél de Milho",
                         'descricao' => 'Porção de Pastél de Milho.',
                         'preco' => 22.00,
                         'ativo' => true
@@ -901,7 +901,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Provolone à Milanesa",
+                        'nome' => " Porção Provolone à Milanesa",
                         'descricao' => 'Porção de Provolone à Milanesa.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -909,7 +909,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Salame",
+                        'nome' => "Porção Salame",
                         'descricao' => 'Porção de Salame fatiado.',
                         'preco' => 25.00,
                         'ativo' => true
@@ -917,7 +917,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Torresmo",
+                        'nome' => "Porção Torresmo",
                         'descricao' => 'Porção de Torresmo.',
                         'preco' => 28.00,
                         'ativo' => true
@@ -931,7 +931,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Alho e Óleo",
+                        'nome' => "Pizza Alho e Óleo",
                         'descricao' => 'Molho, mussarela, alho, óleo e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -939,7 +939,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Americana",
+                        'nome' => "Pizza Americana",
                         'descricao' => 'Molho, mussarela, ovo, bacon, milho e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -947,7 +947,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "À Moda da Casa",
+                        'nome' => "Pizza À Moda da Casa",
                         'descricao' => 'Molho, mussarela, calabresa, bacon, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -955,7 +955,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Atum",
+                        'nome' => "Pizza Atum",
                         'descricao' => 'Molho, mussarela, atum, cebola, azeitona, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -963,7 +963,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Bacon",
+                        'nome' => "Pizza Bacon",
                         'descricao' => 'Molho, mussarela, bacon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -971,7 +971,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Batata",
+                        'nome' => "Pizza Batata",
                         'descricao' => 'Molho, mussarela, frango, batata palha, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -979,7 +979,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Brócolis",
+                        'nome' => "Pizza Brócolis",
                         'descricao' => 'Molho, mussarela, brócolis, azeitona e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -987,7 +987,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Caipira",
+                        'nome' => "Pizza Caipira",
                         'descricao' => 'Molho, mussarela, frango, milho e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -995,7 +995,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa",
+                        'nome' => "Pizza Calabresa",
                         'descricao' => 'Molho, mussarela, calabresa, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1003,7 +1003,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Catupiry",
+                        'nome' => "Pizza Calabresa com Catupiry",
                         'descricao' => 'Molho, mussarela, calabresa, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1011,7 +1011,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Cheddar",
+                        'nome' => "Pizza Calabresa com Cheddar",
                         'descricao' => 'Molho, mussarela, calabresa, cheddar e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1019,7 +1019,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Cebola Roxa",
+                        'nome' => "Pizza Calabresa com Cebola Roxa",
                         'descricao' => 'Molho, mussarela, calabresa, cebola roxa e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1027,7 +1027,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa Mineira",
+                        'nome' => "Pizza Calabresa Mineira",
                         'descricao' => 'Molho, mussarela, calabresa, milho, bacon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1035,7 +1035,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Carioca (Brasileira)",
+                        'nome' => " Pizza Carioca (Brasileira)",
                         'descricao' => 'Molho, mussarela, atum, parmesão, cebola, pimentão, cheiro verde e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1043,7 +1043,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Cinco Queijos",
+                        'nome' => "Pizza Cinco Queijos",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, gorgonzola, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1051,7 +1051,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Champignon",
+                        'nome' => "Pizza Champignon",
                         'descricao' => 'Molho, mussarela, bacon, champignon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1059,7 +1059,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Crock",
+                        'nome' => "Pizza Crock",
                         'descricao' => 'Molho, mussarela, presunto, bacon, champignon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1067,7 +1067,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Fazendeira",
+                        'nome' => "Pizza Fazendeira",
                         'descricao' => 'Molho, mussarela, frango, milho, bacon, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1075,7 +1075,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Francesa",
+                        'nome' => "Pizza Francesa",
                         'descricao' => 'Molho, mussarela, presunto, bacon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1083,7 +1083,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango com Mussarela",
+                        'nome' => "Pizza Frango com Mussarela",
                         'descricao' => 'Molho, mussarela, frango, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1091,7 +1091,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango com Cheddar",
+                        'nome' => "Pizza Frango com Cheddar",
                         'descricao' => 'Molho, mussarela, frango, milho, calabresa, cheddar e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1099,7 +1099,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango Caipira",
+                        'nome' => "Pizza Frango Caipira",
                         'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1107,7 +1107,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Gorgonzola",
+                        'nome' => "Pizza Gorgonzola",
                         'descricao' => 'Molho, mussarela, gorgonzola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1115,7 +1115,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Grega",
+                        'nome' => "Pizza Grega",
                         'descricao' => 'Molho, mussarela, lombo, palmito, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1123,7 +1123,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Italiana",
+                        'nome' => "Pizza Italiana",
                         'descricao' => 'Molho, mussarela, presunto, cebola, milho, ervilha e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1131,7 +1131,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Mussarela",
+                        'nome' => "Pizza Lombo com Mussarela",
                         'descricao' => 'Molho, mussarela, lombo e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1139,7 +1139,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Catupiry",
+                        'nome' => "Pizza Lombo com Catupiry",
                         'descricao' => 'Molho, mussarela, lombo, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1147,7 +1147,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Champignon",
+                        'nome' => "Pizza Lombo com Champignon",
                         'descricao' => 'Molho, mussarela, lombo, champignon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1155,7 +1155,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Cheddar",
+                        'nome' => "Pizza Lombo com Cheddar",
                         'descricao' => 'Molho, mussarela, lombo, cheddar e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1163,7 +1163,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Marguerita",
+                        'nome' => "Pizza Marguerita",
                         'descricao' => 'Molho, mussarela, parmesão, manjericão, alho e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1171,7 +1171,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Maiale",
+                        'nome' => "Pizza Maiale",
                         'descricao' => 'Molho, mussarela, bacon, lombo, calabresa, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1179,7 +1179,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Marina",
+                        'nome' => "Pizza Marina",
                         'descricao' => 'Molho, mussarela, provolone, atum, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1187,7 +1187,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mexicana",
+                        'nome' => "Pizza Mexicana",
                         'descricao' => 'Molho, mussarela, ovo, calabresa, pimenta, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1195,7 +1195,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mista",
+                        'nome' => "Pizza Mista",
                         'descricao' => 'Molho, mussarela, presunto, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1203,7 +1203,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mussarela",
+                        'nome' => "Pizza Mussarela",
                         'descricao' => 'Molho, mussarela, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1211,7 +1211,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Napolitana",
+                        'nome' => "Pizza Napolitana",
                         'descricao' => 'Molho, mussarela, parmesão, aolho, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1219,7 +1219,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Palmito",
+                        'nome' => "Pizza Palmito",
                         'descricao' => 'Molho, mussarela, palmito e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1227,7 +1227,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Palmito Especial",
+                        'nome' => "Pizza Palmito Especial",
                         'descricao' => 'Molho, mussarela, bacon, milho, palmito e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1235,7 +1235,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Paulista",
+                        'nome' => "Pizza Paulista",
                         'descricao' => 'Molho, mussarela, palmito, ervilha e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1243,7 +1243,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Paulista Especial",
+                        'nome' => "Pizza Paulista Especial",
                         'descricao' => 'Molho, mussarela, calabresa, bacon, palmito, ervilha, milho e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1251,7 +1251,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peruana",
+                        'nome' => "Pizza Peruana",
                         'descricao' => 'Molho, mussarela, atum, cebola, ervilha e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1259,7 +1259,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa",
+                        'nome' => "Pizza Portuguesa",
                         'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1267,7 +1267,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa com Calabresa",
+                        'nome' => "Pizza Portuguesa com Calabresa",
                         'descricao' => 'Molho, mussarela, calabresa, ovo, ervilha, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1275,7 +1275,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa Especial",
+                        'nome' => "Pizza Portuguesa Especial",
                         'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, milho, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1283,7 +1283,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Laranjinha",
+                        'nome' => "Pizza Laranjinha",
                         'descricao' => 'Molho, mussarela, bacon, cheddar, doritos e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1291,7 +1291,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Light",
+                        'nome' => "Pizza Light",
                         'descricao' => 'Molho, mussarela, palmito, champignon, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1299,7 +1299,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Provolone",
+                        'nome' => "Pizza Provolone",
                         'descricao' => 'Molho, mussarela, provolone, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1307,7 +1307,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro Queijos",
+                        'nome' => "Pizza Quatro Queijos",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1315,7 +1315,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Romana",
+                        'nome' => "Pizza Romana",
                         'descricao' => 'Molho, mussarela, ovo, bacon, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1323,7 +1323,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Siciliana",
+                        'nome' => "Pizza Siciliana",
                         'descricao' => 'Molho, mussarela, presunto, milho, ervilha e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1331,7 +1331,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Suiça",
+                        'nome' => "Pizza Suiça",
                         'descricao' => 'Molho, mussarela, gorgonzola, palmito e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1339,7 +1339,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Toscana",
+                        'nome' => "Pizza Toscana",
                         'descricao' => 'Molho, mussarela, calabresa, cebola, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1347,7 +1347,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Texana",
+                        'nome' => "Pizza Texana",
                         'descricao' => 'Molho, mussarela, bacon, frango, calabresa e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1355,7 +1355,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Vegetariana",
+                        'nome' => "Pizza Vegetariana",
                         'descricao' => 'Molho, mussarela, brócolis, palmito, champignon, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1363,7 +1363,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Viena",
+                        'nome' => "Pizza Viena",
                         'descricao' => 'Molho, mussarela, lombo, champignon, catupiry, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1371,7 +1371,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Tomate Seco",
+                        'nome' => "Pizza Tomate Seco",
                         'descricao' => 'Molho, mussarela, tomate seco, bacon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1379,7 +1379,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peito de Peru",
+                        'nome' => "Pizza Peito de Peru",
                         'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1387,7 +1387,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peperoni",
+                        'nome' => "Pizza Peperoni",
                         'descricao' => 'Molho, mussarela, peperoni, cheddar, cebola, pimentão e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1395,7 +1395,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Nordestina",
+                        'nome' => "Pizza Nordestina",
                         'descricao' => 'Molho, mussarela, carne seca, tomate, cebola e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1403,7 +1403,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Hot Dog",
+                        'nome' => "Pizza Hot Dog",
                         'descricao' => 'Molho, mussarela, salsicha, batata palha, milho e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1411,7 +1411,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Sardinha",
+                        'nome' => "Pizza Sardinha",
                         'descricao' => 'Molho, mussarela, sardinha, cheiro verde e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1419,7 +1419,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro Queijos com Frango e Bacon",
+                        'nome' => "Pizza Quatro Queijos com Frango e Bacon",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry, frango, bacon e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1435,7 +1435,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Salame",
+                        'nome' => "Pizza Salame",
                         'descricao' => 'Molho, mussarela, salame, provolone e orégano.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1443,7 +1443,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro estações",
+                        'nome' => "Pizza Quatro estações",
                         'descricao' => 'Escolha QUATRO ingredientes de seu desejo.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1451,7 +1451,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Villas",
+                        'nome' => "Pizza Villas",
                         'descricao' => 'Escolha CINCO ingredientes de seu desejo.',
                         'preco' => 45.00,
                         'ativo' => true
@@ -1465,7 +1465,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Alho e Óleo",
+                        'nome' => "Pizza Alho e Óleo (broto)",
                         'descricao' => 'Molho, mussarela, alho, óleo e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1473,7 +1473,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Americana",
+                        'nome' => "Pizza Americana (broto)",
                         'descricao' => 'Molho, mussarela, ovo, bacon, milho e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1481,7 +1481,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "À Moda da Casa",
+                        'nome' => "Pizza À Moda da Casa (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, bacon, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1489,7 +1489,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Atum",
+                        'nome' => "Pizza Atum (broto)",
                         'descricao' => 'Molho, mussarela, atum, cebola, azeitona, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1497,7 +1497,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Bacon",
+                        'nome' => "Pizza Bacon (broto)",
                         'descricao' => 'Molho, mussarela, bacon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1505,7 +1505,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Batata",
+                        'nome' => "Pizza Batata (broto)",
                         'descricao' => 'Molho, mussarela, frango, batata palha, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1513,7 +1513,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Brócolis",
+                        'nome' => "Pizza Brócolis (broto)",
                         'descricao' => 'Molho, mussarela, brócolis, azeitona e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1521,7 +1521,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Caipira",
+                        'nome' => "Pizza Caipira (broto)",
                         'descricao' => 'Molho, mussarela, frango, milho e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1529,7 +1529,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa",
+                        'nome' => "Pizza Calabresa (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1537,7 +1537,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Catupiry",
+                        'nome' => "Pizza Calabresa com Catupiry (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1545,7 +1545,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Cheddar",
+                        'nome' => "Pizza Calabresa com Cheddar (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, cheddar e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1553,7 +1553,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa com Cebola Roxa",
+                        'nome' => "Pizza Calabresa com Cebola Roxa (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, cebola roxa e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1561,7 +1561,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Calabresa Mineira",
+                        'nome' => "Pizza Calabresa Mineira (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, milho, bacon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1569,7 +1569,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Carioca (Brasileira)",
+                        'nome' => "Pizza Carioca Brasileira (broto)",
                         'descricao' => 'Molho, mussarela, atum, parmesão, cebola, pimentão, cheiro verde e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1577,7 +1577,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Cinco Queijos",
+                        'nome' => "Pizza Cinco Queijos (broto)",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, gorgonzola, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1585,7 +1585,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Champignon",
+                        'nome' => "Pizza Champignon (broto)",
                         'descricao' => 'Molho, mussarela, bacon, champignon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1593,7 +1593,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Crock",
+                        'nome' => "Pizza Crock (broto)",
                         'descricao' => 'Molho, mussarela, presunto, bacon, champignon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1601,7 +1601,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Fazendeira",
+                        'nome' => "Pizza Fazendeira (broto)",
                         'descricao' => 'Molho, mussarela, frango, milho, bacon, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1609,7 +1609,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Francesa",
+                        'nome' => "Pizza Francesa (broto)",
                         'descricao' => 'Molho, mussarela, presunto, bacon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1617,7 +1617,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango com Mussarela",
+                        'nome' => "Pizza Frango com Mussarela (broto)",
                         'descricao' => 'Molho, mussarela, frango, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1625,7 +1625,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango com Cheddar",
+                        'nome' => "Pizza Frango com Cheddar (broto)",
                         'descricao' => 'Molho, mussarela, frango, milho, calabresa, cheddar e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1633,7 +1633,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Frango Caipira",
+                        'nome' => "Pizza Frango Caipira (broto)",
                         'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1641,7 +1641,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Gorgonzola",
+                        'nome' => "Pizza Gorgonzola (broto)",
                         'descricao' => 'Molho, mussarela, gorgonzola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1649,7 +1649,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Grega",
+                        'nome' => "Pizza Grega (broto)",
                         'descricao' => 'Molho, mussarela, lombo, palmito, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1657,7 +1657,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Italiana",
+                        'nome' => "Pizza Italiana (broto)",
                         'descricao' => 'Molho, mussarela, presunto, cebola, milho, ervilha e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1665,7 +1665,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Mussarela",
+                        'nome' => "Pizza Lombo com Mussarela (broto)",
                         'descricao' => 'Molho, mussarela, lombo e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1673,7 +1673,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Catupiry",
+                        'nome' => "Pizza Lombo com Catupiry (broto)",
                         'descricao' => 'Molho, mussarela, lombo, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1681,7 +1681,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Champignon",
+                        'nome' => "Pizza Lombo com Champignon (broto)",
                         'descricao' => 'Molho, mussarela, lombo, champignon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1689,7 +1689,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Lombo com Cheddar",
+                        'nome' => "Pizza Lombo com Cheddar (broto)",
                         'descricao' => 'Molho, mussarela, lombo, cheddar e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1697,7 +1697,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Marguerita",
+                        'nome' => "Pizza Marguerita (broto)",
                         'descricao' => 'Molho, mussarela, parmesão, manjericão, alho e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1705,7 +1705,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Maiale",
+                        'nome' => "Pizza Maiale (broto)",
                         'descricao' => 'Molho, mussarela, bacon, lombo, calabresa, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1713,7 +1713,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Marina",
+                        'nome' => "Pizza Marina (broto)",
                         'descricao' => 'Molho, mussarela, provolone, atum, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1721,7 +1721,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mexicana",
+                        'nome' => "Pizza Mexicana (broto)",
                         'descricao' => 'Molho, mussarela, ovo, calabresa, pimenta, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1729,7 +1729,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mista",
+                        'nome' => "Pizza Mista (broto)",
                         'descricao' => 'Molho, mussarela, presunto, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1737,7 +1737,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Mussarela",
+                        'nome' => "Pizza Mussarela (broto)",
                         'descricao' => 'Molho, mussarela, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1745,7 +1745,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Napolitana",
+                        'nome' => "Pizza Napolitana (broto)",
                         'descricao' => 'Molho, mussarela, parmesão, aolho, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1753,7 +1753,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Palmito",
+                        'nome' => "Pizza Palmito (broto)",
                         'descricao' => 'Molho, mussarela, palmito e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1761,7 +1761,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Palmito Especial",
+                        'nome' => "Pizza Palmito Especial (broto)",
                         'descricao' => 'Molho, mussarela, bacon, milho, palmito e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1769,7 +1769,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Paulista",
+                        'nome' => "Pizza Paulista (broto)",
                         'descricao' => 'Molho, mussarela, palmito, ervilha e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1777,7 +1777,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Paulista Especial",
+                        'nome' => "Pizza Paulista Especial (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, bacon, palmito, ervilha, milho e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1785,7 +1785,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peruana",
+                        'nome' => "Pizza Peruana (broto)",
                         'descricao' => 'Molho, mussarela, atum, cebola, ervilha e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1793,7 +1793,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa",
+                        'nome' => "Pizza Portuguesa (broto)",
                         'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1801,7 +1801,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa com Calabresa",
+                        'nome' => "Pizza Portuguesa com Calabresa (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, ovo, ervilha, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1809,7 +1809,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Portuguesa Especial",
+                        'nome' => "Pizza Portuguesa Especial (broto)",
                         'descricao' => 'Molho, mussarela, presunto, ovo, ervilha, milho, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1817,7 +1817,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Laranjinha",
+                        'nome' => "Pizza Laranjinha (broto)",
                         'descricao' => 'Molho, mussarela, bacon, cheddar, doritos e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1825,7 +1825,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Light",
+                        'nome' => "Pizza Light (broto)",
                         'descricao' => 'Molho, mussarela, palmito, champignon, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1833,7 +1833,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Provolone",
+                        'nome' => "Pizza Provolone (broto)",
                         'descricao' => 'Molho, mussarela, provolone, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1841,7 +1841,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro Queijos",
+                        'nome' => "Pizza Quatro Queijos (broto)",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1849,7 +1849,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Romana",
+                        'nome' => "Pizza Romana (broto)",
                         'descricao' => 'Molho, mussarela, ovo, bacon, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1857,7 +1857,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Siciliana",
+                        'nome' => "Pizza Siciliana (broto)",
                         'descricao' => 'Molho, mussarela, presunto, milho, ervilha e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1865,7 +1865,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Suiça",
+                        'nome' => "Pizza Suiça (broto)",
                         'descricao' => 'Molho, mussarela, gorgonzola, palmito e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1873,7 +1873,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Toscana",
+                        'nome' => "Pizza Toscana (broto)",
                         'descricao' => 'Molho, mussarela, calabresa, cebola, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1881,7 +1881,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Texana",
+                        'nome' => "Pizza Texana (broto)",
                         'descricao' => 'Molho, mussarela, bacon, frango, calabresa e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1889,7 +1889,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Vegetariana",
+                        'nome' => "Pizza Vegetariana (broto)",
                         'descricao' => 'Molho, mussarela, brócolis, palmito, champignon, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1897,7 +1897,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Viena",
+                        'nome' => "Pizza Viena (broto)",
                         'descricao' => 'Molho, mussarela, lombo, champignon, catupiry, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1905,7 +1905,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Tomate Seco",
+                        'nome' => "Pizza Tomate Seco (broto)",
                         'descricao' => 'Molho, mussarela, tomate seco, bacon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1913,7 +1913,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peito de Peru",
+                        'nome' => "Pizza Peito de Peru (broto)",
                         'descricao' => 'Molho, mussarela, peito de peru, palmito, tomate e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1921,7 +1921,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Peperoni",
+                        'nome' => "Pizza Peperoni (broto)",
                         'descricao' => 'Molho, mussarela, peperoni, cheddar, cebola, pimentão e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1929,7 +1929,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Nordestina",
+                        'nome' => "Pizza Nordestina (broto)",
                         'descricao' => 'Molho, mussarela, carne seca, tomate, cebola e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1937,7 +1937,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Hot Dog",
+                        'nome' => "Pizza Hot Dog (broto)",
                         'descricao' => 'Molho, mussarela, salsicha, batata palha, milho e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1945,7 +1945,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Sardinha",
+                        'nome' => "Pizza Sardinha (broto)",
                         'descricao' => 'Molho, mussarela, sardinha, cheiro verde e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1953,7 +1953,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro Queijos com Frango e Bacon",
+                        'nome' => "Pizza Quatro Queijos com Frango e Bacon (broto)",
                         'descricao' => 'Molho, mussarela, provolone, parmesão, catupiry, frango, bacon e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1961,7 +1961,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Strogonoff",
+                        'nome' => "Pizza Strogonoff (broto)",
                         'descricao' => 'Molho, mussarela, frango, milho, champignon, batata palha e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1969,7 +1969,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Salame",
+                        'nome' => "Pizza Salame (broto)",
                         'descricao' => 'Molho, mussarela, salame, provolone e orégano.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1977,7 +1977,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Quatro estações",
+                        'nome' => "Pizza Quatro estações (broto)",
                         'descricao' => 'Escolha QUATRO ingredientes de seu desejo.',
                         'preco' => 30.00,
                         'ativo' => true
@@ -1985,7 +1985,7 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Villas",
+                        'nome' => "Pizza Villas (broto)",
                         'descricao' => 'Escolha CINCO ingredientes de seu desejo.',
                         'preco' => 30.00,
                         'ativo' => true
