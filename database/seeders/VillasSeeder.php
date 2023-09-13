@@ -418,7 +418,11 @@ class VillasSeeder extends Seeder
                 'horario' => '19h as 23h'
             ]);
             // Obrigatorios
-            
+            $borda = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => 'Borda',
+                'opcoes' => 'Sem borda;Catupiry;Cheddar'
+            ]);
             $primeiro_sabor = DB::table('obrigatorios')->insertGetid([
                 'user_id' => $idTenant,
                 'nome' => '1o Sabor',
@@ -951,6 +955,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                      // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -959,6 +968,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                        DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $borda
+                        ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -967,6 +981,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -975,6 +994,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -983,6 +1007,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -991,6 +1020,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -999,6 +1033,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1007,6 +1046,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1015,6 +1059,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1023,6 +1072,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1031,6 +1085,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1039,6 +1098,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1047,6 +1111,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1055,6 +1124,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1063,6 +1137,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1071,6 +1150,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1079,6 +1163,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1087,6 +1176,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1095,6 +1189,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1103,6 +1202,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1111,6 +1215,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                    // ProdutoObrigatorios
+                    DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1119,6 +1228,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1127,6 +1241,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1135,6 +1254,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1143,6 +1267,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1151,6 +1280,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1159,6 +1293,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1167,6 +1306,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1175,6 +1319,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1183,6 +1332,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1191,6 +1345,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1199,6 +1358,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1207,6 +1371,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1215,6 +1384,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1223,6 +1397,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1231,6 +1410,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1239,6 +1423,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1247,6 +1436,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1255,6 +1449,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1263,6 +1462,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1271,6 +1475,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1279,6 +1488,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1287,6 +1501,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1295,6 +1514,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1303,6 +1527,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1311,6 +1540,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1319,6 +1553,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1327,6 +1566,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1335,6 +1579,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1343,6 +1592,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1351,6 +1605,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1359,6 +1618,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1367,6 +1631,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1375,6 +1644,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1383,6 +1657,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1391,6 +1670,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1399,6 +1683,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1407,6 +1696,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1415,6 +1709,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1423,6 +1722,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1431,6 +1735,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1439,6 +1748,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1447,6 +1761,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1455,6 +1774,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1463,6 +1787,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1471,6 +1800,11 @@ class VillasSeeder extends Seeder
                         'preco' => 45.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     // FIM PIZZAS GRANDES
                     // INICIO PIZZAS BROTO    
                 $idCategoria = DB::table('categorias')->insertGetid([
@@ -1485,6 +1819,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1493,6 +1832,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1501,6 +1845,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1509,6 +1858,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1517,6 +1871,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1525,6 +1884,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1533,6 +1897,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1541,6 +1910,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1549,6 +1923,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1557,6 +1936,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1565,6 +1949,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1573,6 +1962,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1581,6 +1975,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1589,6 +1988,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1597,6 +2001,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1605,6 +2014,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1613,6 +2027,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1621,6 +2040,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1629,6 +2053,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1637,6 +2066,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1645,6 +2079,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1653,6 +2092,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1661,6 +2105,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1669,6 +2118,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1677,6 +2131,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1685,6 +2144,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1693,6 +2157,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1701,6 +2170,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1709,6 +2183,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1717,6 +2196,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1725,6 +2209,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1733,6 +2222,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1741,6 +2235,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1749,6 +2248,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1757,6 +2261,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1765,6 +2274,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1773,6 +2287,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1781,6 +2300,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1789,6 +2313,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1797,6 +2326,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1805,6 +2339,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1813,6 +2352,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1821,6 +2365,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1829,6 +2378,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1837,6 +2391,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1845,6 +2404,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1853,6 +2417,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1861,6 +2430,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1869,6 +2443,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1877,6 +2456,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1885,6 +2469,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1893,6 +2482,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1901,6 +2495,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1909,6 +2508,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1917,6 +2521,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1925,6 +2534,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1933,6 +2547,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1941,6 +2560,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1949,6 +2573,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1957,6 +2586,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1965,6 +2599,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1973,6 +2612,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1981,6 +2625,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1989,6 +2638,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -1997,6 +2651,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
@@ -2005,6 +2664,11 @@ class VillasSeeder extends Seeder
                         'preco' => 30.00,
                         'ativo' => true
                     ]);
+                        // ProdutoObrigatorios
+                      DB::table('produto_obrigatorios')->insert([
+                        'produto_id' => $produto,
+                        'obrigatorio_id' => $borda
+                      ]);
                     // FIM PIZZAS BROTO
                     // INICIO PIZZAS DOIS SABORES
                     $idCategoria = DB::table('categorias')->insertGetid([
@@ -2029,6 +2693,10 @@ class VillasSeeder extends Seeder
                                 'produto_id' => $produto,
                                 'obrigatorio_id' => $segundo_sabor
                             ]);
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
                         $produto = DB::table('produtos')->insertGetid([
                             'user_id' => $idTenant,
                             'categoria_id' => $idCategoria,
@@ -2047,8 +2715,456 @@ class VillasSeeder extends Seeder
                                 'produto_id' => $produto,
                                 'obrigatorio_id' => $segundo_sabor
                             ]);
+                            DB::table('produto_obrigatorios')->insert([
+                            'produto_id' => $produto,
+                            'obrigatorio_id' => $borda
+                             ]);
                     //fim pizzas dois sabores
+                    // INICIO PIZZAS PREMIUM
+                    $idCategoria = DB::table('categorias')->insertGetid([
+                        'nome' => "Pizzas Premium",
+                        'user_id' => $idTenant
+                    ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Abacaxilesa",
+                            'descricao' => 'Molho, mussarela, calabresa, abacaxi e orégano',
+                            'preco' => 50.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Bacon com Fritas",
+                            'descricao' => 'Molho, mussarela, bacon, parmesão, batata frita e orégano',
+                            'preco' => 50.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Bem Bolada",
+                            'descricao' => 'Molho, mussarela, calabresa, ovo, cebola, pimentão e orégano',
+                            'preco' => 55.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Frango com Cream Cheese",
+                            'descricao' => 'Molho, mussarela, frango, cream cheese e orégano',
+                            'preco' => 55.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Frango com Scala",
+                            'descricao' => 'Molho, mussarela, frango, catupiry, scala e orégano',
+                            'preco' => 55.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Filadelphia",
+                            'descricao' => 'Molho, mussarela, costela bovina desfiada, cebola roxa e orégano',
+                            'preco' => 60.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Pepper",
+                            'descricao' => 'Molho, mussarela, peperoni, pimentão, cebola, cream cheese e orégano',
+                            'preco' => 60.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Saturno",
+                            'descricao' => 'Molho, mussarela, bacon, catupiry, anel de cebola, barbecue e orégano',
+                            'preco' => 50.00,
+                            'ativo' => true
+                        ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $borda
+                            ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Abobrinha",
+                                'descricao' => 'Molho, mussarela, abobrinha italiana e orégano',
+                                'preco' => 50.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+        
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Pernil Desfiado",
+                                'descricao' => 'Molho, mussarela, pernil desfiado, tomate, cebola e orégano',
+                                'preco' => 60.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                           // FIM PIZZAS PREMIUM
+                        // INICIO PIZZAS PREMIUM BROTO
+                        $idCategoria = DB::table('categorias')->insertGetid([
+                            'nome' => "Pizzas Premium Broto (broto)",
+                            'user_id' => $idTenant
+                        ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Abacaxilesa (broto)",
+                                'descricao' => 'Molho, mussarela, calabresa, abacaxi e orégano',
+                                'preco' => 42.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Bacon com Fritas (broto)",
+                                'descricao' => 'Molho, mussarela, bacon, parmesão, batata frita e orégano',
+                                'preco' => 42.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Bem Bolada (broto)",
+                                'descricao' => 'Molho, mussarela, calabresa, ovo, cebola, pimentão e orégano',
+                                'preco' => 45.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Frango com Cream Cheese (broto)",
+                                'descricao' => 'Molho, mussarela, frango, cream cheese e orégano',
+                                'preco' => 45.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Frango com Scala (broto)",
+                                'descricao' => 'Molho, mussarela, frango, catupiry, scala e orégano',
+                                'preco' => 45.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Filadelphia (broto)",
+                                'descricao' => 'Molho, mussarela, costela bovina desfiada, cebola roxa e orégano',
+                                'preco' => 50.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Pepper (broto)",
+                                'descricao' => 'Molho, mussarela, peperoni, pimentão, cebola, cream cheese e orégano',
+                                'preco' => 50.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                            $produto = DB::table('produtos')->insertGetid([
+                                'user_id' => $idTenant,
+                                'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Saturno (broto)",
+                                'descricao' => 'Molho, mussarela, bacon, catupiry, anel de cebola, barbecue e orégano',
+                                'preco' => 42.00,
+                                'ativo' => true
+                            ]);
+                                // ProdutoObrigatorios
+                                DB::table('produto_obrigatorios')->insert([
+                                    'produto_id' => $produto,
+                                    'obrigatorio_id' => $borda
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Abobrinha (broto)",
+                                    'descricao' => 'Molho, mussarela, abobrinha italiana e orégano',
+                                    'preco' => 42.00,
+                                    'ativo' => true
+                                ]);
+                                    // ProdutoObrigatorios
+                                    DB::table('produto_obrigatorios')->insert([
+                                        'produto_id' => $produto,
+                                        'obrigatorio_id' => $borda
+                                    ]);
 
-
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Pernil Desfiado (broto)",
+                                    'descricao' => 'Molho, mussarela, pernil desfiado, tomate, cebola e orégano',
+                                    'preco' => 50.00,
+                                    'ativo' => true
+                                ]);
+                                    // ProdutoObrigatorios
+                                    DB::table('produto_obrigatorios')->insert([
+                                        'produto_id' => $produto,
+                                        'obrigatorio_id' => $borda
+                                    ]);
+                            // FIM PIZZAS PREMIUM BROTO
+                            // INICIO PIZZAS DOCES
+                            $idCategoria = DB::table('categorias')->insertGetid([
+                                'nome' => "Pizzas Doces",
+                                'user_id' => $idTenant
+                            ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Abacaxi",
+                                    'descricao' => 'Mussarela, leite condensado e abacaxi.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza California",
+                                    'descricao' => 'Mussarela, abacaxi e lombo canadense.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Choconata",
+                                    'descricao' => 'Leite condensado, chocolate e banana.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Confete",
+                                    'descricao' => 'Chocolate, leite condensado e confete.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Chocolate Brigadeiro",
+                                    'descricao' => 'Chocolate, leite condensado e brigadeiro.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Doce de Leite",
+                                    'descricao' => 'Canela, doce de leite e powerball.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Prestígio",
+                                    'descricao' => 'Chocolate, leite condensado e coco ralado.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Queijadinha",
+                                    'descricao' => 'Mussarela, coco ralado e leite condensado.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Romeu e Julieta",
+                                    'descricao' => 'Mussarela, leite condensado e goiabada.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Bis Branco",
+                                    'descricao' => 'Bis Branco e leite condensado.',
+                                    'preco' => 45.00,
+                                    'ativo' => true
+                                ]);
+                            //FIM PIZZAS DOCES
+                            // INICIO PIZZAS DOCES BROTO
+                            $idCategoria = DB::table('categorias')->insertGetid([
+                                'nome' => "Pizzas Doces Broto",
+                                'user_id' => $idTenant
+                            ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Abacaxi (broto)",
+                                    'descricao' => 'Mussarela, leite condensado e abacaxi.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza California (broto)",
+                                    'descricao' => 'Mussarela, abacaxi e lombo canadense.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Choconata (broto)",
+                                    'descricao' => 'Leite condensado, chocolate e banana.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Confete (broto)",
+                                    'descricao' => 'Chocolate, leite condensado e confete.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Chocolate Brigadeiro (broto)",
+                                    'descricao' => 'Chocolate, leite condensado e brigadeiro.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Doce de Leite (broto)",
+                                    'descricao' => 'Canela, doce de leite e powerball.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Prestígio (broto)",
+                                    'descricao' => 'Chocolate, leite condensado e coco ralado.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                'nome' => "Pizza Queijadinha (broto)",
+                                    'descricao' => 'Mussarela, coco ralado e leite condensado.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Romeu e Julieta (broto)",
+                                    'descricao' => 'Mussarela, leite condensado e goiabada.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Pizza Bis Branco (broto)",
+                                    'descricao' => 'Bis Branco e leite condensado.',
+                                    'preco' => 30.00,
+                                    'ativo' => true
+                                ]);
+                            //FIM PIZZAS DOCES BROTO
     }
 }

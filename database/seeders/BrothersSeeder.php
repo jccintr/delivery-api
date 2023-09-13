@@ -326,8 +326,7 @@ class BrothersSeeder extends Seeder
                                 'imagem' => 'imagens/'.$slug.'/produtos/burguer.jpeg'
                             ]);
                                 // ProdutoObrigatorios
-                                
-                                DB::table('produto_obrigatorios')->insert([
+                               DB::table('produto_obrigatorios')->insert([
                                     'produto_id' => $produto,
                                     'obrigatorio_id' => $molho
                                 ]);
