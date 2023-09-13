@@ -434,6 +434,21 @@ class VillasSeeder extends Seeder
                 'nome' => '2o Sabor',
                 'opcoes' => 'Pizza Alho e Óleo;Pizza Americana;Pizza À Moda da Casa;Pizza Atum;Pizza Bacon;Pizza Batata;Pizza Brócolis;Pizza Caipira;Pizza Calabresa;Pizza Calabresa com Catupiry;Pizza Calabresa com Cheddar;Pizza Calabresa com Cebola Roxa;Pizza Calabresa Mineira; Pizza Carioca (Brasileira);Pizza Cinco Queijos;Pizza Champignon;Pizza Crock;Pizza Fazendeira;Pizza Francesa;Pizza Frango com Mussarela;Pizza Frango com Cheddar;Pizza Frango Caipira;Pizza Gorgonzola;Pizza Grega;Pizza Italiana;Pizza Lombo com Mussarela;Pizza Lombo com Catupiry;Pizza Lombo com Champignon;Pizza Lombo com Cheddar;Pizza Marguerita;Pizza Maiale;Pizza Marina;Pizza Mexicana;Pizza Mista;Pizza Mussarela;Pizza Napolitana;Pizza Palmito;Pizza Palmito Especial;Pizza Paulista;Pizza Paulista Especial;Pizza Peruana;Pizza Portuguesa;Pizza Portuguesa com Calabresa;Pizza Portuguesa Especial;Pizza Laranjinha;Pizza Light;Pizza Provolone;Pizza Quatro Queijos;Pizza Romana;Pizza Siciliana;Pizza Suiça;Pizza Toscana;Pizza Texana;Pizza Vegetariana;Pizza Viena;Pizza Tomate Seco;Pizza Peito de Peru;Pizza Peperoni;Pizza Nordestina;Pizza Hot Dog;Pizza Sardinha;Pizza Quatro Queijos com Frango e Bacon;Strogonoff;Pizza Salame;Pizza Quatro estações;Pizza Villas'
             ]);
+            $refrigerante_lata = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => 'Tipo ref. lata',
+                'opcoes' => 'Coca-Cola;Guaraná Antárctica;Fanta Uva'
+            ]);
+            $refrigerante_200ml = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => 'Tipo ref. 200ml',
+                'opcoes' => 'Coca-Cola;Guaraná Antárctica'
+            ]);
+            $cerveja_350ml = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => 'Cerveja Lata 350ml',
+                'opcoes' => 'Skol;Brahma'
+            ]);
             
             
             // inicio categorias
@@ -2859,7 +2874,7 @@ class VillasSeeder extends Seeder
                            // FIM PIZZAS PREMIUM
                         // INICIO PIZZAS PREMIUM BROTO
                         $idCategoria = DB::table('categorias')->insertGetid([
-                            'nome' => "Pizzas Premium Broto (broto)",
+                            'nome' => "Pizzas Premium Broto",
                             'user_id' => $idTenant
                         ]);
                             $produto = DB::table('produtos')->insertGetid([
@@ -3144,7 +3159,7 @@ class VillasSeeder extends Seeder
                                 $produto = DB::table('produtos')->insertGetid([
                                     'user_id' => $idTenant,
                                     'categoria_id' => $idCategoria,
-                                'nome' => "Pizza Queijadinha (broto)",
+                                    'nome' => "Pizza Queijadinha (broto)",
                                     'descricao' => 'Mussarela, coco ralado e leite condensado.',
                                     'preco' => 30.00,
                                     'ativo' => true
@@ -3166,5 +3181,113 @@ class VillasSeeder extends Seeder
                                     'ativo' => true
                                 ]);
                             //FIM PIZZAS DOCES BROTO
+                            $idCategoria = DB::table('categorias')->insertGetid([
+                                'nome' => "Bebidas",
+                                'user_id' => $idTenant
+                            ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Refrigerante Lata",
+                                    'descricao' => 'Refrigerante lata 350ml vários sabores',
+                                    'preco' => 5.00,
+                                    'ativo' => true
+                                  ]);
+                                    // ProdutoObrigatorios
+                                    DB::table('produto_obrigatorios')->insert([
+                                        'produto_id' => $produto,
+                                        'obrigatorio_id' => $refrigerante_lata
+                                    ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Coca-Cola 2L",
+                                    'descricao' => 'Refrigerante Coca-Cola 2L',
+                                    'preco' => 15.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Coca-Cola 600ml",
+                                    'descricao' => 'Refrigerante Coca-Cola 600ml',
+                                    'preco' => 8.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Guaraná Antarctica 2L",
+                                    'descricao' => 'Refrigerante Guaraná Antarctica 2L',
+                                    'preco' => 12.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Guaraná Antarctica 600ml",
+                                    'descricao' => 'Refrigerante Guaraná Antarctica 600ml',
+                                    'preco' => 7.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Fanta Laranja 600ml",
+                                    'descricao' => 'Refrigerante Fanta Laranja 600ml',
+                                    'preco' => 7.00,
+                                    'ativo' => true
+                                ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Refrigerante 200ml",
+                                    'descricao' => 'Refrigerante 200ml vários sabores',
+                                    'preco' => 3.00,
+                                    'ativo' => true
+                                  ]);
+                                    // ProdutoObrigatorios
+                                    DB::table('produto_obrigatorios')->insert([
+                                        'produto_id' => $produto,
+                                        'obrigatorio_id' => $refrigerante_200ml
+                                    ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Cerveja Lata 350ml",
+                                    'descricao' => 'Cerveja Lata 350ml várias marcas',
+                                    'preco' => 6.00,
+                                    'ativo' => true
+                                    ]);
+                                    // ProdutoObrigatorios
+                                    DB::table('produto_obrigatorios')->insert([
+                                        'produto_id' => $produto,
+                                        'obrigatorio_id' => $cerveja_350ml
+                                    ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Água",
+                                    'descricao' => 'Água Mineral sem gás 510ml',
+                                    'preco' => 3.00,
+                                    'ativo' => true
+                                    ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Água com Gás",
+                                    'descricao' => 'Água Mineral com gás 510ml',
+                                    'preco' => 3.00,
+                                    'ativo' => true
+                                    ]);
+                                $produto = DB::table('produtos')->insertGetid([
+                                    'user_id' => $idTenant,
+                                    'categoria_id' => $idCategoria,
+                                    'nome' => "Tampico 450ml",
+                                    'descricao' => 'Suco Tampico 450ml',
+                                    'preco' => 7.00,
+                                    'ativo' => true
+                                    ]);
+
     }
 }
