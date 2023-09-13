@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
             CasadopastelSeeder::class,
             //fim lojas exemplo
 
-            //BrothersSeeder::class,
-            //VillasSeeder::class,
-            //FatinhaSeeder::class,
-            //CorujaoSeeder::class,
-            //BrazPizzaSeeder::class,
+            BrothersSeeder::class,
+            VillasSeeder::class,
+            FatinhaSeeder::class,
+            CorujaoSeeder::class,
+            BrazPizzaSeeder::class,
             
             
         ]);

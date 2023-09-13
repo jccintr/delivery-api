@@ -417,6 +417,21 @@ class VillasSeeder extends Seeder
                 'dia' => 6,
                 'horario' => '19h as 23h'
             ]);
+            // Obrigatorios
+            
+            $primeiro_sabor = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => '1o Sabor',
+                'opcoes' => 'Pizza Alho e Óleo;Pizza Americana;Pizza À Moda da Casa;Pizza Atum;Pizza Bacon;Pizza Batata;Pizza Brócolis;Pizza Caipira;Pizza Calabresa;Pizza Calabresa com Catupiry;Pizza Calabresa com Cheddar;Pizza Calabresa com Cebola Roxa;Pizza Calabresa Mineira; Pizza Carioca (Brasileira);Pizza Cinco Queijos;Pizza Champignon;Pizza Crock;Pizza Fazendeira;Pizza Francesa;Pizza Frango com Mussarela;Pizza Frango com Cheddar;Pizza Frango Caipira;Pizza Gorgonzola;Pizza Grega;Pizza Italiana;Pizza Lombo com Mussarela;Pizza Lombo com Catupiry;Pizza Lombo com Champignon;Pizza Lombo com Cheddar;Pizza Marguerita;Pizza Maiale;Pizza Marina;Pizza Mexicana;Pizza Mista;Pizza Mussarela;Pizza Napolitana;Pizza Palmito;Pizza Palmito Especial;Pizza Paulista;Pizza Paulista Especial;Pizza Peruana;Pizza Portuguesa;Pizza Portuguesa com Calabresa;Pizza Portuguesa Especial;Pizza Laranjinha;Pizza Light;Pizza Provolone;Pizza Quatro Queijos;Pizza Romana;Pizza Siciliana;Pizza Suiça;Pizza Toscana;Pizza Texana;Pizza Vegetariana;Pizza Viena;Pizza Tomate Seco;Pizza Peito de Peru;Pizza Peperoni;Pizza Nordestina;Pizza Hot Dog;Pizza Sardinha;Pizza Quatro Queijos com Frango e Bacon;Strogonoff;Pizza Salame;Pizza Quatro estações;Pizza Villas'
+            ]);
+
+            $segundo_sabor = DB::table('obrigatorios')->insertGetid([
+                'user_id' => $idTenant,
+                'nome' => '2o Sabor',
+                'opcoes' => 'Pizza Alho e Óleo;Pizza Americana;Pizza À Moda da Casa;Pizza Atum;Pizza Bacon;Pizza Batata;Pizza Brócolis;Pizza Caipira;Pizza Calabresa;Pizza Calabresa com Catupiry;Pizza Calabresa com Cheddar;Pizza Calabresa com Cebola Roxa;Pizza Calabresa Mineira; Pizza Carioca (Brasileira);Pizza Cinco Queijos;Pizza Champignon;Pizza Crock;Pizza Fazendeira;Pizza Francesa;Pizza Frango com Mussarela;Pizza Frango com Cheddar;Pizza Frango Caipira;Pizza Gorgonzola;Pizza Grega;Pizza Italiana;Pizza Lombo com Mussarela;Pizza Lombo com Catupiry;Pizza Lombo com Champignon;Pizza Lombo com Cheddar;Pizza Marguerita;Pizza Maiale;Pizza Marina;Pizza Mexicana;Pizza Mista;Pizza Mussarela;Pizza Napolitana;Pizza Palmito;Pizza Palmito Especial;Pizza Paulista;Pizza Paulista Especial;Pizza Peruana;Pizza Portuguesa;Pizza Portuguesa com Calabresa;Pizza Portuguesa Especial;Pizza Laranjinha;Pizza Light;Pizza Provolone;Pizza Quatro Queijos;Pizza Romana;Pizza Siciliana;Pizza Suiça;Pizza Toscana;Pizza Texana;Pizza Vegetariana;Pizza Viena;Pizza Tomate Seco;Pizza Peito de Peru;Pizza Peperoni;Pizza Nordestina;Pizza Hot Dog;Pizza Sardinha;Pizza Quatro Queijos com Frango e Bacon;Strogonoff;Pizza Salame;Pizza Quatro estações;Pizza Villas'
+            ]);
+            
+            
             // inicio categorias
             $idCategoria = DB::table('categorias')->insertGetid([
                 'nome' => "Burguers Artesanais",
@@ -893,8 +908,8 @@ class VillasSeeder extends Seeder
                     $produto = DB::table('produtos')->insertGetid([
                         'user_id' => $idTenant,
                         'categoria_id' => $idCategoria,
-                        'nome' => "Porção Pastél de Milho",
-                        'descricao' => 'Porção de Pastél de Milho.',
+                        'nome' => "Porção Pastel de Milho",
+                        'descricao' => 'Porção de Pastéis de Milho.',
                         'preco' => 22.00,
                         'ativo' => true
                     ]);
@@ -1991,8 +2006,48 @@ class VillasSeeder extends Seeder
                         'ativo' => true
                     ]);
                     // FIM PIZZAS BROTO
-
-                    
+                    // INICIO PIZZAS DOIS SABORES
+                    $idCategoria = DB::table('categorias')->insertGetid([
+                        'nome' => "Pizzas Dois Sabores",
+                        'user_id' => $idTenant
+                    ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Grande Dois Sabores",
+                            'descricao' => 'Pizza grande dois sabores',
+                            'preco' => 45.00,
+                            'ativo' => true
+                        ]);
+                        // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $primeiro_sabor
+                            ]);
+                        
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $segundo_sabor
+                            ]);
+                        $produto = DB::table('produtos')->insertGetid([
+                            'user_id' => $idTenant,
+                            'categoria_id' => $idCategoria,
+                            'nome' => "Pizza Broto Dois Sabores",
+                            'descricao' => 'Pizza broto dois sabores',
+                            'preco' => 30.00,
+                            'ativo' => true
+                        ]);
+                        // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $primeiro_sabor
+                            ]);
+                            // ProdutoObrigatorios
+                            DB::table('produto_obrigatorios')->insert([
+                                'produto_id' => $produto,
+                                'obrigatorio_id' => $segundo_sabor
+                            ]);
+                    //fim pizzas dois sabores
 
 
     }

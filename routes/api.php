@@ -83,7 +83,7 @@ Route::middleware('auth:sanctum')->get('/adicionais/{id}',[AdicionalController::
 Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::class,'update']);
 
 
-
+//Route::get('/opcoes',[ProdutosController::class,'opcoes']);
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::get('/produtos/{id}',[ProdutosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'store']);

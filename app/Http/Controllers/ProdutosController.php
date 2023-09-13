@@ -177,4 +177,15 @@ class ProdutosController extends Controller
         
         return response()->json($newProduto,201);
     }
+
+
+    // public function opcoes() {
+    //     $produtos = Produto::where('user_id',6)->where('categoria_id',20)->get();
+    //     $opcoes = "";
+    //     foreach ($produtos as $produto) {
+    //        $opcoes = $opcoes.$produto->nome.';';
+    //     }
+
+    //     return response()->json(['opcoes' => $opcoes],200);
+    // }
 }
