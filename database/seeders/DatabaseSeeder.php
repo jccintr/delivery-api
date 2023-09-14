@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             FatinhaSeeder::class,
             CorujaoSeeder::class,
             BrazPizzaSeeder::class,
+            MercadinhoPopularSeeder::class,
             
             
         ]);
