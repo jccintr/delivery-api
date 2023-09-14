@@ -33,7 +33,7 @@ class VillasSeeder extends Seeder
             'favorecido_pix' => 'Favorecido',
             'tempo_espera' => '15 a 30min',
             'slug' => $slug,
-            'aberto' => true,
+            'aberto' => false,
             'logotipo' => 'imagens/'.$slug.'/logo/villas-logotipo.png'
         ]);
             //taxas
