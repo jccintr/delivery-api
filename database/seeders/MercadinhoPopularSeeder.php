@@ -34,6 +34,10 @@ class MercadinhoPopularSeeder extends Seeder
                 'slug' => $slug,
                 'logotipo' => 'imagens/'.$slug.'/logo/mercadinho-popular.png'
             ]);
+            // Mensagens
+            DB::table('mensagens')->insert([
+                'user_id' => $idTenant
+            ]);
 
                 // taxas
                 DB::table('taxas')->insert([

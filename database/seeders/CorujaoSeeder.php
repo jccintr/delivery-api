@@ -35,6 +35,10 @@ class CorujaoSeeder extends Seeder
             'aberto' => true,
             'logotipo' => 'imagens/'.$slug.'/logo/corujao.png'
         ]);
+        // Mensagens
+        DB::table('mensagens')->insert([
+            'user_id' => $idTenant
+        ]);
          // taxas
          DB::table('taxas')->insert([
             'user_id' => $idTenant,

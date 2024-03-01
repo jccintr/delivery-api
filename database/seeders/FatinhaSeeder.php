@@ -34,6 +34,10 @@ class FatinhaSeeder extends Seeder
             'slug' => $slug,
             'logotipo' => 'imagens/'.$slug.'/logo/fatinha-lanches.png'
         ]);
+        // Mensagens
+        DB::table('mensagens')->insert([
+            'user_id' => $idTenant
+        ]);
          // taxas
          DB::table('taxas')->insert([
             'user_id' => $idTenant,

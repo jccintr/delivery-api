@@ -35,6 +35,10 @@ class PizzaciaSeeder extends Seeder
             'slug' => $slug,
             'logotipo' => 'imagens/'.$slug.'/logo/pizzacia.jpg'
         ]);
+        // Mensagens
+        DB::table('mensagens')->insert([
+            'user_id' => $idTenant
+        ]);
          // taxas
          DB::table('taxas')->insert([
             'user_id' => $idTenant,

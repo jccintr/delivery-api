@@ -34,6 +34,10 @@ class BrazPizzaSeeder extends Seeder
             'slug' => $slug,
             'logotipo' => 'imagens/'.$slug.'/logo/brazpizza.png'
         ]);
+        // Mensagens
+        DB::table('mensagens')->insert([
+            'user_id' => $idTenant
+        ]);
          // taxas
          DB::table('taxas')->insert([
             'user_id' => $idTenant,
