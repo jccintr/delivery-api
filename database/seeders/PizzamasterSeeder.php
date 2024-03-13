@@ -98,6 +98,26 @@ class PizzamasterSeeder extends Seeder
             'dia' => 6,
             'horario' => '18h30 as 23h20'
         ]);
+         // adicionais pizza
+         $adicional_cheddar = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Cheddar',
+            'broto' => 3.00,
+            'grande' => 6.00,
+        ]);
+        $adicional_mussarela = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Mussarela',
+            'broto' => 3.00,
+            'grande' => 6.00,
+        ]);
+        $adicional_catupiry = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Cheddar',
+            'broto' => 3.00,
+            'grande' => 6.00,
+        ]);
+        
 
         // pizzas
         $pizza = DB::table('pizzas')->insertGetid([

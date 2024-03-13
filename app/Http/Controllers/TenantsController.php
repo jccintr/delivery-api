@@ -16,6 +16,7 @@ use App\Models\Obrigatorio;
 use App\Models\Adicional;
 use App\Models\ProdutoObrigatorio;
 use App\Models\ProdutoAdicional;
+use App\Models\AdicionalPizza;
 
 
 
@@ -126,6 +127,7 @@ class TenantsController extends Controller
         $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
         $tenant['produtos'] = Produto::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['pizzas'] = Pizza::where('user_id',$tenant->id)->where('ativo',true)->get(); 
+        $tenant['adicional_pizza'] = AdicionalPizza::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         
         
         foreach ($tenant->produtos as $produto){
