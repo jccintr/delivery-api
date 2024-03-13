@@ -24,14 +24,15 @@ class DatabaseSeeder extends Seeder
             NoCaprichoSeeder::class,
             LucigasSeeder::class,
             CasadopastelSeeder::class,
+            PizzamasterSeeder::class
             //fim lojas exemplo
 
-            BrothersSeeder::class,
-            VillasSeeder::class,
-            FatinhaSeeder::class,
-            CorujaoSeeder::class,
-            BrazPizzaSeeder::class,
-            MercadinhoPopularSeeder::class,
+            // BrothersSeeder::class,
+            // VillasSeeder::class,
+            // FatinhaSeeder::class,
+            // CorujaoSeeder::class,
+            // BrazPizzaSeeder::class,
+            // MercadinhoPopularSeeder::class,
             
             
         ]);

@@ -161,6 +161,16 @@ class PizzamasterSeeder extends Seeder
             'nome' => "Pizzas",
             'user_id' => $idTenant
         ]);
+            $produto = DB::table('produtos')->insertGetid([
+                'user_id' => $idTenant,
+                'categoria_id' => $idCategoria,
+                'nome' => "Pizza",
+                'descricao' => 'Escolha o tamanho e sabor da sua pizza',
+                'preco' => 0.00,
+                'ativo' => true,
+                'pizza' => true
+                //'imagem' => 'imagens/'.$slug.'/produtos/coca-cola-lata.jpg'
+            ]);
         $idCategoria = DB::table('categorias')->insertGetid([
             'nome' => "Bebidas",
             'user_id' => $idTenant

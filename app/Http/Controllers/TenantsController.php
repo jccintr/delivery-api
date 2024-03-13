@@ -11,6 +11,7 @@ use App\Models\Horario;
 use App\Models\Pagamento;
 use App\Models\Categoria;
 use App\Models\Produto;
+use App\Models\Pizza;
 use App\Models\Obrigatorio;
 use App\Models\Adicional;
 use App\Models\ProdutoObrigatorio;
@@ -124,6 +125,7 @@ class TenantsController extends Controller
         $tenant['horarios'] = Horario::where('user_id',$tenant->id)->get(); 
         $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
         $tenant['produtos'] = Produto::where('user_id',$tenant->id)->where('ativo',true)->get(); 
+        $tenant['pizzas'] = Pizza::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         
         
         foreach ($tenant->produtos as $produto){
