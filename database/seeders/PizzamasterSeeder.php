@@ -33,6 +33,7 @@ class PizzamasterSeeder extends Seeder
             'cor_texto' => '#FFFFFF',
             'tempo_espera' => '30 a 45min',
             'slug' => $slug,
+            'aberto' => true,
             'logotipo' => 'imagens/'.$slug.'/logo/pizza-master-logo.png'
         ]);
         // Mensagens
@@ -108,14 +109,32 @@ class PizzamasterSeeder extends Seeder
         $adicional_mussarela = DB::table('adicionais_pizza')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Mussarela',
-            'broto' => 3.00,
+            'broto' => 2.00,
             'grande' => 6.00,
         ]);
         $adicional_catupiry = DB::table('adicionais_pizza')->insertGetid([
             'user_id' => $idTenant,
-            'nome' => 'Cheddar',
+            'nome' => 'Catupiry',
             'broto' => 3.00,
             'grande' => 6.00,
+        ]);
+        $adicional_calabresa = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Calabresa',
+            'broto' => 3.50,
+            'grande' => 6.50,
+        ]);
+        $adicional_frango = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Frango',
+            'broto' => 4.50,
+            'grande' => 7.50,
+        ]);
+        $adicional_bacon = DB::table('adicionais_pizza')->insertGetid([
+            'user_id' => $idTenant,
+            'nome' => 'Bacon',
+            'broto' => 3.00,
+            'grande' => 5.00,
         ]);
         
 
