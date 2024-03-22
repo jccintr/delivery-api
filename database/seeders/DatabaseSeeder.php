@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
             // lojas exemplo
             NoCaprichoSeeder::class,
             LucigasSeeder::class,
-            CasadopastelSeeder::class,
-            PizzamasterSeeder::class
+            CasadopastelSeeder::class
+            //PizzamasterSeeder::class
             //fim lojas exemplo
 
             // BrothersSeeder::class,
