@@ -7,7 +7,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class MauroPizzariaSeeder extends Seeder
+
+class PizzariadoBetoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +17,10 @@ class MauroPizzariaSeeder extends Seeder
      */
     public function run()
     {
-        $slug = 'mauropizzaria';
+        $slug = 'betopizzaria';
         $idTenant = DB::table('users')->insertGetid([
-            'name' => "Mauro Pizzaria",
-            'email' => "mauropizzaria@gmail.com",
+            'name' => "Pizzaria do Beto",
+            'email' => "betopizzaria@gmail.com",
             'password' => Hash::make('123'),
             'role' => 2,
             'telefone' => '35-99912-2008',
@@ -28,7 +29,7 @@ class MauroPizzariaSeeder extends Seeder
             'cidade_id' => 1,
             //'chave_pix' => 'jccintr@gmail.com',
             //'favorecido_pix' => 'Julio Cesar',
-            'cor_fundo' => '#054215',
+            'cor_fundo' => '#a10505',
             'cor_texto' => '#FFFFFF',
             'tempo_espera' => '30 a 45min',
             'slug' => $slug,
