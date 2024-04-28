@@ -23,11 +23,12 @@ class DatabaseSeeder extends Seeder
             // lojas exemplo
             NoCaprichoSeeder::class,
             LucigasSeeder::class,
-            CasadopastelSeeder::class
+            CasadopastelSeeder::class,
             //PizzamasterSeeder::class
             //fim lojas exemplo
 
-            // BrothersSeeder::class,
+             BrothersSeeder::class,
+             PizzariadoBetoSeeder::class
             // VillasSeeder::class,
             // FatinhaSeeder::class,
             // CorujaoSeeder::class,

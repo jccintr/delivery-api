@@ -16,6 +16,7 @@ use App\Http\Controllers\ObrigatoriosController;
 use App\Http\Controllers\AdicionalController;
 use App\Http\Controllers\StatusPedidoController;
 use App\Http\Controllers\StatusPedidoLogController;
+use App\Http\Controllers\PizzasController;
 use App\Models\Cidade;
 
 
@@ -107,3 +108,7 @@ Route::middleware('auth:sanctum')->delete('/produtoobrigatorio/{id}',[ProdutoObr
 
 Route::middleware('auth:sanctum')->post('/produtoadicional',[ProdutoAdicionalController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdicionalController::class,'destroy']);
+
+Route::middleware('auth:sanctum')->get('/pizzas',[PizzasController::class,'index']);
+Route::middleware('auth:sanctum')->put('/pizzas/{id}',[PizzasController::class,'update']);
+Route::middleware('auth:sanctum')->post('/pizzas',[PizzasController::class,'store']);
