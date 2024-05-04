@@ -40,10 +40,11 @@ class PizzasController extends Controller
         $newPizza = new Pizza();
         $newPizza->nome = $nome;
         $newPizza->descricao = $descricao;
-        $newPizza->grande = $grande;
-        $newPizza->broto = $broto;
+        $newPizza->grande = number_format($grande, 2, '.', '');
+        $newPizza->broto = number_format($broto, 2, '.', '');
         $newPizza->user_id = Auth::User()->id;
         $newPizza->ativo = $request->ativo;
+        $newPizza->imagem = null;
         $newPizza->save();
         return response()->json($newPizza,201);
     }
@@ -93,8 +94,8 @@ class PizzasController extends Controller
         }
         $pizza->nome = $nome;
         $pizza->descricao = $descricao;
-        $pizza->grande = $grande;
-        $pizza->broto = $broto;
+        $newPizza->grande = number_format($grande, 2, '.', '');
+        $newPizza->broto = number_format($broto, 2, '.', '');
         $pizza->ativo = $ativo;
         $pizza->save();
         return response()->json($pizza,200);
