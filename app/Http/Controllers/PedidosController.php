@@ -141,7 +141,7 @@ class PedidosController extends Controller
               'to' => $user->push_token,
               'sound'=> 'default',
               'title'=> 'Novo Pedido Delivroo !',
-              'body'=> 'Oba! Acabou de chegar um novo pedido para você. Bora atender mais um cliente !'
+              'body'=> 'Acabou de chegar um novo pedido para você. Veja no aplicativo gestor do Delivroo.'
         ]);
 
        return response()->json($novoPedido,201);
