@@ -135,14 +135,18 @@ class PedidosController extends Controller
 
        $user = User::find($request->tenant_id);
 
-       $response = Http::withHeaders([
-        'Content-Type' => 'application/json'
-        ])->post('https://exp.host/--/api/v2/push/send',[
-              'to' => $user->push_token,
-              'sound'=> 'default',
-              'title'=> 'Novo Pedido Delivroo !',
-              'body'=> 'Acabou de chegar um novo pedido para você. Veja no aplicativo gestor do Delivroo.'
-        ]);
+       if ($user->push_token) {
+           $response = Http::withHeaders([
+                 'Content-Type' => 'application/json'
+             ])->post('https://exp.host/--/api/v2/push/send',[
+                  'to' => $user->push_token,
+                  'sound'=> 'default',
+                  'title'=> 'Novo Pedido Delivroo !',
+                  'body'=> 'Acabou de chegar um novo pedido para você. Veja no aplicativo gestor do Delivroo.'
+             ]);
+
+       }
+      
 
        return response()->json($novoPedido,201);
  }
