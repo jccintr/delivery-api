@@ -141,8 +141,8 @@ class PedidosController extends Controller
              ])->post('https://exp.host/--/api/v2/push/send',[
                   'to' => $user->push_token,
                   'sound'=> 'default',
-                  'title'=> 'Novo Pedido Delivroo !',
-                  'body'=> 'Acabou de chegar um novo pedido para você. Veja no aplicativo gestor do Delivroo.'
+                  'title'=> 'Novo Pedido',
+                  'body'=> 'Chegou um novo pedido de '.$nome.'. Os detalhes deste pedido você pode ver no aplicativo Gestor do Delivroo.'
              ]);
 
        }

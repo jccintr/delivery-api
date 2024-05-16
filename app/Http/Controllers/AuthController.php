@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+
+  public function logout (Request $request) {
+
+        //Auth::User()->currentAccessToken()->delete();
+        Auth::User()->tokens()->delete();
+        $user = User::find(Auth::User()->id);
+        $user->push_token = null;
+        $user->save();
+        return response()->json(['mensagem'=>'User logged out'],200);
+    }
    
     public function login(Request $request){ // login da loja role = 2
 
