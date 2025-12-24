@@ -125,7 +125,10 @@ class TenantsController extends Controller
         $tenant['taxas'] = Taxa::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['pagamentos'] = Pagamento::where('user_id',$tenant->id)->get(); 
         $tenant['horarios'] = Horario::where('user_id',$tenant->id)->get(); 
-        $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
+       // $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
+        $tenant['categorias'] = Categoria::where('user_id', $tenant->id)
+             ->orderBy('position')
+             ->get();
         $tenant['produtos'] = Produto::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['pizzas'] = Pizza::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['adicional_pizza'] = AdicionalPizza::where('user_id',$tenant->id)->where('ativo',true)->get(); 
