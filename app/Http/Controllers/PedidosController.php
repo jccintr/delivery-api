@@ -83,33 +83,26 @@ class PedidosController extends Controller
        $novoPedido = new Pedido();
        $novoPedido->user_id = $tenant;
        $novoPedido->token = $tenant."-".time();
-
+       $novoPedido->nome = $nome;
+       $novoPedido->telefone = $telefone;
        
        if($delivery===true){
-         $novoPedido->delivery = true;
-         $novoPedido->nome = $nome;
-         $novoPedido->telefone = $telefone;
-         $novoPedido->endereco = $endereco;
-         $taxa = Taxa::find($taxa_id);
-         $novoPedido->bairro = $taxa->bairro;
-         $novoPedido->taxa_entrega = $taxa->valor;
-         $pagamento = Pagamento::find($pagamento_id);
-         $novoPedido->forma_pagamento = $pagamento->nome;
-         $novoPedido->observacao = $observacao;
-         $novoPedido->status_pedido_id = 1;
-         $novoPedido->save();
+          $novoPedido->delivery = true;
+          $novoPedido->endereco = $endereco;
+          $taxa = Taxa::find($taxa_id);
+          $novoPedido->bairro = $taxa->bairro;
+          $novoPedido->taxa_entrega = $taxa->valor;
         } 
         else { // para retirar
-         $novoPedido->delivery = false;
-         $novoPedido->nome = $nome;
-         $novoPedido->telefone = $telefone;
-         $novoPedido->taxa_entrega = 0; //x
-         $pagamento = Pagamento::find($pagamento_id);
-         $novoPedido->forma_pagamento = $pagamento->nome;
-         $novoPedido->observacao = $observacao;
-         $novoPedido->status_pedido_id = 1;
-         $novoPedido->save();
-        } 
+          $novoPedido->delivery = false;
+          $novoPedido->taxa_entrega = 0; 
+        }
+         
+        $pagamento = Pagamento::find($pagamento_id);
+        $novoPedido->forma_pagamento = $pagamento->nome;
+        $novoPedido->observacao = $observacao;
+        $novoPedido->status_pedido_id = 1;
+        $novoPedido->save();
 
        //adiciona os itens no pedido
        foreach ($itensPedido as $itemPedido){

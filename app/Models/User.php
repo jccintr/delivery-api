@@ -46,4 +46,45 @@ class User extends Authenticatable
         'ativo'=> 'boolean',
         'aberto' => 'boolean'
     ];
+
+    // incluido em 06-02-2026
+    public function taxas()
+    {
+        return $this->hasMany(Taxa::class, 'user_id');
+    }
+
+    public function pagamentos()
+    {
+        return $this->hasMany(Pagamento::class, 'user_id');
+    }
+
+    public function horarios()
+    {
+        return $this->hasMany(Horario::class, 'user_id');
+    }
+
+    public function categorias()
+    {
+        return $this->hasMany(Categoria::class, 'user_id');
+    }
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class, 'user_id');
+    }
+
+    public function pizzas()
+    {
+        return $this->hasMany(Pizza::class, 'user_id');
+    }
+
+    public function adicionalPizza()   // note o nome em camelCase
+    {
+        return $this->hasMany(AdicionalPizza::class, 'user_id');
+    }
+
+    public function bordas()
+    {
+        return $this->hasMany(Borda::class, 'user_id');
+    }
 }

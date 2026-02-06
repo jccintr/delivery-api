@@ -113,9 +113,9 @@ class TenantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show2($slug)
     {
-        //$tenant = User::find($id);
+       
         $tenant = User::where('slug',$slug)->first();
         if(!$tenant) {
             $array['erro'] = "Estabelecimento não encontrado.";
@@ -125,7 +125,6 @@ class TenantsController extends Controller
         $tenant['taxas'] = Taxa::where('user_id',$tenant->id)->where('ativo',true)->get(); 
         $tenant['pagamentos'] = Pagamento::where('user_id',$tenant->id)->get(); 
         $tenant['horarios'] = Horario::where('user_id',$tenant->id)->get(); 
-       // $tenant['categorias'] = Categoria::where('user_id',$tenant->id)->get(); 
         $tenant['categorias'] = Categoria::where('user_id', $tenant->id)
              ->orderBy('position')
              ->get();
@@ -159,6 +158,49 @@ class TenantsController extends Controller
 
     }
 
+    public function show($slug)
+{
+    $tenant = User::where('slug', $slug)
+        ->where('role', 2)
+        ->with([
+            'taxas' => fn($q) => $q->where('ativo', true),
+            'pagamentos',
+            'horarios',
+            'categorias' => fn($q) => $q->orderBy('position'),
+            'produtos' => fn($q) => $q->where('ativo', true)->with(['obrigatorios', 'adicionais']),
+            'pizzas' => fn($q) => $q->where('ativo', true),
+            'adicionalPizza' => fn($q) => $q->where('ativo', true),
+            'bordas' => fn($q) => $q->where('ativo', true),
+        ])
+        ->firstOrFail();
+
+       // ajusta os obrigatorios e os adicionais de acordo com o front end
+       $tenant->produtos->each(function ($produto) {
+            // Transforma os obrigatórios um array 
+            $produto->setRelation(
+                'obrigatorios',
+                $produto->obrigatorios->map(function ($obr) {
+                    return (object) [
+                        'nome'   => $obr->nome,
+                        'opcoes' => explode(';', trim($obr->opcoes)),
+                    ];
+                })->values()
+            );
+            // omite campos desnecessários nos adicionais
+            $produto->setRelation(
+                'adicionais', 
+                 $produto->adicionais->map(function ($adic) {
+                    return [
+                        'nome'  => $adic->nome,
+                        'valor' => $adic->valor,
+                    ];
+            })->values()
+    );
+    });
+
+    return response()->json($tenant, 200);
+}
+
     /**
      * Update the specified resource in storage.
      *
@@ -186,12 +228,19 @@ class TenantsController extends Controller
 
         $user = Auth::User();
         $user->aberto = !$user->aberto;
+
         if ($user->aberto) {
+            $message = 'Loja aberta com sucesso';
             $user->opened_at = now();
+        } else {
+            $message = 'Loja fechada com sucesso';
         }
         $user->save();
-        return response()->json($user,200);
 
+        return response()->json([
+            'mensagem' => $message,
+            'aberto'  => $user->aberto
+        ], 200);
 
     }
 

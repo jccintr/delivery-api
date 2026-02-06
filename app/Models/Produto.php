@@ -17,8 +17,30 @@ class Produto extends Model
         'updated_at',
     ];
 
-    public function categoria(){
+    public function categoria()
+    {
          return $this->belongsTo(Categoria::class);
+    }
+    // adicionado em 06-02-2026
+   
+    public function obrigatorios()
+    {
+        return $this->belongsToMany(
+            Obrigatorio::class,
+            'produto_obrigatorios',
+            'produto_id',
+            'obrigatorio_id'
+        );
+    }
+
+    public function adicionais()
+    {
+        return $this->belongsToMany(
+            Adicional::class,
+            'produto_adicionais',
+            'produto_id',
+            'adicional_id'
+        );
     }
 
 }
