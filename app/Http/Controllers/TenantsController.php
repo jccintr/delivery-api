@@ -249,7 +249,9 @@ class TenantsController extends Controller
         $user = Auth::User();
         $user->tempo_espera = $request->tempo_espera;
         $user->save();
-        return response()->json($user,200);
+        return response()->json([
+            'mensagem' => "Tempo de espera atualizado com sucesso"
+       ], 200);
     }
 
     public function storePushtoken( Request $request) {
