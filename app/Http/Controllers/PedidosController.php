@@ -140,8 +140,11 @@ class PedidosController extends Controller
 
        }
       
-
-       return response()->json($novoPedido,201);
+        return response()->json([
+            'mensagem' => "Pedido enviado com sucesso",
+            'id' => $novoPedido->id
+       ], 201);
+      
  }
 
     /**
