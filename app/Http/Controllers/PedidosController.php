@@ -281,6 +281,8 @@ class PedidosController extends Controller
             
        endforeach;
 
+        $resposta['tempo_espera'] = Auth::User()->tempo_espera;
+        $resposta['aberto'] = Auth::User()->aberto;
         $resposta['recebidos'] = $recebidos;
         $resposta['entregues'] = $entregues;
         $resposta['retirados'] = $retirados;
