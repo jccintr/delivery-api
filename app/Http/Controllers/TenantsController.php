@@ -250,6 +250,7 @@ class TenantsController extends Controller
         $user->tempo_espera = $request->tempo_espera;
         $user->save();
         return response()->json([
+            'tempo_espera' => $user->tempo_espera,
             'mensagem' => "Tempo de espera atualizado com sucesso"
        ], 200);
     }
