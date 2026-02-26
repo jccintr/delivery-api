@@ -34,15 +34,18 @@ class CategoriasController extends Controller
 
         
         $nome = $request->nome;
-
+        $position = $request->position;
         if (!$nome){
-            $array['erro'] = "Campos obrigatórios não informados.";
+             $array['erro'] = "Campos nome é obrigatório.";
             return response()->json($array,400);
         }
 
         $newCategoria = new Categoria();
         $newCategoria->user_id = Auth::User()->id;
         $newCategoria->nome = $nome;
+        if($position !== null){
+            $newCategoria->position = $position;
+        }
         $newCategoria->save();
 
         return response()->json($newCategoria,201);
@@ -63,7 +66,7 @@ class CategoriasController extends Controller
         }
         $categoria = Categoria::find($id);
         if (!$categoria){
-            $array['erro'] = "Categoria não encontrada.";
+             $array['erro'] = "Categoria não encontrada. Id: " . $id;
             return response()->json($array,404);
         }
         return response()->json($categoria,200);
@@ -80,28 +83,36 @@ class CategoriasController extends Controller
     {
         
         if (!$id){
-            $array['erro'] = "Requisição mal formatada.";
+            $array['erro'] = "Id da categoria não informado.";
             return response()->json($array,400);
         }
         $nome = $request->nome;
+        $position = $request->position;
         if (!$nome) {
-            $array['erro'] = "Campos obrigatórios não informados.";
+            $array['erro'] = "Campos nome é obrigatório.";
             return response()->json($array,400);
         }
         $categoria = Categoria::find($id);
         
         if (!$categoria){
-            $array['erro'] = "Categoria não encontrada.";
+            $array['erro'] = "Categoria não encontrada. Id: " . $id;
             return response()->json($array,404);
         }
         if ($categoria->user_id !== Auth::User()->id){
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido.";
             return response()->json($array,401);
         }
         $categoria->nome = $nome;
+        if($position !== null){
+            $categoria->position = $position;
+        }
         $categoria->save();
         return response()->json($categoria,200);
     }
+
+     public function updateWithPosition(Request $request, $id){
+
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -111,6 +122,24 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+
+        if (!$categoria) {
+            return response()->json(['erro' => "Categoria não encontrada. ID: {$id}"], 404);
+        }
+
+        if ($categoria->user_id !== Auth::user()->id) {
+            return response()->json(['erro' => 'Acesso não permitido.'], 403);
+        }
+
+        if ($categoria->produtos()->exists()) {
+            return response()->json([
+                'erro' => 'Não é possível excluir: existem produtos vinculados a esta categoria.'
+            ], 422);
+        }
+
+        $categoria->delete();
+
+        return response()->json(null, 204); // 204 No Content é comum em exclusões bem-sucedidas
     }
 }

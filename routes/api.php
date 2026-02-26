@@ -58,6 +58,7 @@ Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::clas
 Route::middleware('auth:sanctum')->get('/categorias/{id}',[CategoriasController::class,'show']);
 Route::middleware('auth:sanctum')->post('/categorias',[CategoriasController::class,'store']);
 Route::middleware('auth:sanctum')->put('/categorias/{id}',[CategoriasController::class,'update']);
+Route::middleware('auth:sanctum')->delete('/categorias/{id}',[CategoriasController::class,'destroy']);
 
 Route::middleware('auth:sanctum')->get('/pagamentos',[PagamentosController::class,'index']);
 Route::middleware('auth:sanctum')->get('/pagamentos/{id}',[PagamentosController::class,'show']);
