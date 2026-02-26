@@ -17,7 +17,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::where('user_id',Auth::User()->id)->with('produtos')->orderBy('nome')->get();
+        $categorias = Categoria::where('user_id',Auth::User()->id)->with('produtos')->orderBy('position')->get();
         return response()->json($categorias,200);
     }
 
