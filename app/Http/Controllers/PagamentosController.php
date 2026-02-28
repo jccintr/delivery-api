@@ -28,15 +28,19 @@ class PagamentosController extends Controller
     public function store(Request $request)
     {
         $nome = $request->nome;
+        $ativo = $request->ativo;
 
         if (!$nome){
-            $array['erro'] = "Campos obrigatórios não informados.";
+            $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
 
         $newPagamento = new Pagamento();
         $newPagamento->user_id = Auth::User()->id;
         $newPagamento->nome = $nome;
+        if($ativo !== null){
+            $newPagamento->ativo = $ativo;
+        }
         $newPagamento->save();
 
         return response()->json($newPagamento,201);
@@ -56,7 +60,7 @@ class PagamentosController extends Controller
         }
         $pagamento = Pagamento::find($id);
         if (!$pagamento){
-            $array['erro'] = "Categoria não encontrada.";
+             $array['erro'] = "Forma de Pagamento não encontrada. Id: " . $id;
             return response()->json($array,404);
         }
         return response()->json($pagamento,200);
@@ -76,21 +80,25 @@ class PagamentosController extends Controller
             return response()->json($array,400);
         }
         $nome = $request->nome;
+        $ativo = $request->ativo;
         if (!$nome) {
-            $array['erro'] = "Campos obrigatórios não informados.";
+            $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
         $pagamento = Pagamento::find($id);
         
         if (!$pagamento){
-            $array['erro'] = "Forma de pagamento não encontrada.";
+            $array['erro'] = "Forma de Pagamento não encontrada. Id: " . $id;
             return response()->json($array,404);
         }
         if ($pagamento->user_id !== Auth::User()->id){
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido.";
             return response()->json($array,401);
         }
         $pagamento->nome = $nome;
+        if($ativo !== null){
+            $pagamento->ativo = $ativo;
+        }
         $pagamento->save();
         return response()->json($pagamento,200);
     }

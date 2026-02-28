@@ -36,7 +36,7 @@ class CategoriasController extends Controller
         $nome = $request->nome;
         $position = $request->position;
         if (!$nome){
-             $array['erro'] = "Campos nome é obrigatório.";
+             $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
 

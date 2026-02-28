@@ -164,7 +164,7 @@ class TenantsController extends Controller
         ->where('role', 2)
         ->with([
             'taxas' => fn($q) => $q->where('ativo', true),
-            'pagamentos',
+            'pagamentos' => fn($q) => $q->where('ativo', true),
             'horarios',
             'categorias' => fn($q) => $q->orderBy('position'),
             'produtos' => fn($q) => $q->where('ativo', true)->with(['obrigatorios', 'adicionais']),

@@ -38,12 +38,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// AUTH
 Route::post('/auth/register',[AuthController::class,'register']);
 Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/login2',[AuthController::class,'login2']);
 Route::middleware('auth:sanctum')->post('/logout',[AuthController::class,'logout']);
 
+// TENANTS
 Route::get('/tenant/{slug}',[TenantsController::class,'show']);
 Route::middleware('auth:sanctum')->post('/tenant',[TenantsController::class,'store']);
 Route::middleware('auth:sanctum')->post('/tenant/token',[TenantsController::class,'storePushToken']);
@@ -54,38 +55,46 @@ Route::middleware('auth:sanctum')->post('/changepassword',[TenantsController::cl
 Route::middleware('auth:sanctum')->post('/changepix',[TenantsController::class,'changePix']);
 Route::middleware('auth:sanctum')->post('/changecolors',[TenantsController::class,'changeColors']);
 
+//  CATEGORIAS
 Route::middleware('auth:sanctum')->get('/categorias',[CategoriasController::class,'index']);
 Route::middleware('auth:sanctum')->get('/categorias/{id}',[CategoriasController::class,'show']);
 Route::middleware('auth:sanctum')->post('/categorias',[CategoriasController::class,'store']);
 Route::middleware('auth:sanctum')->put('/categorias/{id}',[CategoriasController::class,'update']);
 Route::middleware('auth:sanctum')->delete('/categorias/{id}',[CategoriasController::class,'destroy']);
 
+// PAGAMENTOS
 Route::middleware('auth:sanctum')->get('/pagamentos',[PagamentosController::class,'index']);
 Route::middleware('auth:sanctum')->get('/pagamentos/{id}',[PagamentosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/pagamentos',[PagamentosController::class,'store']);
 Route::middleware('auth:sanctum')->put('/pagamentos/{id}',[PagamentosController::class,'update']);
 
+// TAXAS
 Route::middleware('auth:sanctum')->get('/taxas',[TaxasController::class,'index']);
 Route::middleware('auth:sanctum')->get('/taxas/{id}',[TaxasController::class,'show']);
 Route::middleware('auth:sanctum')->post('/taxas',[TaxasController::class,'store']);
 Route::middleware('auth:sanctum')->put('/taxas/{id}',[TaxasController::class,'update']);
 
+// HORARIOS
 Route::middleware('auth:sanctum')->get('/horarios',[HorariosController::class,'index']);
 Route::middleware('auth:sanctum')->get('/horarios/{id}',[HorariosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/horarios',[HorariosController::class,'store']);
 Route::middleware('auth:sanctum')->put('/horarios/{id}',[HorariosController::class,'update']);
 
+
+// OBRIGATORIOS
 Route::middleware('auth:sanctum')->get('/obrigatorios',[ObrigatoriosController::class,'index']);
 Route::middleware('auth:sanctum')->post('/obrigatorios',[ObrigatoriosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/obrigatorios/{id}',[ObrigatoriosController::class,'show']);
 Route::middleware('auth:sanctum')->put('/obrigatorios/{id}',[ObrigatoriosController::class,'update']);
 
+// ADICIONAIS
 Route::middleware('auth:sanctum')->get('/adicionais',[AdicionalController::class,'index']);
 Route::middleware('auth:sanctum')->post('/adicionais',[AdicionalController::class,'store']);
 Route::middleware('auth:sanctum')->get('/adicionais/{id}',[AdicionalController::class,'show']);
 Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::class,'update']);
 
 
+// PRODUTOS
 //Route::get('/opcoes',[ProdutosController::class,'opcoes']);
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::get('/produtos/{id}',[ProdutosController::class,'show']);
@@ -94,6 +103,7 @@ Route::middleware('auth:sanctum')->post('/produtos/clone/{id}',[ProdutosControll
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
 Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosController::class,'updateImagem']);
 
+// PEDIDOS
 Route::post('/pedidos',[PedidosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);
 Route::middleware('auth:sanctum')->get('/pedidos/{id}',[PedidosController::class,'show']);
@@ -111,6 +121,7 @@ Route::middleware('auth:sanctum')->delete('/produtoobrigatorio/{id}',[ProdutoObr
 Route::middleware('auth:sanctum')->post('/produtoadicional',[ProdutoAdicionalController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdicionalController::class,'destroy']);
 
+// PIZZAS
 Route::middleware('auth:sanctum')->get('/pizzas',[PizzasController::class,'index']);
 Route::middleware('auth:sanctum')->put('/pizzas/{id}',[PizzasController::class,'update']);
 Route::middleware('auth:sanctum')->post('/pizzas',[PizzasController::class,'store']);
