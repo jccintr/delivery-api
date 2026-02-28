@@ -29,9 +29,14 @@ class TaxasController extends Controller
     {
         $bairro = $request->bairro;
         $valor = $request->valor;
+        $ativo = $request->ativo;
 
-        if (!$bairro or !$valor){
-            $array['erro'] = "Campos obrigatórios não informados.";
+        if (!$bairro){
+            $array['erro'] = "Campo bairro é obrigatório.";
+            return response()->json($array,400);
+        }
+        if (!$valor){
+            $array['erro'] = "Campo valor é obrigatório.";
             return response()->json($array,400);
         }
 
@@ -39,6 +44,9 @@ class TaxasController extends Controller
         $newTaxa->user_id = Auth::User()->id;
         $newTaxa->bairro = $bairro;
         $newTaxa->valor = $valor;
+        if($ativo !== null){
+            $newTaxa->ativo = $ativo;
+        }
         $newTaxa->save();
 
         return response()->json($newTaxa,201);
@@ -85,18 +93,23 @@ class TaxasController extends Controller
         $valor = $request->valor;
         $ativo = $request->ativo;
         
-        if (!$bairro or !$valor ) {
-            $array['erro'] = "Campos obrigatórios não informados.";
+         if (!$bairro){
+            $array['erro'] = "Campo bairro é obrigatório.";
             return response()->json($array,400);
         }
+        if (!$valor){
+            $array['erro'] = "Campo valor é obrigatório.";
+            return response()->json($array,400);
+        }
+
         $taxa = Taxa::find($id);
         
         if (!$taxa){
-            $array['erro'] = "Taxa de entrega não encontrada.";
+            $array['erro'] = "Taxa não encontrada. Id: " . $id;
             return response()->json($array,404);
         }
         if ($taxa->user_id !== Auth::User()->id){
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido.";
             return response()->json($array,401);
         }
         $taxa->bairro = $bairro;
