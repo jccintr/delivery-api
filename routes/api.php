@@ -92,6 +92,7 @@ Route::middleware('auth:sanctum')->get('/adicionais',[AdicionalController::class
 Route::middleware('auth:sanctum')->post('/adicionais',[AdicionalController::class,'store']);
 Route::middleware('auth:sanctum')->get('/adicionais/{id}',[AdicionalController::class,'show']);
 Route::middleware('auth:sanctum')->put('/adicionais/{id}',[AdicionalController::class,'update']);
+Route::middleware('auth:sanctum')->delete('/adicionais/{id}',[AdicionalController::class,'destroy']);
 
 
 // PRODUTOS

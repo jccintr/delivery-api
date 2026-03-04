@@ -131,6 +131,20 @@ class AdicionalController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $adicional = Adicional::find($id);
+
+        if (!$adicional) {
+            return response()->json(['erro' => "Item adicional não encontrado. ID: {$id}"], 404);
+        }
+
+        if ($adicional->user_id !== Auth::user()->id) {
+            return response()->json(['erro' => 'Acesso não permitido.'], 403);
+        }
+
+        $adicional->delete();
+
+        return response()->json(null, 204); // 204 No Content é comum em exclusões bem-sucedidas
+    
     }
 }
