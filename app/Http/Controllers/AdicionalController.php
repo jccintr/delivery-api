@@ -31,18 +31,23 @@ class AdicionalController extends Controller
         $nome = $request->nome;
         $valor = $request->valor;
 
-        if (!$nome or !$valor){
-            $array['erro'] = "Campos obrigatórios não informados.";
+        if (!$nome) {
+            $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
 
-        $newAdicional = new Adicional();
-        $newAdicional->user_id = Auth::User()->id;
-        $newAdicional->nome = $nome;
-        $newAdicional->valor = $valor;
-        $newAdicional->save();
+         if (!$valor) {
+            $array['erro'] = "Campo valor é obrigatório.";
+            return response()->json($array,400);
+        }
 
-        return response()->json($newAdicional,201);
+        $novoAdicional = new Adicional();
+        $novoAdicional->user_id = Auth::User()->id;
+        $novoAdicional->nome = $nome;
+        $novoAdicional->valor = $valor;
+        $novoAdicional->save();
+
+        return response()->json($novoAdicional,201);
     }
 
     /**
@@ -53,19 +58,23 @@ class AdicionalController extends Controller
      */
     public function show($id)
     {
+
         if (!$id){
             $array['erro'] = "Requisição mal formatada.";
             return response()->json($array,400);
         }
+
         $adicional = Adicional::find($id);
         if (!$adicional){
-            $array['erro'] = "Adicional não encontrado.";
+            $array['erro'] = "Adicional não encontrado. Id: " . $id;
             return response()->json($array,404);
         }
+
         if ($adicional->user_id !== Auth::User()->id){
             $array['erro'] = "Não Autorizado.";
             return response()->json($array,401);
         }
+
         return response()->json($adicional,200);
     }
 
@@ -78,26 +87,36 @@ class AdicionalController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         if (!$id){
             $array['erro'] = "Requisição mal formatada.";
             return response()->json($array,400);
         }
+        
         $nome = $request->nome;
         $valor = $request->valor;
-        if (!$nome or !$valor) {
-            $array['erro'] = "Campos obrigatórios não informados.";
+        
+        if (!$nome) {
+            $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
+
+        if (!$valor) {
+            $array['erro'] = "Campo valor é obrigatório.";
+            return response()->json($array,400);
+        }
+
         $adicional = Adicional::find($id);
-        
         if (!$adicional){
-            $array['erro'] = "Adicional não encontrado.";
+            $array['erro'] = "Adicional não encontrado. Id: " . $id;
             return response()->json($array,404);
         }
+
         if ($adicional->user_id !== Auth::User()->id){
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido.";
             return response()->json($array,401);
         }
+
         $adicional->nome = $nome;
         $adicional->valor = $valor;
         $adicional->save();
