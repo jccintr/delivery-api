@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Adicional;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ProdutoAdicional;
 
 class AdicionalController extends Controller
 {
@@ -142,9 +143,18 @@ class AdicionalController extends Controller
             return response()->json(['erro' => 'Acesso não permitido.'], 403);
         }
 
+        // verificar se está sendo utilizado em algum produto.
+
+       if (ProdutoAdicional::where('adicional_id', $adicional->id)->count() > 0) {
+           return response()->json([
+          'erro' => 'Não é possível excluir: este adicional está sendo utilizado.'
+           ], 422);
+        }
+         
+
         $adicional->delete();
 
-        return response()->json(null, 204); // 204 No Content é comum em exclusões bem-sucedidas
+        return response()->json(null, 204);
     
     }
 }
