@@ -86,6 +86,7 @@ Route::middleware('auth:sanctum')->get('/obrigatorios',[ObrigatoriosController::
 Route::middleware('auth:sanctum')->post('/obrigatorios',[ObrigatoriosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/obrigatorios/{id}',[ObrigatoriosController::class,'show']);
 Route::middleware('auth:sanctum')->put('/obrigatorios/{id}',[ObrigatoriosController::class,'update']);
+Route::middleware('auth:sanctum')->delete('/obrigatorios/{id}',[ObrigatoriosController::class,'destroy']);
 
 // ADICIONAIS
 Route::middleware('auth:sanctum')->get('/adicionais',[AdicionalController::class,'index']);

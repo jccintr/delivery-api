@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Obrigatorio;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ProdutoObrigatorio;
 
 
 class ObrigatoriosController extends Controller
@@ -38,8 +39,18 @@ class ObrigatoriosController extends Controller
         $nome = $request->nome;
         $opcoes = $request->opcoes;
         
-        if(!$nome or !$opcoes or count($opcoes)==0){
-            $array['erro'] = "Campos obrigatórios não informados.";
+        if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$opcoes){
+             $array['erro'] = "Opções de seleção não informadas.";
+            return response()->json($array,400);
+        }
+
+        if (count($opcoes)<2){
+             $array['erro'] = "É necessário informar pelo menos duas opções.";
             return response()->json($array,400);
         }
 
@@ -94,16 +105,36 @@ class ObrigatoriosController extends Controller
     {
         $nome = $request->nome;
         $opcoes = $request->opcoes;
+
+        if (!$id){
+            $array['erro'] = "Requisição mal formatada.";
+            return response()->json($array,400);
+        }
         
-        if(!$nome or !$opcoes or !$id or count($opcoes)==0){
-            $array['erro'] = "Campos obrigatórios não informados.";
+         if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$opcoes){
+             $array['erro'] = "Opções de seleção não informadas.";
+            return response()->json($array,400);
+        }
+
+        if (count($opcoes)<2){
+             $array['erro'] = "É necessário informar pelo menos duas opções.";
             return response()->json($array,400);
         }
 
         $obrigatorio = Obrigatorio::find($id);
 
+        if (!$obrigatorio){
+            $array['erro'] = "Obrigatorio não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
+
         if ($obrigatorio->user_id !== Auth::User()->id){
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido.";
             return response()->json($array,401);
         }
 
@@ -126,6 +157,27 @@ class ObrigatoriosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $obrigatorio = Obrigatorio::find($id);
+
+        if (!$obrigatorio) {
+            return response()->json(['erro' => "Item obrigatorio não encontrado. ID: {$id}"], 404);
+        }
+
+        if ($obrigatorio->user_id !== Auth::user()->id) {
+            return response()->json(['erro' => 'Acesso não permitido.'], 403);
+        }
+
+        // verificar se está sendo utilizado em algum produto.
+
+       if (ProdutoObrigatorio::where('obrigatorio_id', $obrigatorio->id)->count() > 0) {
+           return response()->json([
+          'erro' => 'Não é possível excluir: este item obrigatorio está sendo utilizado.'
+           ], 422);
+        }
+         
+
+        $obrigatorio->delete();
+
+        return response()->json(null, 204);
     }
 }
