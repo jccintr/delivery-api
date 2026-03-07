@@ -104,6 +104,7 @@ Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'
 Route::middleware('auth:sanctum')->post('/produtos/clone/{id}',[ProdutosController::class,'clone']);
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
 Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosController::class,'updateImagem']);
+Route::middleware('auth:sanctum')->delete('/produtos/{id}',[ProdutosController::class,'destroy']);
 
 // PEDIDOS
 Route::post('/pedidos',[PedidosController::class,'store']);

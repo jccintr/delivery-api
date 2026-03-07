@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\ProdutoObrigatorio;
 use App\Models\ProdutoAdicional;
+use App\Models\ItemPedido;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+
 
 class ProdutosController extends Controller
 {
@@ -141,7 +143,32 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $produto = Produto::find($id);
+
+        if (!$produto) {
+            return response()->json(['erro' => "Produto não encontrado. ID: {$id}"], 404);
+        }
+
+        if ($produto->user_id !== Auth::user()->id) {
+            return response()->json(['erro' => 'Acesso não permitido.'], 403);
+        }
+
+        // verificar se o produto não está referenciado em algum pedido
+        if (ItemPedido::where('produto_id',$produto->id)->count()>0) {
+                    return response()->json([
+                        'erro' => 'Não é possível excluir: existem pedidos com este produto.'
+                    ], 422);
+        }
+        // exclui os itens obrigatorios caso existam
+        ProdutoObrigatorio::where('produto_id', $produto->id)->delete();
+        // exclui os itens adicionais caso existam
+        ProdutoAdicional::where('produto_id', $produto->id)->delete();
+        // exclui o produto
+        $produto->delete();
+
+        return response()->json(null, 204);
+
     }
 
     public function clone($id) {
@@ -149,7 +176,7 @@ class ProdutosController extends Controller
         $produto = Produto::find($id);
 
         if (Auth::User()->id !== $produto->user_id) {
-            $array['erro'] = "Não Autorizado.";
+            $array['erro'] = "Acesso não permitido. UserId "+Auth::User()->id;
             return response()->json($array,401);
         }
 
