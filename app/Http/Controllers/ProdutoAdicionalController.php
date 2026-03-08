@@ -43,7 +43,13 @@ class ProdutoAdicionalController extends Controller
      */
     public function show($id)
     {
-        //
+       if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+
+        $adicionais = ProdutoAdicional::where('produto_id',$id)->get();
+        return response()->json($adicionais,200);
     }
 
     /**

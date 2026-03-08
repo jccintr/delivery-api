@@ -99,6 +99,8 @@ Route::middleware('auth:sanctum')->delete('/adicionais/{id}',[AdicionalControlle
 // PRODUTOS
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::get('/produtos/{id}',[ProdutosController::class,'show']);
+Route::get('/produtos/{id}/adicionais',[ProdutosController::class,'getAdicionais']);
+Route::get('/produtos/{id}/obrigatorios',[ProdutosController::class,'getObrigatorios']);
 Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'store']);
 Route::middleware('auth:sanctum')->post('/produtos/clone/{id}',[ProdutosController::class,'clone']);
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
@@ -119,9 +121,10 @@ Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,
 
 Route::middleware('auth:sanctum')->post('/statuslog',[StatusPedidoLogController::class,'store']);
 
+// PRODUTO OBRIGATORIO
 Route::middleware('auth:sanctum')->post('/produtoobrigatorio',[ProdutoObrigatorioController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/produtoobrigatorio/{id}',[ProdutoObrigatorioController::class,'destroy']);
-
+// PRODUTO ADICIONAL
 Route::middleware('auth:sanctum')->post('/produtoadicional',[ProdutoAdicionalController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdicionalController::class,'destroy']);
 

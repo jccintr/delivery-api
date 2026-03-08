@@ -98,10 +98,32 @@ class ProdutosController extends Controller
         }
 
         $produto = Produto::find($id);
+       // $produto = Produto::with(['obrigatorios', 'adicionais'])->find($id);
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
         $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
         $produto['obrigatorios'] = $obrigatorios;
         $adicionais = ProdutoAdicional::where('produto_id',$produto->id)->get();
         $produto['adicionais'] = $adicionais;
+        return response()->json($produto,200);
+    }
+
+    public function show2web($id)
+    {
+        if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+
+       
+       $produto = Produto::with(['obrigatorios', 'adicionais'])->find($id);
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
+       
         return response()->json($produto,200);
     }
 
@@ -385,4 +407,51 @@ class ProdutosController extends Controller
         return response()->json(['ativo'  => $produto->ativo], 200);
 
    }
+
+   public function getAdicionais($id)
+   {
+        if (!$id) {
+            return response()->json(['erro' => "Id do produto não informado."], 400);
+        }
+
+        $produto = Produto::with('adicionais')->find($id);
+
+        if (!$produto) {
+            return response()->json(['erro' => "Produto não encontrado. Id: " . $id], 404);
+        }
+
+        $adicionais = $produto->adicionais->map(function ($adicional) {
+            return [
+                'id'   => $adicional->id,
+                'nome' => $adicional->nome,   
+            ];
+         });
+
+        
+        return response()->json($adicionais, 200);
+   }
+
+   public function getObrigatorios($id)
+   {
+        if (!$id) {
+            return response()->json(['erro' => "Id do produto não informado."], 400);
+        }
+
+        $produto = Produto::with('obrigatorios')->find($id);
+
+        if (!$produto) {
+            return response()->json(['erro' => "Produto não encontrado. Id: " . $id], 404);
+        }
+
+        $obrigatorios = $produto->obrigatorios->map(function ($obrigatorio) {
+            return [
+                'id'   => $obrigatorio->id,
+                'nome' => $obrigatorio->nome,   
+            ];
+         });
+
+        
+        return response()->json($obrigatorios, 200);
+   }
+
 }
