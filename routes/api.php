@@ -97,14 +97,15 @@ Route::middleware('auth:sanctum')->delete('/adicionais/{id}',[AdicionalControlle
 
 
 // PRODUTOS
-//Route::get('/opcoes',[ProdutosController::class,'opcoes']);
 Route::get('/produtos',[ProdutosController::class,'index']);
 Route::get('/produtos/{id}',[ProdutosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/produtos',[ProdutosController::class,'store']);
 Route::middleware('auth:sanctum')->post('/produtos/clone/{id}',[ProdutosController::class,'clone']);
 Route::middleware('auth:sanctum')->put('/produtos/{id}',[ProdutosController::class,'update']);
+Route::middleware('auth:sanctum')->post('/produtos/update/{id}',[ProdutosController::class,'update2']);
 Route::middleware('auth:sanctum')->post('/produtos/imagem/{id}',[ProdutosController::class,'updateImagem']);
 Route::middleware('auth:sanctum')->delete('/produtos/{id}',[ProdutosController::class,'destroy']);
+Route::middleware('auth:sanctum')->put('/produtos/toggleativo/{id}',[ProdutosController::class,'toggleAtivo']);
 
 // PEDIDOS
 Route::post('/pedidos',[PedidosController::class,'store']);

@@ -39,12 +39,34 @@ class ProdutosController extends Controller
         $preco = $request->preco;
         $categoria_id = $request->categoria_id;
         $imagem = $request->imagem;
-        
-        if (!$categoria_id or !$nome or !$descricao or !$preco){
-            $array['erro'] = "Campos obrigatórios não informados.";
+
+        if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
 
+        if (!$descricao){
+             $array['erro'] = "Campo descrição é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$preco or $preco<=0){
+             $array['erro'] = "Campo preço é obrigatório e deve ser maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        if (!$categoria_id or $categoria_id<=0){
+             $array['erro'] = "Campo categoria id é obrigatório e deve ser um inteiro maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        $maxSizeBytes = 3 * 1024 * 1024; 
+        if ($imagem->getSize() > $maxSizeBytes) {
+            return response()->json([
+                'erro' => 'A imagem é muito grande. O tamanho máximo permitido é 3MB.'
+            ], 422);
+        }
+        
         $newProduto = new Produto();
         $newProduto->user_id = $user_id;
         $newProduto->categoria_id = $categoria_id;
@@ -70,6 +92,11 @@ class ProdutosController extends Controller
      */
     public function show($id)
     {
+        if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+
         $produto = Produto::find($id);
         $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
         $produto['obrigatorios'] = $obrigatorios;
@@ -88,7 +115,7 @@ class ProdutosController extends Controller
     public function update(Request $request, $id)
     {
         if (!$id){
-            $array['erro'] = "Requisição mal formatada.";
+            $array['erro'] = "Id do produto não informado.";
             return response()->json($array,400);
         }
         $nome = $request->nome;
@@ -96,17 +123,34 @@ class ProdutosController extends Controller
         $preco = $request->preco;
         $categoria_id = $request->categoria_id;
         $ativo = $request->ativo;
-           
-        if (!$nome or !$preco or !is_numeric($preco)) {
-            $array['erro'] = "Campos obrigatórios não informados.";
+
+        if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
-        $produto = Produto::find($id);
+
+        if (!$descricao){
+             $array['erro'] = "Campo descrição é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$preco or $preco<=0){
+             $array['erro'] = "Campo preço é obrigatório e deve ser maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        if (!$categoria_id or $categoria_id<=0){
+             $array['erro'] = "Campo categoria id é obrigatório e deve ser um inteiro maior do que zero.";
+            return response()->json($array,400);
+        }
+
         
+        $produto = Produto::find($id);
         if (!$produto){
-            $array['erro'] = "Produto não encontrado.";
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
             return response()->json($array,404);
         }
+           
         if ($produto->user_id !== Auth::User()->id){
             $array['erro'] = "Não Autorizado.";
             return response()->json($array,401);
@@ -120,11 +164,113 @@ class ProdutosController extends Controller
         return response()->json($produto,200);
     }
 
+
+    public function update2(Request $request, $id)
+    {
+
+        if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+       $user_id = Auth::User()->id;
+       $slug = Auth::User()->slug;
+       $nome = $request->nome;
+       $descricao = $request->descricao;
+       $preco  = $request->preco;
+       $categoria_id = $request->categoria_id;
+       $imagem = $request->imagem;
+
+        if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$descricao){
+             $array['erro'] = "Campo descrição é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$preco or $preco<=0){
+             $array['erro'] = "Campo preço é obrigatório e deve ser maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        if (!$categoria_id or $categoria_id<=0){
+             $array['erro'] = "Campo categoria id é obrigatório e deve ser um inteiro maior do que zero.";
+            return response()->json($array,400);
+        }
+        
+        if($imagem){
+            $maxSizeBytes = 3 * 1024 * 1024; 
+            if ($imagem->getSize() > $maxSizeBytes) {
+                return response()->json([
+                    'erro' => 'A imagem é muito grande. O tamanho máximo permitido é 3MB.'
+                ], 422);
+            }
+         }
+
+        $produto = Produto::find($id);
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
+           
+        if ($produto->user_id !== Auth::User()->id){
+            $array['erro'] = "Acesso não permitido.";
+            return response()->json($array,403);
+        }
+
+        $produto->nome = $nome;
+        $produto->descricao = $descricao;
+        $produto->preco = $preco;
+        $produto->categoria_id = $categoria_id;
+        if($produto->imagem and $imagem){
+            Storage::disk('public')->delete($produto->imagem);
+          
+        }
+        if($imagem){
+          $imagem_url = $imagem->store('imagens/'.$slug.'/produtos','public');
+          $produto->imagem = $imagem_url;
+        }
+       
+        $produto->save();
+        return response()->json($produto,200);
+
+    }
+
     public function updateImagem(Request $request, $id){
+
+        if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
         
         $slug = Auth::User()->slug;
         $produto = Produto::find($id);
         $imagem = $request->file('imagem');
+
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
+
+        if ($produto->user_id !== Auth::User()->id){
+            $array['erro'] = "Acesso não permitido.";
+            return response()->json($array,403);
+        }
+
+        if(!$imagem){
+             $array['erro'] = "Imagem não fornecida.";
+             return response()->json($array,400);
+        }
+
+        $maxSizeBytes = 3 * 1024 * 1024; 
+        if ($imagem->getSize() > $maxSizeBytes) {
+            return response()->json([
+                'erro' => 'A imagem é muito grande. O tamanho máximo permitido é 3MB.'
+            ], 422);
+        }
+
         if($produto->imagem){
             Storage::disk('public')->delete($produto->imagem);
         }
@@ -164,6 +310,10 @@ class ProdutosController extends Controller
         ProdutoObrigatorio::where('produto_id', $produto->id)->delete();
         // exclui os itens adicionais caso existam
         ProdutoAdicional::where('produto_id', $produto->id)->delete();
+        // deleta a imagem do produto do servidor caso exista
+        if($produto->imagem){
+            Storage::disk('public')->delete($produto->imagem);
+        }
         // exclui o produto
         $produto->delete();
 
@@ -173,17 +323,23 @@ class ProdutosController extends Controller
 
     public function clone($id) {
 
+        if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+
         $produto = Produto::find($id);
 
         if (Auth::User()->id !== $produto->user_id) {
             $array['erro'] = "Acesso não permitido. UserId "+Auth::User()->id;
-            return response()->json($array,401);
+            return response()->json($array,403);
         }
 
         $newProduto = $produto->replicate();
         $newProduto->nome = 'Cópia de '.$produto->nome;
         $newProduto->imagem = null;
         $newProduto->created_at = date("Y-m-d H:i:s"); //Carbon::now();
+        $newProduto->ativo = false;
         $newProduto->save();
 
         $obrigatorios = ProdutoObrigatorio::where('produto_id',$produto->id)->get();
@@ -206,13 +362,27 @@ class ProdutosController extends Controller
     }
 
 
-    // public function opcoes() {
-    //     $produtos = Produto::where('user_id',6)->where('categoria_id',20)->get();
-    //     $opcoes = "";
-    //     foreach ($produtos as $produto) {
-    //        $opcoes = $opcoes.$produto->nome.';';
-    //     }
+   public function toggleAtivo($id){
 
-    //     return response()->json(['opcoes' => $opcoes],200);
-    // }
+    if (!$id){
+            $array['erro'] = "Id do produto não informado.";
+            return response()->json($array,400);
+        }
+
+        $produto = Produto::find($id);
+
+        if (!$produto){
+            $array['erro'] = "Produto não encontrado. Id: " . $id;
+            return response()->json($array,404);
+        }
+
+        if (Auth::User()->id !== $produto->user_id) {
+            $array['erro'] = "Acesso não permitido.";
+            return response()->json($array,403);
+        }
+        $produto->ativo = !$produto->ativo;
+        $produto->save();
+        return response()->json(['ativo'  => $produto->ativo], 200);
+
+   }
 }
