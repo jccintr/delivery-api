@@ -67,9 +67,15 @@ class ProdutoObrigatorioController extends Controller
      */
     public function destroy($id)
     {
+
         $item = ProdutoObrigatorio::find($id);
+        if (!$item) {
+            return response()->json(['erro' => "Produto Obrigatório não encontrado. ID: {$id}"], 404);
+        }
+
         $item->delete();
-        $array['sucesso'] = "Item removido com sucesso";
-            return response()->json($array,200);
+
+        return response()->json(null, 204);
     }
+    
 }

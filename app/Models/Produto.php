@@ -30,7 +30,7 @@ class Produto extends Model
             'produto_obrigatorios',
             'produto_id',
             'obrigatorio_id'
-        );
+        )->withPivot('id');
     }
 
     public function adicionais()
@@ -40,7 +40,7 @@ class Produto extends Model
             'produto_adicionais',
             'produto_id',
             'adicional_id'
-        );
+        )->withPivot('id');
     }
 
 }

@@ -72,9 +72,14 @@ class ProdutoAdicionalController extends Controller
      */
     public function destroy($id)
     {
+        
         $item = ProdutoAdicional::find($id);
+        if (!$item) {
+            return response()->json(['erro' => "Produto Adicional não encontrado. ID: {$id}"], 404);
+        }
+
         $item->delete();
-        $array['sucesso'] = "Item removido com sucesso";
-        return response()->json($array,200);
+       
+        return response()->json(null, 204);
     }
 }

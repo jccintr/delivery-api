@@ -423,7 +423,8 @@ class ProdutosController extends Controller
         $adicionais = $produto->adicionais->map(function ($adicional) {
             return [
                 'id'   => $adicional->id,
-                'nome' => $adicional->nome,   
+                'nome' => $adicional->nome, 
+                'produto_adicional_id' => $adicional->pivot->id,  
             ];
          });
 
@@ -446,7 +447,8 @@ class ProdutosController extends Controller
         $obrigatorios = $produto->obrigatorios->map(function ($obrigatorio) {
             return [
                 'id'   => $obrigatorio->id,
-                'nome' => $obrigatorio->nome,   
+                'nome' => $obrigatorio->nome,
+                'produto_obrigatorio_id' => $obrigatorio->pivot->id,
             ];
          });
 
