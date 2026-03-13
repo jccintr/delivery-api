@@ -135,7 +135,7 @@ class PedidosController extends Controller
 
            $tipo = $novoPedido->delivery ? 'entregar' : 'retirar';
            $valor = $totalPedido + $novoPedido->taxa_entrega;
-           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . $valor; 
+           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . number_format($valor, 2, ',', '.'); 
            $response = Http::withHeaders([
                  'Content-Type' => 'application/json'
              ])->post('https://exp.host/--/api/v2/push/send',[
