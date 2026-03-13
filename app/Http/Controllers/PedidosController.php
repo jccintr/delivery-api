@@ -130,13 +130,17 @@ class PedidosController extends Controller
        $user = User::find($request->tenant_id);
 
        if ($user->push_token) {
+
+           $tipo = $novoPedido->delivery ? 'entregar' : 'retirar';
+           $valor = $novoPedido->total + $novoPedido->taxa_entrega;
+           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . number_format($valor, 2, ',', '.'); 
            $response = Http::withHeaders([
                  'Content-Type' => 'application/json'
              ])->post('https://exp.host/--/api/v2/push/send',[
                   'to' => $user->push_token,
                   'sound'=> 'default',
-                  'title'=> 'Novo Pedido',
-                  'body'=> 'Chegou um novo pedido de '.$nome.'. Os detalhes deste pedido você pode ver no aplicativo Gestor do Delivroo.'
+                  'title'=> 'Novo Pedido Recebido',
+                  'body'=> $body
              ]);
 
        }
