@@ -333,7 +333,7 @@ class PedidosController extends Controller
 
         $user = Auth::User();
 
-        $day = $request->query('day');
+        $day = $request->query('data');
 
         // Se não veio o parâmetro, usa a data atual
         if (!$day) {
