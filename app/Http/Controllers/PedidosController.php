@@ -106,6 +106,7 @@ class PedidosController extends Controller
         $novoPedido->save();
 
        //adiciona os itens no pedido
+        $totalPedido = 0;
        foreach ($itensPedido as $itemPedido){
          
          $novoItemPedido = new ItemPedido();
@@ -117,6 +118,7 @@ class PedidosController extends Controller
          $novoItemPedido->adicionais = $itemPedido['adicionais'];
          $novoItemPedido->observacao = $itemPedido['observacao'];
          $novoItemPedido->save();
+         $totalPedido = $totalPedido + $novoItemPedido->total;
 
        }
        
@@ -132,8 +134,8 @@ class PedidosController extends Controller
        if ($user->push_token) {
 
            $tipo = $novoPedido->delivery ? 'entregar' : 'retirar';
-           $valor = $novoPedido->total + $novoPedido->taxa_entrega;
-           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . number_format($valor, 2, ',', '.'); 
+           $valor = $totalPedido + $novoPedido->taxa_entrega;
+           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . $valor; 
            $response = Http::withHeaders([
                  'Content-Type' => 'application/json'
              ])->post('https://exp.host/--/api/v2/push/send',[
