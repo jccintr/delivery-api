@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\StatusPedidoLog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 
 class PedidosController extends Controller
@@ -327,4 +328,75 @@ class PedidosController extends Controller
     
 
    }
+
+   public function ordersPerDay(Request $request){
+
+        $user = Auth::User();
+
+        $day = $request->query('day');
+
+        // Se não veio o parâmetro, usa a data atual
+        if (!$day) {
+            $data = Carbon::today(); // hoje à meia-noite
+        } else {
+            // Valida estritamente o formato YYYY-MM-DD
+            if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $day)) {
+                return response()->json([
+                    'error' => 'Formato de data inválido. Use apenas YYYY-MM-DD (ex: 2026-12-01)'
+                ], 422);
+            }
+
+            try {
+                $data = Carbon::createFromFormat('Y-m-d', $day)->startOfDay();
+                 //Opcional: impede datas futuras ou muito antigas (ajuste conforme necessidade)
+                 if ($data->isFuture()) {
+                     return response()->json(['error' => 'Data não pode ser futura'], 422);
+                 }
+            } catch (\Exception $e) {
+                return response()->json([
+                    'error' => 'Data inválida ou fora do formato YYYY-MM-DD'
+                ], 422);
+            }
+        }
+
+        // Define o intervalo do dia inteiro
+        $start = $data->copy()->startOfDay(); // 00:00:00
+        $end   = $data->copy()->endOfDay();   // 23:59:59
+
+        $pedidos = Pedido::where('user_id', $user->id)
+            ->where('created_at', '>=', $start)
+            ->where('created_at', '<=', $end)
+            ->with('statusPedidoLog.statusPedido')
+            ->with('statusPedido')
+            ->with('itensPedido.produto')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // Formatação padrão que você usa nos outros métodos
+        foreach ($pedidos as $pedido) {
+            $pedido['data'] = $pedido->created_at->format('d/m/Y H:i');
+
+            $total = 0;
+            foreach ($pedido->itensPedido as $itemPedido) {
+                $itemPedido['obrigatorios'] = $itemPedido->obrigatorios 
+                    ? explode(';', $itemPedido->obrigatorios) 
+                    : [];
+
+                $itemPedido['adicionais'] = $itemPedido->adicionais 
+                    ? explode(';', $itemPedido->adicionais) 
+                    : [];
+
+                $total += $itemPedido->total;
+            }
+            $pedido['total'] = round($total, 2);
+
+            foreach ($pedido->statusPedidoLog as $statusPedido) {
+                $statusPedido['data'] = $statusPedido->created_at->format('d/m-H:i');
+            }
+        }
+
+        return response()->json($pedidos, 200);
+
+   }
+
 }

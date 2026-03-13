@@ -112,14 +112,16 @@ Route::middleware('auth:sanctum')->put('/produtos/toggleativo/{id}',[ProdutosCon
 // PEDIDOS
 Route::post('/pedidos',[PedidosController::class,'store']);
 Route::middleware('auth:sanctum')->get('/pedidos',[PedidosController::class,'index']);
+Route::middleware('auth:sanctum')->get('/pedidos/dia',[PedidosController::class,'ordersPerDay']);
 Route::middleware('auth:sanctum')->get('/pedidos/{id}',[PedidosController::class,'show']);
 Route::middleware('auth:sanctum')->get('/pedidosresumo',[PedidosController::class,'resumo']);
 Route::middleware('auth:sanctum')->get('/pedidos/{ano}/{mes}',[PedidosController::class,'historico']);
 Route::get('/lastorder/{id}',[PedidosController::class,'show2']);
 
-Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,'index']);
 
+Route::middleware('auth:sanctum')->get('/status',[StatusPedidoController::class,'index']);
 Route::middleware('auth:sanctum')->post('/statuslog',[StatusPedidoLogController::class,'store']);
+
 
 // PRODUTO OBRIGATORIO
 Route::middleware('auth:sanctum')->post('/produtoobrigatorio',[ProdutoObrigatorioController::class,'store']);
