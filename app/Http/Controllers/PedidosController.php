@@ -135,7 +135,7 @@ class PedidosController extends Controller
 
            $tipo = $novoPedido->delivery ? 'entregar' : 'retirar';
            $valor = $totalPedido + $novoPedido->taxa_entrega;
-           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . number_format($valor, 2, ',', '.'); 
+           $body = "Chegou um novo pedido de {$nome} para {$tipo} no valor de R$ " . number_format($valor, 2, ',', '.')."."; 
            $response = Http::withHeaders([
                  'Content-Type' => 'application/json'
              ])->post('https://exp.host/--/api/v2/push/send',[
@@ -146,6 +146,15 @@ class PedidosController extends Controller
              ]);
 
        }
+       // notifica o painel web
+       
+        $responseFromPushServer = Http::withHeaders([
+                 'Content-Type' => 'application/json'
+             ])->post('https://delivroo-pusher-server-node-production.up.railway.app/api/new-order',[
+                  'pdvId' => $user->slug,
+                  'customer'=> $novoPedido->nome,
+                  'total'=> $totalPedido + $novoPedido->taxa_entrega
+             ]);
       
         return response()->json([
             'mensagem' => "Pedido enviado com sucesso",
