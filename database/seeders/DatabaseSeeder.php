@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             BrothersSeeder::class,
             AcaiDaPraiaSeeder::class,
             FastBurguerSeeder::class,
+            BellaMassaSeeder::class,
             // PizzariadoBetoSeeder::class
           
             
