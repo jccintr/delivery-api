@@ -132,5 +132,8 @@ Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdici
 
 // PIZZAS
 Route::middleware('auth:sanctum')->get('/pizzas',[PizzasController::class,'index']);
-Route::middleware('auth:sanctum')->put('/pizzas/{id}',[PizzasController::class,'update']);
 Route::middleware('auth:sanctum')->post('/pizzas',[PizzasController::class,'store']);
+Route::middleware('auth:sanctum')->delete('/pizzas/{id}',[PizzasController::class,'destroy']);
+Route::middleware('auth:sanctum')->put('/pizzas/{id}',[PizzasController::class,'update']);
+Route::middleware('auth:sanctum')->put('/pizzas/toggleativo/{id}',[PizzasController::class,'toggleAtivo']);
+Route::middleware('auth:sanctum')->post('/pizzas/imagem/{id}',[PizzasController::class,'updateImagem']);

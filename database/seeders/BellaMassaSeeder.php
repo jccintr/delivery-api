@@ -32,7 +32,7 @@ class BellaMassaSeeder extends Seeder
         'cor_texto' => '#ffffff',
         'tempo_espera' => '15 a 30min',
         'slug' => $slug,
-        'aberto' => true,
+        'aberto' => false,
         'logotipo' => 'imagens/'.$slug.'/logo/bella-massa-logo2.jpg'
      ]);
        // Mensagens
@@ -145,8 +145,7 @@ class BellaMassaSeeder extends Seeder
         'dia' => 6,
         'horario' => '19h as 23h'
     ]);
-    // Obrigatorios
-    // Obrigatorios
+     // Obrigatorios
      $tipo_refri_200 = DB::table('obrigatorios')->insertGetid([
             'user_id' => $idTenant,
             'nome' => 'Tipo ref. 200ml',
@@ -235,56 +234,64 @@ class BellaMassaSeeder extends Seeder
         'nome' => "Atum",
         'descricao' => 'Mussarela, atum e cebola.',
         'grande' => 60,
-        'broto' => 40
+        'broto' => 40,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-atum.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Portuguesa",
         'descricao' => 'Mussarela, presunto, ovo e cebola.',
         'grande' => 58,
-        'broto' => 40
+        'broto' => 40,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-portuguesa.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Peperonni",
         'descricao' => 'Mussarela, peperoni e cebola.',
         'grande' => 62,
-        'broto' => 42
+        'broto' => 42,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-peperoni.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Napolitana",
         'descricao' => 'Mussarela, presunto, tomate e cebola.',
         'grande' => 60.00,
-        'broto' => 40
+        'broto' => 40,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-napolitana.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Frango Catupiry",
         'descricao' => 'Mussarela, frango desfiado e catupiry.',
         'grande' => 60.00,
-        'broto' => 40
+        'broto' => 40,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-frango.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Quatro queijos",
         'descricao' => 'Mussarela, provolone, parmesão e catupiry.',
         'grande' => 62.00,
-        'broto' => 42.00
+        'broto' => 42.00,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-4queijos.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Calabresa",
         'descricao' => 'Mussarela, calabresa e cebola.',
         'grande' => 64.00,
-        'broto' => 44.00
+        'broto' => 44.00,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-calabresa.png'
     ]);
     $pizza = DB::table('pizzas')->insertGetid([
         'user_id' => $idTenant,
         'nome' => "Marguerita",
         'descricao' => 'Mussarela, tomate, parmesão, e manjericão.',
         'grande' => 60.00,
-        'broto' => 40.00
+        'broto' => 40.00,
+        'imagem' => 'imagens/'.$slug.'/produtos/pizza-marguerita.png'
     ]);
     //CATEGORIAS
     $idCategoria = DB::table('categorias')->insertGetid([
@@ -300,6 +307,104 @@ class BellaMassaSeeder extends Seeder
             'ativo' => true,
             'pizza' => true,
             'imagem' => 'imagens/'.$slug.'/produtos/pizza-da-bella-massa.png'
+        ]);
+    $idCategoria = DB::table('categorias')->insertGetid([
+        'nome' => "Pizzas Fritas",
+        'user_id' => $idTenant
+    ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Portuguesa",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela, presunto, ovo, azeitona fatiada, cebola e um toque de orégano.',
+            'preco' => 58.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-portuguesa.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Calabresa",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela, calabresa fatiada, cebola e um toque de orégano.',
+            'preco' => 58.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-calabresa.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Mista",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela, presunto e um toque de orégano.',
+            'preco' => 56.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-mista.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Frango Caipira",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela, frango, milho e um toque de orégano.',
+            'preco' => 58.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-frango.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Calamista",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela, calabresa fatiada,presunto, cebola e um toque de orégano.',
+            'preco' => 58.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-calamista.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Pizza Frita Mussarela",
+            'descricao' => 'Molho de tomate, requeijão cremoso, mussarela e um toque de orégano.',
+            'preco' => 57.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/pizza-frita-mussarela.png'
+        ]);
+    $idCategoria = DB::table('categorias')->insertGetid([
+        'nome' => "Esfihas Abertas",
+        'user_id' => $idTenant
+    ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Esfiha de Carne",
+            'descricao' => 'Esfihas abertas de carne com cebola e tomate.',
+            'preco' => 5.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/esfihas-carne.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Esfiha de Frango",
+            'descricao' => 'Esfihas abertas de frango desfiado e mussarela.',
+            'preco' => 6.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/esfihas-frango.png'
+        ]);
+        $produto = DB::table('produtos')->insertGetid([
+            'user_id' => $idTenant,
+            'categoria_id' => $idCategoria,
+            'nome' => "Esfiha de Calabresa",
+            'descricao' => 'Esfihas abertas de calabresa ralada e mussarela.',
+            'preco' => 6.00,
+            'ativo' => true,
+            'pizza' => false,
+            'imagem' => 'imagens/'.$slug.'/produtos/esfihas-calabresa.png'
         ]);
     $idCategoria = DB::table('categorias')->insertGetid([
         'nome' => "Bebidas",
