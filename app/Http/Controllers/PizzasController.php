@@ -34,8 +34,10 @@ class PizzasController extends Controller
         $grande = $request->grande;
         $broto = $request->broto;
         $imagem = $request->imagem;
+
+        $slug = Auth::User()->slug;
         
-         if (!$nome){
+        if (!$nome){
              $array['erro'] = "Campo nome é obrigatório.";
             return response()->json($array,400);
         }
@@ -74,7 +76,7 @@ class PizzasController extends Controller
         $newPizza->user_id = Auth::User()->id;
         if($imagem){
             $imagem_url = $imagem->store('imagens/'.$slug.'/produtos','public');
-            $newProduto->imagem = $imagem_url;
+            $newPizza->imagem = $imagem_url;
         }
         $newPizza->save();
         return response()->json($newPizza,201);
@@ -125,12 +127,83 @@ class PizzasController extends Controller
         }
         $pizza->nome = $nome;
         $pizza->descricao = $descricao;
-        $newPizza->grande = number_format($grande, 2, '.', '');
-        $newPizza->broto = number_format($broto, 2, '.', '');
+        $pizza->grande = number_format($grande, 2, '.', '');
+        $pizza->broto = number_format($broto, 2, '.', '');
         $pizza->ativo = $ativo;
         $pizza->save();
         return response()->json($pizza,200);
     }
+
+     public function update2(Request $request, $id){
+
+         if (!$id){
+            $array['erro'] = "Id da pizza não informado.";
+            return response()->json($array,400);
+        }
+
+        $user_id = Auth::User()->id;
+        $slug = Auth::User()->slug;
+        $nome = $request->nome;
+        $descricao = $request->descricao;
+        $ativo = $request->ativo;
+        $grande = $request->grande;
+        $broto = $request->broto;
+        $imagem = $request->imagem;
+
+        if (!$nome){
+             $array['erro'] = "Campo nome é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$descricao){
+             $array['erro'] = "Campo descrição é obrigatório.";
+            return response()->json($array,400);
+        }
+
+        if (!$broto or $broto<=0){
+             $array['erro'] = "Campo broto é obrigatório e deve ser maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        if (!$grande or $grande<=0){
+             $array['erro'] = "Campo grande é obrigatório e deve ser maior do que zero.";
+            return response()->json($array,400);
+        }
+
+        if($imagem){
+            $maxSizeBytes = 3 * 1024 * 1024; 
+            if ( $imagem->getSize() > $maxSizeBytes) {
+                return response()->json([
+                    'erro' => 'A imagem é muito grande. O tamanho máximo permitido é 3MB.'
+                ], 422);
+            }
+        }
+
+        $pizza = Pizza::find($id);
+
+        if (!$pizza) {
+            return response()->json(['erro' => "Pizza não encontrada. ID: {$id}"], 404);
+        }
+        if ($pizza->user_id !== Auth::User()->id){
+            $array['erro'] = "Acesso não Autorizado.";
+            return response()->json($array,401);
+        }
+        $pizza->nome = $nome;
+        $pizza->descricao = $descricao;
+        $pizza->grande = number_format($grande, 2, '.', '');
+        $pizza->broto = number_format($broto, 2, '.', '');
+        if($pizza->imagem and $imagem){
+            Storage::disk('public')->delete($pizza->imagem);
+          
+        }
+        if($imagem){
+          $imagem_url = $imagem->store('imagens/'.$slug.'/produtos','public');
+          $pizza->imagem = $imagem_url;
+        }
+
+        $pizza->save();
+        return response()->json($pizza,200);
+     }
 
     /**
      * Remove the specified resource from storage.

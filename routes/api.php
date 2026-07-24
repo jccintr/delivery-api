@@ -17,6 +17,7 @@ use App\Http\Controllers\AdicionalController;
 use App\Http\Controllers\StatusPedidoController;
 use App\Http\Controllers\StatusPedidoLogController;
 use App\Http\Controllers\PizzasController;
+use App\Http\Controllers\BordasPizzaController;
 use App\Models\Cidade;
 
 
@@ -134,6 +135,12 @@ Route::middleware('auth:sanctum')->delete('/produtoadicional/{id}',[ProdutoAdici
 Route::middleware('auth:sanctum')->get('/pizzas',[PizzasController::class,'index']);
 Route::middleware('auth:sanctum')->post('/pizzas',[PizzasController::class,'store']);
 Route::middleware('auth:sanctum')->delete('/pizzas/{id}',[PizzasController::class,'destroy']);
-Route::middleware('auth:sanctum')->put('/pizzas/{id}',[PizzasController::class,'update']);
+Route::middleware('auth:sanctum')->post('/pizzas/update/{id}',[PizzasController::class,'update2']);
 Route::middleware('auth:sanctum')->put('/pizzas/toggleativo/{id}',[PizzasController::class,'toggleAtivo']);
 Route::middleware('auth:sanctum')->post('/pizzas/imagem/{id}',[PizzasController::class,'updateImagem']);
+// BORDAS
+Route::middleware('auth:sanctum')->get('/pizzas/bordas',[BordasPizzaController::class,'index']);
+Route::middleware('auth:sanctum')->post('/pizzas/bordas',[BordasPizzaController::class,'store']);
+Route::middleware('auth:sanctum')->put('/pizzas/bordas/{id}',[BordasPizzaController::class,'update']);
+Route::middleware('auth:sanctum')->delete('/pizzas/bordas/{id}',[BordasPizzaController::class,'destroy']);
+Route::middleware('auth:sanctum')->post('/pizzas/bordas/toggleativo/{id}',[BordasPizzaController::class,'toggleAtivo']);
