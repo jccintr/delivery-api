@@ -39,6 +39,7 @@ class BordasPizzaController extends Controller
         $novaBorda->nome = $nome;
         $novaBorda->grande = number_format($grande, 2, '.', '');
         $novaBorda->broto = number_format($broto, 2, '.', '');
+        $novaBorda->ativo = true;
         $novaBorda->user_id = Auth::User()->id;
         $novaBorda->save();
         return response()->json($novaBorda,201);

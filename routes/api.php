@@ -68,12 +68,14 @@ Route::middleware('auth:sanctum')->get('/pagamentos',[PagamentosController::clas
 Route::middleware('auth:sanctum')->get('/pagamentos/{id}',[PagamentosController::class,'show']);
 Route::middleware('auth:sanctum')->post('/pagamentos',[PagamentosController::class,'store']);
 Route::middleware('auth:sanctum')->put('/pagamentos/{id}',[PagamentosController::class,'update']);
+Route::middleware('auth:sanctum')->put('/pagamentos/toggleativo/{id}',[PagamentosController::class,'toggleAtivo']);
 
 // TAXAS
 Route::middleware('auth:sanctum')->get('/taxas',[TaxasController::class,'index']);
 Route::middleware('auth:sanctum')->get('/taxas/{id}',[TaxasController::class,'show']);
 Route::middleware('auth:sanctum')->post('/taxas',[TaxasController::class,'store']);
 Route::middleware('auth:sanctum')->put('/taxas/{id}',[TaxasController::class,'update']);
+Route::middleware('auth:sanctum')->put('/taxas/toggleativo/{id}',[TaxasController::class,'toggleAtivo']);
 
 // HORARIOS
 Route::middleware('auth:sanctum')->get('/horarios',[HorariosController::class,'index']);
@@ -137,10 +139,10 @@ Route::middleware('auth:sanctum')->post('/pizzas',[PizzasController::class,'stor
 Route::middleware('auth:sanctum')->delete('/pizzas/{id}',[PizzasController::class,'destroy']);
 Route::middleware('auth:sanctum')->post('/pizzas/update/{id}',[PizzasController::class,'update2']);
 Route::middleware('auth:sanctum')->put('/pizzas/toggleativo/{id}',[PizzasController::class,'toggleAtivo']);
-Route::middleware('auth:sanctum')->post('/pizzas/imagem/{id}',[PizzasController::class,'updateImagem']);
+Route::middleware('auth:sanctum')->put('/pizzas/imagem/{id}',[PizzasController::class,'updateImagem']);
 // BORDAS
 Route::middleware('auth:sanctum')->get('/pizzas/bordas',[BordasPizzaController::class,'index']);
 Route::middleware('auth:sanctum')->post('/pizzas/bordas',[BordasPizzaController::class,'store']);
 Route::middleware('auth:sanctum')->put('/pizzas/bordas/{id}',[BordasPizzaController::class,'update']);
 Route::middleware('auth:sanctum')->delete('/pizzas/bordas/{id}',[BordasPizzaController::class,'destroy']);
-Route::middleware('auth:sanctum')->post('/pizzas/bordas/toggleativo/{id}',[BordasPizzaController::class,'toggleAtivo']);
+Route::middleware('auth:sanctum')->put('/pizzas/bordas/toggleativo/{id}',[BordasPizzaController::class,'toggleAtivo']);

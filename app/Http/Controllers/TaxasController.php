@@ -129,4 +129,27 @@ class TaxasController extends Controller
     {
         //
     }
+
+     public function toggleAtivo($id){
+
+        if (!$id){
+            $array['erro'] = "Id da taxa não informado.";
+            return response()->json($array,400);
+        }
+
+        $taxa = Taxa::find($id);
+
+        if (!$taxa) {
+            return response()->json(['erro' => "Taxa não encontrada. ID: {$id}"], 404);
+        }
+        if ($taxa->user_id !== Auth::User()->id){
+            $array['erro'] = "Acesso não Autorizado.";
+            return response()->json($array,401);
+        }
+
+        $taxa->ativo = !$taxa->ativo;
+        $taxa->save();
+        return response()->json($taxa,200);
+
+      }
 }

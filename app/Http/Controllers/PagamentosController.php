@@ -113,4 +113,27 @@ class PagamentosController extends Controller
     {
         //
     }
+
+     public function toggleAtivo($id){
+
+        if (!$id){
+            $array['erro'] = "Id do pagamento não informado.";
+            return response()->json($array,400);
+        }
+
+        $pagamento = Pagamento::find($id);
+
+        if (!$pagamento) {
+            return response()->json(['erro' => "Pagamento não encontrado. ID: {$id}"], 404);
+        }
+        if ($pagamento->user_id !== Auth::User()->id){
+            $array['erro'] = "Acesso não Autorizado.";
+            return response()->json($array,401);
+        }
+
+        $pagamento->ativo = !$pagamento->ativo;
+        $pagamento->save();
+        return response()->json($pagamento,200);
+
+      }
 }
